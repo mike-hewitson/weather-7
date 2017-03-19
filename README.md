@@ -59,6 +59,7 @@ Copy log_data.clj adjust ns and test it
 Change database names to in profiles.clj weather_4 to keep old test data
 
 Do a test run of the log_data
+Checkin, push and push to heroku (repaet this a lot)
 
 Copy code from db.core
 Copy routes from home.clj and any others
@@ -137,7 +138,7 @@ Don't forget to execute the functions in the repl
 To run the logger to log one set of readings per location at the current time in the development environment.
 
 ```
-$ lein with-profile dev trampoline run -m weather-6.log-data
+$ lein with-profile dev trampoline run -m weather-7.log-data
 ```
 
 For the scheduled job in Heroku, try the following
