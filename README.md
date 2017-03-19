@@ -64,9 +64,7 @@ Checkin, push and push to heroku (repaet this a lot)
 Do the following, checking at each stage. If the step works, checkin, push to heroku
 
 -  Copy code from db.core and the tests
--  Copy routes from home.clj and any others
--  Copy all test files
-For clj files, don't forget to adjust the ns
+-  Copy routes from home.clj, services and tests
 
 ### profiles.clj
 
