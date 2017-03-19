@@ -47,19 +47,26 @@ Add clj-http to dependencies (for darksky access)
                  [org.clojure/math.numeric-tower "0.0.4"]]
                  [com.novemberain/monger "3.1.0"]
 
+
+### copy source and artifacts
+
 Copy weather icons directory into public
 Add into base.html
-Copy contents from home.html, and any other html pages
+Copy contents from home.html, and any other html pages (unless using cljs)
+
+Copy log_data.clj adjust ns and test it
+
+Change database names to in profiles.clj weather_4 to keep old test data
+
+Do a test run of the log_data
 
 Copy code from db.core
-Copy log_data.clj adjust ns and test it
 Copy routes from home.clj and any others
 Copy all test files
 For clj files, don't forget to adjust the ns
 
 ### profiles.clj
 
-Change database names to weather_4 to keep old test data
 
 ## Running
 
