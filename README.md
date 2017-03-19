@@ -61,9 +61,11 @@ Change database names to in profiles.clj weather_4 to keep old test data
 Do a test run of the log_data
 Checkin, push and push to heroku (repaet this a lot)
 
-Copy code from db.core
-Copy routes from home.clj and any others
-Copy all test files
+Do the following, checking at each stage. If the step works, checkin, push to heroku
+
+-  Copy code from db.core and the tests
+-  Copy routes from home.clj and any others
+-  Copy all test files
 For clj files, don't forget to adjust the ns
 
 ### profiles.clj

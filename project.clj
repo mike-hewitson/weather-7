@@ -49,7 +49,8 @@
             [lein-cljsbuild "1.1.5"]
             [lein-immutant "2.1.0"]
             [lein-kibit "0.1.2"]
-            [lein-ancient "0.6.10"]]
+            [lein-ancient "0.6.10"]
+            [lein-midje "3.1.3"]]
   :clean-targets ^{:protect false}
   [:target-path [:cljsbuild :builds :app :compiler :output-dir] [:cljsbuild :builds :app :compiler :output-to]]
   :figwheel
@@ -96,8 +97,7 @@
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.18.1"]
                                  [lein-doo "0.1.7"]
                                  [lein-figwheel "0.5.9"]
-                                 [org.clojure/clojurescript "1.9.495"]
-                                 [lein-midje "3.1.3"]]
+                                 [org.clojure/clojurescript "1.9.495"]]
                   :cljsbuild
                   {:builds
                    {:app
