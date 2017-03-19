@@ -18,7 +18,7 @@
                  [org.clojure/tools.cli "0.3.5"]
                  [org.clojure/tools.logging "0.3.1"]
                  [org.webjars.bower/tether "1.4.0"]
-                 [org.webjars/bootstrap "4.0.0-alpha.5"]
+                 [org.webjars/bootstrap "4.0.0-alpha.6-1"]
                  [org.webjars/font-awesome "4.7.0"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
                  [re-frame "0.9.2"]
@@ -29,7 +29,12 @@
                  [ring/ring-core "1.6.0-RC1"]
                  [ring/ring-defaults "0.2.3"]
                  [secretary "1.2.3"]
-                 [selmer "1.10.6"]]
+                 [selmer "1.10.6"]
+                 [clj-http "3.4.1"]
+                 [clj-time "0.13.0"]
+                 [com.andrewmcveigh/cljs-time "0.4.0"]
+                 [org.clojure/math.numeric-tower "0.0.4"]
+                 [com.novemberain/monger "3.1.0"]]
 
   :min-lein-version "2.0.0"
 
@@ -42,7 +47,9 @@
 
   :plugins [[lein-cprop "1.0.1"]
             [lein-cljsbuild "1.1.5"]
-            [lein-immutant "2.1.0"]]
+            [lein-immutant "2.1.0"]
+            [lein-kibit "0.1.2"]
+            [lein-ancient "0.6.10"]]
   :clean-targets ^{:protect false}
   [:target-path [:cljsbuild :builds :app :compiler :output-dir] [:cljsbuild :builds :app :compiler :output-to]]
   :figwheel
@@ -50,7 +57,7 @@
    :nrepl-port 7002
    :css-dirs ["resources/public/css"]
    :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
-  
+
 
   :profiles
   {:uberjar {:omit-source true
@@ -66,8 +73,8 @@
                  :closure-warnings
                  {:externs-validation :off :non-standard-jsdoc :off}
                  :externs ["react/externs/react.js"]}}}}
-             
-             
+
+
              :aot :all
              :uberjar-name "weather-7.jar"
              :source-paths ["env/prod/clj"]
@@ -83,11 +90,14 @@
                                  [binaryage/devtools "0.9.2"]
                                  [com.cemerick/piggieback "0.2.2-SNAPSHOT"]
                                  [doo "0.1.7"]
-                                 [figwheel-sidecar "0.5.9"]]
+                                 [figwheel-sidecar "0.5.9"]
+                                 [midje "1.8.3"]
+                                 [proto-repl "0.3.1"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.18.1"]
                                  [lein-doo "0.1.7"]
                                  [lein-figwheel "0.5.9"]
-                                 [org.clojure/clojurescript "1.9.495"]]
+                                 [org.clojure/clojurescript "1.9.495"]
+                                 [lein-midje "3.1.3"]]
                   :cljsbuild
                   {:builds
                    {:app
@@ -100,9 +110,9 @@
                       :source-map true
                       :optimizations :none
                       :pretty-print true}}}}
-                  
-                  
-                  
+
+
+
                   :doo {:build "test"}
                   :source-paths ["env/dev/clj"]
                   :resource-paths ["env/dev/resources"]
@@ -118,8 +128,8 @@
                      {:output-to "target/test.js"
                       :main "weather-7.doo-runner"
                       :optimizations :whitespace
-                      :pretty-print true}}}}
-                  
-                  }
+                      :pretty-print true}}}}}
+
+
    :profiles/dev {}
    :profiles/test {}})
