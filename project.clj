@@ -18,7 +18,7 @@
                  [org.clojure/tools.cli "0.3.5"]
                  [org.clojure/tools.logging "0.3.1"]
                  [org.webjars.bower/tether "1.4.0"]
-                 [org.webjars/bootstrap "4.0.0-alpha.6-1"]
+                 [org.webjars/bootstrap "4.0.0-alpha.5"]
                  [org.webjars/font-awesome "4.7.0"]
                  [org.webjars/webjars-locator-jboss-vfs "0.1.0"]
                  [re-frame "0.9.2"]
