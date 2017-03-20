@@ -139,9 +139,11 @@ To run the logger to log one set of readings per location at the current time in
 
 ```
 $ lein with-profile dev trampoline run -m weather-7.log-data
+$ lein with-profile dev trampoline run -m weather-7.log-tides
 ```
 
-For the scheduled job in Heroku, try the following
+For the scheduled job in Heroku, use the following, log-data every 10 mins, tides every day
 ```
-$ lein with-profile production trampoline run -m weather-6.log-data
+$ lein with-profile production trampoline run -m weather-7.log-data
+$ lein with-profile production trampoline run -m weather-7.log-tides
 ```

@@ -41,5 +41,3 @@
   (log-tides)
   (log/info "Logged one set of tides")
   (System/exit 0))
-
-; TODO create tests
