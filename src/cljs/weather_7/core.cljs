@@ -8,7 +8,11 @@
             [ajax.core :refer [GET POST]]
             [weather-7.ajax :refer [load-interceptors!]]
             [weather-7.handlers]
-            [weather-7.subscriptions])
+            [weather-7.subscriptions]
+            [goog.string :as gstring]
+            [goog.string.format]
+            [cljs-time.core :as t]
+            [cljs-time.format :as tf])
   (:import goog.History))
 
 (defn nav-link [uri title page collapsed?]
@@ -37,12 +41,56 @@
     [:div.col-md-12
      [:img {:src (str js/context "/img/warning_clojure.png")}]]]])
 
+(def date-format (tf/formatter "HH:mm"))
+(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))
+
+(defn create-reading-element [reading]
+  [:div.row
+   [:table.table
+    [:h3 (:location reading)]
+    [:tbody
+     [:tr
+      [:td "forecast"]
+      [:td "week"]
+      [:td (:week-summary reading)]]
+     [:tr
+      [:td]
+      [:td "day"]
+      [:td (:day-summary reading)]]
+     [:tr
+      [:td "sunrise/sunset"]
+      [:td]
+      [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
+           " / "
+           (tf/unparse date-format (t/to-default-time-zone (:sunset reading)))]]
+     [:tr
+      [:td "temp"]
+      [:td "max"]
+      [:td (gstring/format "%.1f" (:temperature-max reading)) " °C"]]
+     [:tr
+      [:td]
+      [:td "now"]
+      [:td (gstring/format "%.1f" (:temperature reading)) " °C"]]
+     [:tr
+      [:td "wind"]
+      [:td]
+      [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]]]])
+
+
+; TODO fix tests error and run lein ancient
+; TODO create tests for this stuff
+; TODO move homepage out to seperate module
+
 (defn home-page []
   [:div.container
-   (when-let [docs @(rf/subscribe [:docs])]
-     [:div.row>div.col-sm-12
-      [:div {:dangerouslySetInnerHTML
-             {:__html (md->html docs)}}]])])
+   (when-let [latest @(rf/subscribe [:latest])]
+     [:div.container-fluid
+       [:div.col-xs-12
+         [:ul {:class "tab-pane fade in active"}
+          (for [reading  (:readings latest)]
+            ^{:key (:location reading)} [create-reading-element reading])]]
+       [:div.col-xs-12
+         [:time "weather info @ " (tf/unparse date-time-format (t/to-default-time-zone (:date latest)))]]])])
 
 (def pages
   {:home #'home-page
@@ -79,6 +127,9 @@
 (defn fetch-docs! []
   (GET "/docs" {:handler #(rf/dispatch [:set-docs %])}))
 
+(defn fetch-latest! []
+  (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
+
 (defn mount-components []
   (rf/clear-subscription-cache!)
   (r/render [#'page] (.getElementById js/document "app")))
@@ -87,5 +138,6 @@
   (rf/dispatch-sync [:initialize-db])
   (load-interceptors!)
   (fetch-docs!)
+  (fetch-latest!)
   (hook-browser-navigation!)
   (mount-components))

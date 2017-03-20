@@ -16,3 +16,8 @@
   :set-docs
   (fn [db [_ docs]]
     (assoc db :docs docs)))
+
+(reg-event-db
+  :set-latest
+  (fn [db [_ latest]]
+    (assoc db :latest latest)))
