@@ -46,8 +46,9 @@
 
 (defn create-reading-element [reading]
   [:div.row
+   [:h3 (:location reading)
+    [:i {:class (str "wi " (:icon reading))}]]
    [:table.table
-    [:h3 (:location reading)]
     [:tbody
      [:tr
       [:td "forecast"]
@@ -76,21 +77,20 @@
       [:td]
       [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]]]])
 
-; TODO add weather icons
-; TODO fix tests error and run lein ancient
 ; TODO create tests for this stuff
 ; TODO move homepage out to seperate module
 
 (defn home-page []
-  [:div.container
+  [:div.container-fluid
    (when-let [latest @(rf/subscribe [:latest])]
-     [:div.container-fluid
-       [:div.col-xs-12
-         [:ul {:class "tab-pane fade in active"}
-          (for [reading  (:readings latest)]
-            ^{:key (:location reading)} [create-reading-element reading])]]
-       [:div.col-xs-12
-         [:time "weather info @ " (tf/unparse date-time-format (t/to-default-time-zone (:date latest)))]]])])
+     ; [:div.container-fluid
+      [:div {:class "row row-content"}
+        [:div.col-xs-12
+          [:ul {:class "tab-pane fade in active"}
+           (for [reading  (:readings latest)]
+             ^{:key (:location reading)} [create-reading-element reading])]]
+        [:div.col-xs-12
+          [:time "weather info @ " (tf/unparse date-time-format (t/to-default-time-zone (:date latest)))]]])])
 
 (def pages
   {:home #'home-page
