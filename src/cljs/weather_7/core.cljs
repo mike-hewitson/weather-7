@@ -76,7 +76,7 @@
       [:td]
       [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]]]])
 
-
+; TODO add weather icons
 ; TODO fix tests error and run lein ancient
 ; TODO create tests for this stuff
 ; TODO move homepage out to seperate module
@@ -124,9 +124,6 @@
 
 ;; -------------------------
 ;; Initialize app
-(defn fetch-docs! []
-  (GET "/docs" {:handler #(rf/dispatch [:set-docs %])}))
-
 (defn fetch-latest! []
   (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
 
@@ -137,7 +134,6 @@
 (defn init! []
   (rf/dispatch-sync [:initialize-db])
   (load-interceptors!)
-  (fetch-docs!)
   (fetch-latest!)
   (hook-browser-navigation!)
   (mount-components))
