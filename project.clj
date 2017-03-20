@@ -1,7 +1,7 @@
 (defproject weather-7 "0.1.0-SNAPSHOT"
 
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "weather website to show minimum of relevant weather information"
+  :url "https://aqueous-sierra-27664.herokuapp.com/"
 
   :dependencies [[cljs-ajax "0.5.8"]
                  [compojure "1.5.2"]
