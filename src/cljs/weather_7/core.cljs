@@ -46,7 +46,7 @@
 
 (defn create-reading-element [reading]
   [:div.row
-   [:h3 (:location reading)
+   [:h3 (str (:location reading) " ")
     [:i {:class (str "wi " (:icon reading))}]]
    [:table.table
     [:tbody
