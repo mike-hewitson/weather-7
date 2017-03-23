@@ -2,7 +2,22 @@
   (:require ; [weather-4.layout :as layout]
             [clojure.tools.logging :as log]
             [clojure.math.numeric-tower :as m]
-            [weather-7.db.core :as db]))
+            [weather-7.db.core :as db]
+            [clj-time.core :as t]
+            [clj-time.coerce :as c]))
+
+(def fields-needed
+  [:sunset
+   :day-summary
+   :wind-speed
+   :sunrise
+   :icon
+   :wind-bearing
+   :wind-direction
+   :temperature-max
+   :location
+   :temperature
+   :week-summary])
 
 (def locations
   ["Sandton" "Paradise Beach"])
@@ -32,5 +47,21 @@
 (defn format-home-page-data []
     (create-map-for-template (first (db/get-latest))))
 
+; TODO change template map to resemble tide list so they can be merged
+; and will work for the
 ; TODO reduce data to service to only whats needed
-; TODO crate tests for this
+; TODO create tests for this
+
+(defn create-next-tide-list
+  "Create a map with the next tide with key of location"
+  [tide]
+  (let [now (c/from-date (new java.util.Date))
+        locations (:locations (first tide))]
+   (apply merge (map (fn [x] {(:location x)
+                              (some #(if (t/after?
+                                          (c/from-date (c/to-date (:date %)))
+                                          now)
+                                         %)
+                                    (:extremes (:tides x)))}) locations))))
+
+; TODO merge tides info into api return

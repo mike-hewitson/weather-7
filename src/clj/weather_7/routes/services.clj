@@ -25,6 +25,8 @@
          :temperature s/Num
          :week-summary s/Str}]})
 
+; TODO add tide data to schema
+
 (defapi service-routes
   {:swagger {:ui "/swagger-ui"
              :spec "/swagger.json"

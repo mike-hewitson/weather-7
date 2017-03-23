@@ -35,6 +35,14 @@
   (sort (sorted-map $natural -1))
   (limit 1)))
 
+(defn get-tides
+  "return the most recent set of tide data"
+  []
+ (with-collection db "tides"
+  (find {})
+  (sort (sorted-map $natural -1))
+  (limit 1)))
+
 (defn get-reading-at-time
   "return the reading just before to the supplied date/time"
   [date-time]

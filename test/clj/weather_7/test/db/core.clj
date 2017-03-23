@@ -4,6 +4,7 @@
             [weather-7.db.core :as db]))
 
 ; TODO fix the deferable state error with testing db
+; TODO include test for latest tide
 
 ; (facts "about 'get-latest'"
 ;   (let [data (first (db/get-latest))]
