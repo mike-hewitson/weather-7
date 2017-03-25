@@ -27,14 +27,16 @@
          :week-summary s/Str}]})
 
 (s/defschema Summary
-    [{:location
-      [{:max-temp s/Num
-        :avg-temp s/Num
-        :max-wind s/Num
-        :min-temp s/Num
-        :count s/Num
-        :min-wind s/Num
-        :avg-wind s/Num}]}])
+    [{:location s/Str
+      :summary
+         [{:date s/Inst
+           :max-temp s/Num
+           :avg-temp s/Num
+           :max-wind s/Num
+           :min-temp s/Num
+           :count s/Num
+           :min-wind s/Num
+           :avg-wind s/Num}]}])
 
 ; TODO add tide data to schema
 
