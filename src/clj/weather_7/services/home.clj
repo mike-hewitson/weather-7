@@ -66,8 +66,13 @@
 
 ; TODO merge tides info into api return
 
-(def bob (create-map-for-template (first (db/get-latest))))
+(def bob (create-map-for-template (last (db/get-latest))))
 
-(apply merge (map #({(:location (:readings %)) (:readings %)}) bob))
+{(:location (first (:readings bob))) (first (:readings bob))}
+(def data (apply merge (map (fn [x] {(:location x) x}) (:readings bob))))
 
 (select-keys (first (:readings bob)) fields-needed)
+
+(def tides (create-next-tide-list (db/get-tides)))
+
+(merge-with merge data tides)
