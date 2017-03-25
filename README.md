@@ -5,7 +5,7 @@ generated using Luminus version "2.9.11.37"
 ## to create a new version of this from a template
 
 ```
-$ lein new luminus weather-x +re-frame +swagger
+$ lein new luminus weather-x +re-frame +swagger +kibit
 ```
 ### begin
 
@@ -35,6 +35,8 @@ run it to check first, then to update
 $ lein ancient
 $ lein ancient upgrade
 ```
+And make sure you test afterwards
+
 
 ### project.clj
 

@@ -39,10 +39,10 @@
 
 (defn create-map-for-template
   "create the data for the web page template"
-  [latest-reading]
+  [latest-readings]
   {:readings (filter (fn [x] (some #(= (:location x) %) locations))
-                     (add-direction-into-readings (:readings latest-reading)))
-   :date (:date latest-reading)})
+                     (add-direction-into-readings (:readings latest-readings)))
+   :date (:date latest-readings)})
 
 (defn format-home-page-data []
     (create-map-for-template (first (db/get-latest))))
@@ -65,3 +65,14 @@
                                     (:extremes (:tides x)))}) locations))))
 
 ; TODO merge tides info into api return
+
+(def bob (create-map-for-template (last (db/get-latest))))
+
+{(:location (first (:readings bob))) (first (:readings bob))}
+(def data (apply merge (map (fn [x] {(:location x) x}) (:readings bob))))
+
+(select-keys (first (:readings bob)) fields-needed)
+
+(def tides (create-next-tide-list (db/get-tides)))
+
+(merge-with merge data tides)
