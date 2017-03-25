@@ -2,7 +2,8 @@
   (:require [ring.util.http-response :refer :all]
             [compojure.api.sweet :refer :all]
             [schema.core :as s]
-            [weather-7.services.home :as srv]))
+            [weather-7.services.home :as srvh]
+            [weather-7.services.summary :as srvs]))
 
 (s/defschema Latest
     {:date s/Inst
@@ -25,6 +26,16 @@
          :temperature s/Num
          :week-summary s/Str}]})
 
+(s/defschema Summary
+    [{:location
+      [{:max-temp s/Num
+        :avg-temp s/Num
+        :max-wind s/Num
+        :min-temp s/Num
+        :count s/Num
+        :min-wind s/Num
+        :avg-wind s/Num}]}])
+
 ; TODO add tide data to schema
 
 (defapi service-routes
@@ -41,28 +52,10 @@
       :return       Latest
       :query-params []
       :summary      "returns the current weather conditions"
-      (ok (srv/format-home-page-data)))
+      (ok (srvh/format-home-page-data)))
 
-    (POST "/minus" []
-      :return      Long
-      :body-params [x :- Long, y :- Long]
-      :summary     "x-y with body-parameters."
-      (ok (- x y)))
-
-    (GET "/times/:x/:y" []
-      :return      Long
-      :path-params [x :- Long, y :- Long]
-      :summary     "x*y with path-parameters"
-      (ok (* x y)))
-
-    (POST "/divide" []
-      :return      Double
-      :form-params [x :- Long, y :- Long]
-      :summary     "x/y with form-parameters"
-      (ok (/ x y)))
-
-    (GET "/power" []
-      :return      Long
-      :header-params [x :- Long, y :- Long]
-      :summary     "x^y with header-parameters"
-      (ok (long (Math/pow x y))))))
+    (POST "/summary" []
+      :return      Summary
+      :query-params []
+      :summary     "returns summary of weather conditions"
+      (ok (srvs/build-summary-data)))))
