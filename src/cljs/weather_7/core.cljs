@@ -75,7 +75,15 @@
      [:tr
       [:td "wind"]
       [:td]
-      [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]]]])
+      [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]
+     (if (:date reading)
+       [:tr
+        [:td "next tide"]
+        [:td]
+        [:td
+         (:type reading) " "
+         (gstring/format "%.1f" (:height reading)) " m at "
+         (tf/unparse date-format (t/to-default-time-zone (:date reading)))]])]]])
 
 ; TODO create tests for this stuff
 ; TODO move homepage out to seperate module
