@@ -1,6 +1,5 @@
 (ns weather-7.services.home
-  (:require ; [weather-4.layout :as layout]
-            [clojure.tools.logging :as log]
+  (:require [clojure.tools.logging :as log]
             [clojure.math.numeric-tower :as m]
             [weather-7.db.core :as db]
             [clj-time.core :as t]
@@ -34,23 +33,21 @@
   "include the direction element into the reading"
   [readings]
   (map (fn [reading]
-         (assoc reading :wind-direction (get-direction (:wind-bearing reading))))
+         (assoc (select-keys reading fields-needed) :wind-direction (get-direction (:wind-bearing reading))))
        readings))
 
 (defn create-map-for-template
   "create the data for the web page template"
   [latest-readings]
-  {:readings (filter (fn [x] (some #(= (:location x) %) locations))
-                     (add-direction-into-readings (:readings latest-readings)))
+  ; {:readings (filter (fn [x] (some #(= (:location x) %) locations)))}
+  {:readings (add-direction-into-readings (:readings latest-readings))
    :date (:date latest-readings)})
 
-(defn format-home-page-data []
-    (create-map-for-template (first (db/get-latest))))
-
-; TODO change template map to resemble tide list so they can be merged
-; and will work for the
-; TODO reduce data to service to only whats needed
-; TODO create tests for this
+(defn prepare-latest-readings
+  [readings]
+  (apply merge
+         (map (fn [x] { (:location x) x})
+              (:readings readings))))
 
 (defn create-next-tide-list
   "Create a map with the next tide with key of location"
@@ -64,15 +61,28 @@
                                          %)
                                     (:extremes (:tides x)))}) locations))))
 
-; TODO merge tides info into api return
+(defn format-home-page-data []
+  (let [weather-data (first (db/get-latest))
+        tides-data (db/get-tides)
+        reading-date (:date weather-data)]
+   {:date reading-date
+    :readings
+     (vals
+      (select-keys
+       (merge-with merge
+                   (prepare-latest-readings (create-map-for-template weather-data))
+                   (create-next-tide-list tides-data))
+       locations))}))
 
-; (def bob (create-map-for-template (last (db/get-latest))))
-;
-; {(:location (first (:readings bob))) (first (:readings bob))}
-; (def data (apply merge (map (fn [x] {(:location x) x}) (:readings bob))))
-;
-; (select-keys (first (:readings bob)) fields-needed)
-;
-; (def tides (create-next-tide-list (db/get-tides)))
-;
-; (merge-with merge data tides)
+; TODO reduce data to service to only whats needed for tides
+; TODO create tests for this
+
+; TODO refactor this crap
+
+; store date somewhere?
+; prepare weather and tides from raw for merging
+; merge
+; select only locations required
+; strip out values
+; add wind direction (maybe at the end)
+; add back date

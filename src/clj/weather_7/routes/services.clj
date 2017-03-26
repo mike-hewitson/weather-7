@@ -8,23 +8,27 @@
 (s/defschema Latest
     {:date s/Inst
      :readings
-      [{:sunset s/Inst
-         :cloud-cover s/Num
-         :pressure s/Num
+      [{ :sunset s/Inst
+         ; :cloud-cover s/Num
+         ; :pressure s/Num
          :day-summary s/Str
          :wind-speed s/Num
          :sunrise s/Inst
          :icon s/Str
-         :humidity s/Num
-         :precip-intensity s/Num
+         ; :humidity s/Num
+         ; :precip-intensity s/Num
          :wind-bearing s/Num
-         :now-summary s/Str
+         ; :now-summary s/Str
          :wind-direction s/Str
          :temperature-max s/Num
-         :precip-probability s/Num
+         ; :precip-probability s/Num
          :location s/Str
          :temperature s/Num
-         :week-summary s/Str}]})
+         :week-summary s/Str
+         (s/optional-key :date) s/Inst
+         (s/optional-key :dt) s/Num
+         (s/optional-key :type) s/Str
+         (s/optional-key :height) s/Num}]})
 
 (s/defschema Summary
     [{:location s/Str
