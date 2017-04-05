@@ -9,11 +9,8 @@
             [weather-7.ajax :refer [load-interceptors!]]
             [weather-7.handlers]
             [weather-7.subscriptions]
-            [weather-7.pages.home :refer [home-page]])
-            ; [goog.string :as gstring]
-            ; [goog.string.format]
-            ; [cljs-time.core :as t]
-            ; [cljs-time.format :as tf])
+            [weather-7.pages.home :refer [home-page]]
+            [weather-7.pages.summary :refer [summary-page]])
   (:import goog.History))
 
 (defn nav-link [uri title page collapsed?]
@@ -31,10 +28,10 @@
       {:on-click #(swap! collapsed? not)} "☰"]
      [:div.collapse.navbar-toggleable-xs
       (when-not @collapsed? {:class "in"})
-      [:a.navbar-brand {:href "#/"} "weather-7"]
+      [:a.navbar-brand {:href "#/"} "weather"]
       [:ul.nav.navbar-nav
        [nav-link "#/" "Home" :home collapsed?]
-       [nav-link "#/about" "About" :about collapsed?]]]]))
+       [nav-link "#/summary" "Summary" :about collapsed?]]]]))
 
 (defn about-page []
   [:div.container
@@ -42,68 +39,12 @@
     [:div.col-md-12
      [:img {:src (str js/context "/img/warning_clojure.png")}]]]])
 
-; (def date-format (tf/formatter "HH:mm"))
-; (def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))
-
-; (defn create-reading-element [reading]
-;   [:div.row
-;    [:h3 (str (:location reading) " ")
-;     [:i {:class (str "wi " (:icon reading))}]]
-;    [:table.table
-;     [:tbody
-;      [:tr
-;       [:td "forecast"]
-;       [:td "week"]
-;       [:td (:week-summary reading)]]
-;      [:tr
-;       [:td]
-;       [:td "day"]
-;       [:td (:day-summary reading)]]
-;      [:tr
-;       [:td "sunrise/sunset"]
-;       [:td]
-;       [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
-;            " / "
-;            (tf/unparse date-format (t/to-default-time-zone (:sunset reading)))]]
-;      [:tr
-;       [:td "temp"]
-;       [:td "max"]
-;       [:td (gstring/format "%.1f" (:temperature-max reading)) " °C"]]
-;      [:tr
-;       [:td]
-;       [:td "now"]
-;       [:td (gstring/format "%.1f" (:temperature reading)) " °C"]]
-;      [:tr
-;       [:td "wind"]
-;       [:td]
-;       [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]
-;      (if (:date reading)
-;        [:tr
-;         [:td "next tide"]
-;         [:td]
-;         [:td
-;          (:type reading) " "
-;          (gstring/format "%.1f" (:height reading)) " m at "
-;          (tf/unparse date-format (t/to-default-time-zone (:date reading)))]])]]])
 
 ; TODO create tests for this stuff
-; TODO move homepage out to seperate module
-
-; (defn home-page []
-;   [:div.container-fluid
-;    (when-let [latest @(rf/subscribe [:latest])]
-;      ; [:div.container-fluid
-;       [:div {:class "row row-content"}
-;         [:div.col-xs-12
-;           [:ul {:class "tab-pane fade in active"}
-;            (for [reading  (:readings latest)]
-;              ^{:key (:location reading)} [create-reading-element reading])]]
-;         [:div.col-xs-12
-;           [:time "weather info @ " (tf/unparse date-time-format (t/to-default-time-zone (:date latest)))]]])])
 
 (def pages
   {:home #'home-page
-   :about #'about-page})
+   :summary #'summary-page})
 
 (defn page []
   [:div
@@ -117,8 +58,8 @@
 (secretary/defroute "/" []
   (rf/dispatch [:set-active-page :home]))
 
-(secretary/defroute "/about" []
-  (rf/dispatch [:set-active-page :about]))
+(secretary/defroute "/summary" []
+  (rf/dispatch [:set-active-page :summary]))
 
 ;; -------------------------
 ;; History
