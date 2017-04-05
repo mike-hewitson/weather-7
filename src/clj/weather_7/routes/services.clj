@@ -58,10 +58,10 @@
       :return       Latest
       :query-params []
       :summary      "returns the current weather conditions"
-      (ok (srvh/format-home-page-data)))
+      (ok (srvh/prepare-home-page-data)))
 
     (GET "/summary" []
       :return      Summary
       :query-params []
       :summary     "returns summary of weather conditions"
-      (ok (srvs/build-summary-data)))))
+      (ok (srvs/prepare-summary-data)))))

@@ -292,6 +292,7 @@
                   :week-summary "Light rain on Thursday, with temperatures bottoming out at 21°C on Thursday."}]})
 
 (def home-page-data
+
   {:date #inst "2017-03-05T16:27:02.112-00:00",
    :readings [{:sunset #inst "2017-03-05T17:48:02.000-00:00",
                :day-summary "Light rain until evening.",
@@ -326,3 +327,93 @@
                :location "Paradise Beach",
                :temperature 20.600000381469727,
                :week-summary "Light rain on Thursday, with temperatures bottoming out at 21°C on Thursday."}]})
+
+(def tides-data
+  {:_id [org.bson.types.ObjectId 1736410270 "58dfba9601ffcffe500acb31"],
+   :date #inst "2017-04-01T14:35:02.345-00:00",
+   :locations [{:tides
+                {:callCount 1,
+                 :requestLat "-34.0521",
+                 :responseLat -34.166668,
+                 :atlas "TPXO_8_v1",
+                 :copyright "Tidal data retrieved from www.worldtide.info. Copyright © 2014-2017 FaMe IT. Licensed for use of individual spatial coordinates on behalf of/by an end-user. Copyright © 2010-2016 Oregon State University. Licensed for individual spatial coordinates via ModEM-Geophysics Inc. NO GUARANTEES ARE MADE ABOUT THE CORRECTNESS OF THIS DATA. You may not use it if anyone or anything could come to harm as a result of using it (e.g. for navigational purposes).",
+                 :extremes
+                  [{:date "2017-04-01T10:29+0000",
+                    :dt 1491042556,
+                    :type "Low",
+                    :height -0.693}
+                   {:date "2017-04-01T16:40+0000",
+                    :dt 1491064803,
+                    :type "High",
+                    :height 0.609}
+                   {:date "2017-04-01T22:43+0000",
+                    :dt 1491086595,
+                    :type "Low",
+                    :height -0.618}
+                   {:date "2017-04-02T05:04+0000",
+                    :dt 1491109469,
+                    :type "High",
+                    :height 0.621}
+                   {:date "2017-04-02T11:17+0000",
+                    :dt 1491131860,
+                    :type "Low",
+                    :height -0.542}
+                   {:date "2017-04-02T17:34+0000",
+                    :dt 1491154493,
+                    :type "High",
+                    :height 0.461}
+                   {:date "2017-04-02T23:38+0000",
+                    :dt 1491176308,
+                    :type "Low",
+                    :height -0.453}
+                   {:date "2017-04-03T06:07+0000",
+                    :dt 1491199634,
+                    :type "High",
+                    :height 0.448},]
+                 :status 200,
+                 :responseLon 24.5,
+                 :requestLon "24.5412",}
+                :location "Paradise Beach"}
+               {:tides
+                {:callCount 1,
+                 :requestLat "51.317",
+                 :responseLat 51.466675,
+                 :atlas "TPXO_8_v1",
+                 :copyright "Tidal data retrieved from www.worldtide.info. Copyright © 2014-2017 FaMe IT. Licensed for use of individual spatial coordinates on behalf of/by an end-user. Copyright © 2010-2016 Oregon State University. Licensed for individual spatial coordinates via ModEM-Geophysics Inc. NO GUARANTEES ARE MADE ABOUT THE CORRECTNESS OF THIS DATA. You may not use it if anyone or anything could come to harm as a result of using it (e.g. for navigational purposes).",
+                 :extremes
+                  [{:date "2017-04-01T09:02+0000",
+                    :dt 1491037339,
+                    :type "Low",
+                    :height -2.295}
+                   {:date "2017-04-01T15:03+0000",
+                    :dt 1491058996,
+                    :type "High",
+                    :height 2.273}
+                   {:date "2017-04-01T21:18+0000",
+                    :dt 1491081539,
+                    :type "Low",
+                    :height -2.013}
+                   {:date "2017-04-02T03:23+0000",
+                    :dt 1491103425,
+                    :type "High",
+                    :height 2.295}
+                   {:date "2017-04-02T09:46+0000",
+                    :dt 1491126402,
+                    :type "Low",
+                    :height -1.999}
+                   {:date "2017-04-02T15:51+0000",
+                    :dt 1491148276,
+                    :type "High",
+                    :height 1.966}
+                   {:date "2017-04-02T22:05+0000",
+                    :dt 1491170754,
+                    :type "Low",
+                    :height -1.783}
+                   {:date "2017-04-03T04:17+0000",
+                    :dt 1491193058,
+                    :type "High",
+                    :height 1.943},
+                      :status 200,
+                      :responseLon 0.6333313,
+                      :requestLon "0.057",]
+                 :location "London"}}]})

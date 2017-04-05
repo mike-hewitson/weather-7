@@ -14,6 +14,37 @@
       (r/get-direction 359) => "N"))
 
 
-(facts "about 'create-map-for-template'"
-       (fact "given a specific input, it should produce the expected output"
-             (r/create-map-for-template fix/latest-reading) => fix/home-page-data))
+(facts "about 'format-readings-for-merge'"
+  (let [readings (r/format-readings-for-merge fix/latest-reading)]
+    (fact "it should return a map"
+     (map? readings) => true)
+    (fact "it should contain 3 items"
+     (count readings) => 3)
+    (fact "elements should contain 10 items"
+     (count (val (first readings))) => 10)))
+
+(facts "about 'create-directions-for-merge'"
+  (let [directions (r/create-directions-for-merge fix/latest-reading)]
+    (fact "it should return a map"
+     (map? directions) => true)
+    (fact "it should contain 3 items"
+     (count directions) => 3)
+    (fact "elements should contain 1 items"
+     (count (val (first directions))) => 1)
+    (fact "it should contain wind-direction"
+      (:wind-direction (val (first directions))) => truthy)
+    (fact "it should contain some correct data"
+      (string? (:wind-direction (val (first directions)))) => true)))
+
+; (facts "about 'create-next-tide-list'"
+;   (let [tides (r/create-next-tide-list fix/tides-data)]
+;     (fact "it should return a map"
+;      (map? tides) => true)
+;     (fact "it should contain 2 items"
+;      (count tides) => 2)
+;     (fact "elements should contain 4 items"
+;      (count (val (first tides))) => 4)
+;     (fact "it should contain a date field"
+;       (:date (val (first tides))) => truthy)
+;     (fact "it should contain some correct data"
+;       (string? (:type (val (first tides)))) => true)))

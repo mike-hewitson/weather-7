@@ -51,6 +51,7 @@ Add clj-http to dependencies (for darksky access)
                  [org.clojure/math.numeric-tower "0.0.4"]]
                  [com.novemberain/monger "3.1.0"]
 
+<!-- TODO add in extra dependencies -->
 
 ### copy source and artifacts
 

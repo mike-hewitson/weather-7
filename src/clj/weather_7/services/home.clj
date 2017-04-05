@@ -29,31 +29,26 @@
   [bearing]
   (wind-directions (mod (m/round (/ bearing 45)) 8)))
 
-(defn add-direction-into-readings
-  "include the direction element into the reading"
-  [readings]
-  (map (fn [reading]
-         (assoc (select-keys reading fields-needed) :wind-direction (get-direction (:wind-bearing reading))))
-       readings))
-
-(defn create-map-for-template
-  "create the data for the web page template"
-  [latest-readings]
-  ; {:readings (filter (fn [x] (some #(= (:location x) %) locations)))}
-  {:readings (add-direction-into-readings (:readings latest-readings))
-   :date (:date latest-readings)})
-
-(defn prepare-latest-readings
+(defn format-readings-for-merge
+  "create map of selected reading data for merge"
   [readings]
   (apply merge
-         (map (fn [x] { (:location x) x})
+         (map (fn [x] { (:location x) (select-keys x fields-needed)})
               (:readings readings))))
+
+(defn create-directions-for-merge
+  "create wind directions for merging"
+  [readings]
+  (apply merge
+    (map (fn [reading]
+             { (:location reading) {:wind-direction (get-direction (:wind-bearing reading))}})
+         (:readings readings))))
 
 (defn create-next-tide-list
   "Create a map with the next tide with key of location"
   [tide]
   (let [now (c/from-date (new java.util.Date))
-        locations (:locations (first tide))]
+        locations (:locations tide)]
    (apply merge (map (fn [x] {(:location x)
                               (some #(if (t/after?
                                           (c/from-date (c/to-date (:date %)))
@@ -61,28 +56,18 @@
                                          %)
                                     (:extremes (:tides x)))}) locations))))
 
-(defn format-home-page-data []
+(defn prepare-home-page-data []
+  "bring together all of the home page data components"
   (let [weather-data (first (db/get-latest))
-        tides-data (db/get-tides)
-        reading-date (:date weather-data)]
+        tides-data (first (db/get-tides))
+        reading-date (:date weather-data)
+        now (c/from-date (new java.util.Date))]
    {:date reading-date
     :readings
      (vals
       (select-keys
        (merge-with merge
-                   (prepare-latest-readings (create-map-for-template weather-data))
+                   (format-readings-for-merge weather-data)
+                   (create-directions-for-merge weather-data)
                    (create-next-tide-list tides-data))
        locations))}))
-
-; TODO reduce data to service to only whats needed for tides
-; TODO create tests for this
-
-; TODO refactor this crap
-
-; store date somewhere?
-; prepare weather and tides from raw for merging
-; merge
-; select only locations required
-; strip out values
-; add wind direction (maybe at the end)
-; add back date
