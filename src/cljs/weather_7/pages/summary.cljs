@@ -143,7 +143,7 @@
 
 ; (prn "xaxis" (get-xaxis test-data))
 ; (prn "series" (get-series test-data))
-; (prn "full" (clj->js (load-data test-data)))
+(prn "full" (clj->js (load-data test-data)))
 ;
 
 (defn home-render []
