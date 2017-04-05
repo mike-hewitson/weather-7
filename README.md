@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mike-hewitson/weather-7.svg?branch=master)](https://travis-ci.org/mike-hewitson/weather-7)
+
 # weather-6
 
 generated using Luminus version "2.9.11.37"
