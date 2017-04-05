@@ -73,7 +73,7 @@
                  :pretty-print false
                  :closure-warnings
                  {:externs-validation :off :non-standard-jsdoc :off}
-                 :externs ["react/externs/react.js"]}}}}
+                 :externs ["externs.js"]}}}}
 
 
              :aot :all

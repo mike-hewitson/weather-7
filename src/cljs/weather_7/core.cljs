@@ -31,14 +31,7 @@
       [:a.navbar-brand {:href "#/"} "weather"]
       [:ul.nav.navbar-nav
        [nav-link "#/" "Home" :home collapsed?]
-       [nav-link "#/summary" "Summary" :about collapsed?]]]]))
-
-(defn about-page []
-  [:div.container
-   [:div.row
-    [:div.col-md-12
-     [:img {:src (str js/context "/img/warning_clojure.png")}]]]])
-
+       [nav-link "#/summary" "Summary" :summary collapsed?]]]]))
 
 ; TODO create tests for this stuff
 

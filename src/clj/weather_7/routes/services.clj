@@ -60,7 +60,7 @@
       :summary      "returns the current weather conditions"
       (ok (srvh/format-home-page-data)))
 
-    (POST "/summary" []
+    (GET "/summary" []
       :return      Summary
       :query-params []
       :summary     "returns summary of weather conditions"

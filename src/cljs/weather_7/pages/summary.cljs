@@ -1,74 +1,45 @@
 (ns weather-7.pages.summary
-  (:require [reagent.core :as r]
-            [re-frame.core :as rf]
-            [goog.string :as gstring]
-            [goog.string.format]
-            [cljs-time.core :as t]
-            [cljs-time.format :as tf]))
-
-(def date-format (tf/formatter "HH:mm"))
-(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))
-
-; (defn create-reading-element [reading]
-;   [:div.row
-;    [:h3 (str (:location reading) " ")
-;     [:i {:class (str "wi " (:icon reading))}]]
-;    [:table.table
-;     [:tbody
-;      [:tr
-;       [:td "forecast"]
-;       [:td "week"]
-;       [:td (:week-summary reading)]]
-;      [:tr
-;       [:td]
-;       [:td "day"]
-;       [:td (:day-summary reading)]]
-;      [:tr
-;       [:td "sunrise/sunset"]
-;       [:td]
-;       [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
-;            " / "
-;            (tf/unparse date-format (t/to-default-time-zone (:sunset reading)))]]
-;      [:tr
-;       [:td "temp"]
-;       [:td "max"]
-;       [:td (gstring/format "%.1f" (:temperature-max reading)) " °C"]]
-;      [:tr
-;       [:td]
-;       [:td "now"]
-;       [:td (gstring/format "%.1f" (:temperature reading)) " °C"]]
-;      [:tr
-;       [:td "wind"]
-;       [:td]
-;       [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]
-;      (if (:date reading)
-;        [:tr
-;         [:td "next tide"]
-;         [:td]
-;         [:td
-;          (:type reading) " "
-;          (gstring/format "%.1f" (:height reading)) " m at "
-;          (tf/unparse date-format (t/to-default-time-zone (:date reading)))]])]]])
-
+  (:require [re-frame.core :as rf]
+            [reagent.core :as r]))
 ; TODO create tests for this stuff
 
-; (defn summary-page []
-;   [:div.container-fluid
-;    (when-let [latest @(rf/subscribe [:latest])]
-     ; [:div.container-fluid
-      ; [:div {:class "row row-content"}
-      ;   [:div.col-xs-12
-          ; [:ul {:class "tab-pane fade in active"}
-         ; [:h3 "hello"])
-           ; (for [reading  (:readings latest)]
-           ;   ^{:key (:location reading)} [create-reading-element reading])]]
-        ; [:div.col-xs-12
-        ;   [:time "weather info @ " (tf/unparse date-time-format (t/to-default-time-zone (:date latest)))]]])])
+(defn home-render []
+  [:div {:style {:min-width "310px" :max-width "800px"
+                 :height "400px" :margin "0 auto"}}])
+
+(def chart-config
+  {:chart {:type "spline"}
+   :title {:text "Historic World Population by Region"}
+   :subtitle {:text "Source: Wikipedia.org"}
+   :xAxis {:categories ["Africa" "America" "Asia" "Europe" "Oceania"]
+           :title {:text nil}}
+   :yAxis {:min 0
+           :title {:text "Population (millions)"
+                   :align "high"}
+           :labels {:overflow "justify"}}
+   :tooltip {:valueSuffix " millions"}
+   :plotOptions {:spline {:dataLabels {:enabled false}
+                          :marker {:enabled false}}}
+   :legend {:layout "vertical"
+            :align "right"
+            :verticalAlign "top"
+            :x -40
+            :y 100
+            :floating true
+            :borderWidth 1
+            :shadow true}
+   :credits {:enabled false}
+   :series [{:name "Year 1800"
+             :data [107 31 635 203 2]}
+            {:name "Year 1900"
+             :data [133 156 947 408 6]}
+            {:name "Year 2008"
+             :data [973 914 4054 732 34]}]})
+
+(defn home-did-mount [this]
+  (js/Highcharts.Chart. (r/dom-node this) (clj->js chart-config)))
+
 
 (defn summary-page []
-   [:div.container-fluid
-    (when-let [latest @(rf/subscribe [:latest])]
-     ; [:div.container-fluid
-      [:div {:class "row row-content"}
-        [:div.col-xs-12
-          [:h3 "hello, I'm here"]]])])
+  (r/create-class {:reagent-render home-render
+                   :component-did-mount home-did-mount}))
