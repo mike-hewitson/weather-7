@@ -3,3 +3,45 @@
 notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.641 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.497 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.604 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/core.cljs   line:92  column:1  ----[0m
+
+  [1mhome-page already refers to: weather-7.pages.home/home-page being replaced by: weather-7.core/home-page[0m
+
+  [36m89[0m  [36m; TODO create tests for this stuff[0m
+  [36m90[0m  [36m; TODO move homepage out to seperate module[0m
+  [36m91[0m  [36m[0m
+  [33m92[0m  [1m(defn home-page [][0m
+  [0m  [0m  [33m^--- home-page already refers to: weather-7.pages.home/home-page being replaced by: weather-7.core/home-page[0m
+  [36m93[0m  [36m  [:div.container-fluid[0m
+  [36m94[0m  [36m   (when-let [latest @(rf/subscribe [:latest])][0m
+  [36m95[0m  [36m     ; [:div.container-fluid[0m
+  [36m96[0m  [36m      [:div {:class "row row-content"}[0m
+  [36m97[0m  [36m        [:div.col-xs-12[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.66 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.54 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.541 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.628 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
