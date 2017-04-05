@@ -2,12 +2,15 @@
   (:require [re-frame.core :as rf]
             [reagent.core :as r]
             [cljs-time.core :as t]
-            [cljs-time.format :as tf]))
+            [cljs-time.format :as tf]
+            [cljs-time.coerce :as c]))
 
 ; TODO create tests for this stuff
 
 (def date-format (tf/formatter "yyyy:MM:dd"))
 
+(defn round [x]
+  (/ (Math/round (* x 10)) 10))
 
 (enable-console-print!)
 
@@ -127,8 +130,11 @@
 (defn get-xaxis [summary]
   {:xAxis {:categories
             (into [] (map #(tf/unparse date-format (t/to-default-time-zone (:date %)))
-                          (:summary summary)))
-           :title {:text nil}}})
+                          (:summary summary)))}})
+           ; :dateTimeLabelFormats
+           ;  {:month "%e. %b"
+           ;   :year "%b"}
+           ; :title {:text "Date"}}})
 
 (defn load-data [summary-data]
   (merge (get-xaxis summary-data)
@@ -137,7 +143,7 @@
 
 ; (prn "xaxis" (get-xaxis test-data))
 ; (prn "series" (get-series test-data))
-; (prn "full" (load-data test-data))
+; (prn "full" (clj->js (load-data test-data)))
 ;
 
 (defn home-render []
