@@ -77,6 +77,9 @@
 (defn fetch-latest! []
   (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
 
+(defn fetch-summary! []
+  (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])}))
+
 (defn mount-components []
   (rf/clear-subscription-cache!)
   (r/render [#'page] (.getElementById js/document "app")))
@@ -85,5 +88,6 @@
   (rf/dispatch-sync [:initialize-db])
   (load-interceptors!)
   (fetch-latest!)
+  (fetch-summary!)
   (hook-browser-navigation!)
   (mount-components))

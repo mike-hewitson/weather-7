@@ -16,3 +16,8 @@
   :set-latest
   (fn [db [_ latest]]
     (assoc db :latest latest)))
+
+(reg-event-db
+  :set-summary
+  (fn [db [_ summary]]
+    (assoc db :summary summary)))

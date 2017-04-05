@@ -10,3 +10,8 @@
   :latest
   (fn [db _]
     (:latest db)))
+
+(reg-sub
+  :summary
+  (fn [db _]
+    (:summary db)))
