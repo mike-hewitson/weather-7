@@ -136,3 +136,63 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.538 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.585 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.52 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.469 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.548 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.476 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:75  column:63  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.summary/test-data[0m
+
+  [36m71[0m  [36m  [:div {:style {:min-width "310px" :max-width "800px"[0m
+  [36m72[0m  [36m                 :height "400px" :margin "0 auto"}}])[0m
+  [36m73[0m  [36m[0m
+  [36m74[0m  [36m(defn home-did-mount [this][0m
+  [33m75[0m  [1m  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data test-data))))[0m
+  [0m  [0m  [33m                                                              ^--- Use of undeclared Var weather-7.pages.summary/test-data[0m
+  [36m76[0m  [36m[0m
+  [36m77[0m  [36m[0m
+  [36m78[0m  [36m(defn summary-page [][0m
+  [36m79[0m  [36m  (r/create-class {:reagent-render home-render[0m
+  [36m80[0m  [36m                   :component-did-mount home-did-mount}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.481 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:77  column:63  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.summary/test-data[0m
+
+  [36m73[0m  [36m  [:div {:style {:min-width "310px" :max-width "800px"[0m
+  [36m74[0m  [36m                 :height "400px" :margin "0 auto"}}])[0m
+  [36m75[0m  [36m[0m
+  [36m76[0m  [36m(defn home-did-mount [this][0m
+  [33m77[0m  [1m  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data test-data))))[0m
+  [0m  [0m  [33m                                                              ^--- Use of undeclared Var weather-7.pages.summary/test-data[0m
+  [36m78[0m  [36m[0m
+  [36m79[0m  [36m[0m
+  [36m80[0m  [36m(defn summary-page [][0m
+  [36m81[0m  [36m  (r/create-class {:reagent-render home-render[0m
+  [36m82[0m  [36m                   :component-did-mount home-did-mount}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.452 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.399 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js

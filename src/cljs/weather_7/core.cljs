@@ -13,6 +13,8 @@
             [weather-7.pages.summary :refer [summary-page]])
   (:import goog.History))
 
+;  (enable-console-print!)
+
 (defn nav-link [uri title page collapsed?]
   (let [selected-page (rf/subscribe [:page])]
     [:li.nav-item
