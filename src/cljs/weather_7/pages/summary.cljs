@@ -39,11 +39,11 @@
 
 (defn get-series [summary]
   {:series
-   [{:name "Maximum" :data (map #(:max-temp %)
+   [{:name "Maximum" :data (map #(round (:max-temp %))
                                 (:summary summary))}
-    {:name "Average" :data (map #(:avg-temp %)
+    {:name "Average" :data (map #(round (:avg-temp %))
                                 (:summary summary))}
-    {:name "Minimum" :data (map #(:min-temp %)
+    {:name "Minimum" :data (map #(round (:min-temp %))
                                 (:summary summary))}]})
 
 ; (tf/unparse date-format (t/to-default-time-zone (get % "date")))

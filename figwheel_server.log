@@ -205,3 +205,60 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.432 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:42  column:35  ----[0m
+
+  [1mWrong number of args (2) passed to weather-7.pages.summary/round[0m
+
+  [36m38[0m  [36m   :credits {:enabled false}})[0m
+  [36m39[0m  [36m[0m
+  [36m40[0m  [36m(defn get-series [summary][0m
+  [36m41[0m  [36m  {:series[0m
+  [33m42[0m  [1m   [{:name "Maximum" :data (map #((round :max-temp %))[0m
+  [0m  [0m  [33m                                  ^--- Wrong number of args (2) passed to weather-7.pages.summary/round[0m
+  [36m43[0m  [36m                                (:summary summary))}[0m
+  [36m44[0m  [36m    {:name "Average" :data (map #((round :avg-temp %))[0m
+  [36m45[0m  [36m                                (:summary summary))}[0m
+  [36m46[0m  [36m    {:name "Minimum" :data (map #((round :min-temp %))[0m
+  [36m47[0m  [36m                                (:summary summary))}]})[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:44  column:35  ----[0m
+
+  [1mWrong number of args (2) passed to weather-7.pages.summary/round[0m
+
+  [36m40[0m  [36m(defn get-series [summary][0m
+  [36m41[0m  [36m  {:series[0m
+  [36m42[0m  [36m   [{:name "Maximum" :data (map #((round :max-temp %))[0m
+  [36m43[0m  [36m                                (:summary summary))}[0m
+  [33m44[0m  [1m    {:name "Average" :data (map #((round :avg-temp %))[0m
+  [0m  [0m  [33m                                  ^--- Wrong number of args (2) passed to weather-7.pages.summary/round[0m
+  [36m45[0m  [36m                                (:summary summary))}[0m
+  [36m46[0m  [36m    {:name "Minimum" :data (map #((round :min-temp %))[0m
+  [36m47[0m  [36m                                (:summary summary))}]})[0m
+  [36m48[0m  [36m[0m
+  [36m49[0m  [36m; (tf/unparse date-format (t/to-default-time-zone (get % "date")))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:46  column:35  ----[0m
+
+  [1mWrong number of args (2) passed to weather-7.pages.summary/round[0m
+
+  [36m42[0m  [36m   [{:name "Maximum" :data (map #((round :max-temp %))[0m
+  [36m43[0m  [36m                                (:summary summary))}[0m
+  [36m44[0m  [36m    {:name "Average" :data (map #((round :avg-temp %))[0m
+  [36m45[0m  [36m                                (:summary summary))}[0m
+  [33m46[0m  [1m    {:name "Minimum" :data (map #((round :min-temp %))[0m
+  [0m  [0m  [33m                                  ^--- Wrong number of args (2) passed to weather-7.pages.summary/round[0m
+  [36m47[0m  [36m                                (:summary summary))}]})[0m
+  [36m48[0m  [36m[0m
+  [36m49[0m  [36m; (tf/unparse date-format (t/to-default-time-zone (get % "date")))[0m
+  [36m50[0m  [36m[0m
+  [36m51[0m  [36m; TODO sort out time axis[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.562 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.444 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
