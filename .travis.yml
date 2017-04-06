@@ -5,8 +5,8 @@ before_script:
   # - mongod --version 3.2
   # - ./bin/ci/before_script.sh
 script: lein2 do clean, javac, test
-script: lein midje
-script: lein cloverage --fail-threshold 40
+# script: lein midje
+script: lein cloverage --fail-threshold 45
 jdk:
   - oraclejdk8
 services:

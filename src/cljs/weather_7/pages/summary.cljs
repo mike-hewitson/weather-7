@@ -74,7 +74,8 @@
                  :height "400px" :margin "0 auto"}}])
 
 (defn home-did-mount [this]
-  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data test-data))))
+  (prn "full" (clj->js (load-data (last @(rf/subscribe [:summary])))))
+  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (last @(rf/subscribe [:summary]))))))
 
 
 (defn summary-page []

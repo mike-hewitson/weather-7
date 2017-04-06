@@ -13,7 +13,7 @@
             [weather-7.pages.summary :refer [summary-page]])
   (:import goog.History))
 
-;  (enable-console-print!)
+(enable-console-print!)
 
 (defn nav-link [uri title page collapsed?]
   (let [selected-page (rf/subscribe [:page])]
@@ -73,6 +73,7 @@
   (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
 
 (defn fetch-summary! []
+  (prn "after get" (GET "/api/summary"))
   (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])}))
 
 (defn mount-components []
@@ -84,5 +85,6 @@
   (load-interceptors!)
   (fetch-latest!)
   (fetch-summary!)
+  (prn "after fetch" @(rf/subscribe [:summary]))
   (hook-browser-navigation!)
   (mount-components))
