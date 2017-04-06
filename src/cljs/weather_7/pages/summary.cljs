@@ -73,11 +73,25 @@
   [:div {:style {:min-width "310px" :max-width "800px"
                  :height "400px" :margin "0 auto"}}])
 
-(defn home-did-mount [this]
-  (prn "full" (clj->js (load-data (last @(rf/subscribe [:summary])))))
+(defn home-did-mount1 [this]
   (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (last @(rf/subscribe [:summary]))))))
 
+(defn home-did-mount2 [this]
+  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (first @(rf/subscribe [:summary]))))))
+
+(defn chart1 []
+  (r/create-class {:reagent-render home-render
+                   :display-name "chart1"
+                   :component-did-mount home-did-mount1}))
+
+(defn chart2 []
+  (r/create-class {:reagent-render home-render
+                   :display-name "chart2"
+                   :component-did-mount home-did-mount2}))
 
 (defn summary-page []
-  (r/create-class {:reagent-render home-render
-                   :component-did-mount home-did-mount}))
+  [:div
+    [chart1]
+    [chart2]])
+
+; TODO make these charts generic

@@ -32,8 +32,8 @@
       (when-not @collapsed? {:class "in"})
       [:a.navbar-brand {:href "#/"} "weather"]
       [:ul.nav.navbar-nav
-       [nav-link "#/" "Home" :home collapsed?]
-       [nav-link "#/summary" "Summary" :summary collapsed?]]]]))
+       [nav-link "#/" "home" :home collapsed?]
+       [nav-link "#/summary" "summary" :summary collapsed?]]]]))
 
 ; TODO create tests for this stuff
 
@@ -73,7 +73,6 @@
   (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
 
 (defn fetch-summary! []
-  (prn "after get" (GET "/api/summary"))
   (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])}))
 
 (defn mount-components []
@@ -85,6 +84,5 @@
   (load-interceptors!)
   (fetch-latest!)
   (fetch-summary!)
-  (prn "after fetch" @(rf/subscribe [:summary]))
   (hook-browser-navigation!)
   (mount-components))

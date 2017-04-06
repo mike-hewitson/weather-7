@@ -262,3 +262,83 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.444 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.826 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:90  column:4  ----[0m
+
+  [1mWrong number of args (3) passed to reagent.core/create-class[0m
+
+  [36m86[0m  [36m  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (last @(rf/subscribe [:summary]))))))[0m
+  [36m87[0m  [36m[0m
+  [36m88[0m  [36m[0m
+  [36m89[0m  [36m(defn summary-page [][0m
+  [33m90[0m  [1m  [(r/create-class {:reagent-render home-render}[0m
+  [0m  [0m  [33m   ^--- Wrong number of args (3) passed to reagent.core/create-class[0m
+  [36m91[0m  [36m                   :component-did-mount home-did-mount)[0m
+  [36m92[0m  [36m   (r/create-class {:reagent-render home2-render}[0m
+  [36m93[0m  [36m                   :component-did-mount home2-did-mount)])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:92  column:4  ----[0m
+
+  [1mWrong number of args (3) passed to reagent.core/create-class[0m
+
+  [36m89[0m  [36m(defn summary-page [][0m
+  [36m90[0m  [36m  [(r/create-class {:reagent-render home-render}[0m
+  [36m91[0m  [36m                   :component-did-mount home-did-mount)[0m
+  [33m92[0m  [1m   (r/create-class {:reagent-render home2-render}[0m
+  [0m  [0m  [33m   ^--- Wrong number of args (3) passed to reagent.core/create-class[0m
+  [36m93[0m  [36m                   :component-did-mount home2-did-mount)])[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.791 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.707 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.489 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/summary.cljs   line:93  column:57  ----[0m
+
+  [1mDuplicate key: :reagent-render[0m
+
+  [36m91[0m  [36m:component-did-mount home-did-mount[0m
+  [36m92[0m  [36m:reagent-render home2-render[0m
+  [33m93[0m  [1m:component-did-mount home2-did-mount}))[0m
+  [0m  [0m  [33m                                     ^--- Duplicate key: :reagent-render[0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.713 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.72 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.552 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.509 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.886 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.549 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.578 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.495 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.583 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.603 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
