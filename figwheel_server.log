@@ -342,3 +342,123 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.603 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:86  column:42  ----[0m
+
+  [1mWrong number of args (1) passed to weather-7.pages.summary/home-did-mount1[0m
+
+  [36m82[0m  [36m(defn chart1 [][0m
+  [36m83[0m  [36m  (let [data (load-data (last @(rf/subscribe [:summary])))][0m
+  [36m84[0m  [36m   (r/create-class {:reagent-render home-render[0m
+  [36m85[0m  [36m                    :display-name "chart1"[0m
+  [33m86[0m  [1m                    :component-did-mount (home-did-mount1 data)})))[0m
+  [0m  [0m  [33m                                         ^--- Wrong number of args (1) passed to weather-7.pages.summary/home-did-mount1[0m
+  [36m87[0m  [36m[0m
+  [36m88[0m  [36m(defn chart2 [][0m
+  [36m89[0m  [36m  (r/create-class {:reagent-render home-render[0m
+  [36m90[0m  [36m                   :display-name "chart2"[0m
+  [36m91[0m  [36m                   :component-did-mount home-did-mount2}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.635 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.545 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.58 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.509 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.54 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.619 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:86  column:43  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.summary/home-did-mount[0m
+
+  [36m82[0m  [36m(defn chart [location][0m
+  [36m83[0m  [36m  (let [data (load-data (last @(rf/subscribe [:summary])))][0m
+  [36m84[0m  [36m   (r/create-class {:reagent-render home-render[0m
+  [36m85[0m  [36m                    :display-name "chart1"[0m
+  [33m86[0m  [1m                    :component-did-mount (home-did-mount data)})))[0m
+  [0m  [0m  [33m                                          ^--- Use of undeclared Var weather-7.pages.summary/home-did-mount[0m
+  [36m87[0m  [36m[0m
+  [36m88[0m  [36m(defn chart2 [][0m
+  [36m89[0m  [36m  (r/create-class {:reagent-render home-render[0m
+  [36m90[0m  [36m                   :display-name "chart2"[0m
+  [36m91[0m  [36m                   :component-did-mount home-did-mount2}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.557 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/summary.cljs   line:86  column:42  ----[0m
+
+  [1mWrong number of args (1) passed to weather-7.pages.summary/home-did-mount1[0m
+
+  [36m82[0m  [36m(defn chart [location][0m
+  [36m83[0m  [36m  (let [data (load-data (last @(rf/subscribe [:summary])))][0m
+  [36m84[0m  [36m   (r/create-class {:reagent-render home-render[0m
+  [36m85[0m  [36m                    :display-name "chart1"[0m
+  [33m86[0m  [1m                    :component-did-mount (home-did-mount1 data)})))[0m
+  [0m  [0m  [33m                                         ^--- Wrong number of args (1) passed to weather-7.pages.summary/home-did-mount1[0m
+  [36m87[0m  [36m[0m
+  [36m88[0m  [36m(defn chart2 [][0m
+  [36m89[0m  [36m  (r/create-class {:reagent-render home-render[0m
+  [36m90[0m  [36m                   :display-name "chart2"[0m
+  [36m91[0m  [36m                   :component-did-mount home-did-mount2}))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.527 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.543 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.532 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.515 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.611 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.479 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.572 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.512 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.613 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.538 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.619 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.482 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.529 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.474 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.482 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.534 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js

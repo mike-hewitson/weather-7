@@ -7,7 +7,7 @@
 
 ; TODO create tests for this stuff
 
-(def date-format (tf/formatter "yyyy:MM:dd"))
+(def date-format (tf/formatter "yyyy/MM/dd"))
 
 (defn round [x]
   (/ (Math/round (* x 10)) 10))
@@ -27,14 +27,14 @@
    :tooltip {:valueSuffix " deg C"}
    :plotOptions {:spline {:dataLabels {:enabled false}
                           :marker {:enabled false}}}
-   :legend {:layout "vertical"
-            :align "right"
-            :verticalAlign "top"
-            :x -40
-            :y 100
-            :floating true
-            :borderWidth 1
-            :shadow true}
+   ; :legend {:layout "vertical"
+   ;          :align "right"
+   ;          :verticalAlign "top"
+   ;          :x -40
+   ;          :y 100
+   ;          :floating true
+   ;          :borderWidth 1
+   ;          :shadow true}
    :credits {:enabled false}})
 
 (defn get-series [summary]
@@ -47,7 +47,6 @@
                                 (:summary summary))}]})
 
 ; (tf/unparse date-format (t/to-default-time-zone (get % "date")))
-
 ; TODO sort out time axis
 
 (defn get-xaxis [summary]
@@ -79,10 +78,11 @@
 (defn home-did-mount2 [this]
   (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (first @(rf/subscribe [:summary]))))))
 
-(defn chart1 []
-  (r/create-class {:reagent-render home-render
-                   :display-name "chart1"
-                   :component-did-mount home-did-mount1}))
+(defn chart [location]
+  (let [data (load-data (last @(rf/subscribe [:summary])))]
+   (r/create-class {:reagent-render home-render
+                    :display-name "chart1"
+                    :component-did-mount home-did-mount2})))
 
 (defn chart2 []
   (r/create-class {:reagent-render home-render
@@ -91,7 +91,7 @@
 
 (defn summary-page []
   [:div
-    [chart1]
+    [chart "Sandton"]
     [chart2]])
 
 ; TODO make these charts generic
