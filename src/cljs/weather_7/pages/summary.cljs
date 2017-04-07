@@ -16,7 +16,7 @@
 
 (def chart-config
   {:chart {:type "spline"}
-   :title {:text "Paradise Beach Temperature History"}
+   ; :title {:text "Paradise Beach Temperature History"}
    ; :subtitle {:text "Source: Wikipedia.org"}
    ; :xAxis {:categories ["Africa" "America" "Asia" "Europe" "Oceania"]
    ;         :title {:text nil}}
@@ -61,12 +61,8 @@
 (defn load-data [summary-data]
   (merge (get-xaxis summary-data)
          (get-series summary-data)
+         {:title {:text (str (:location summary-data) " Temperature Summary")}}
          chart-config))
-
-; (prn "xaxis" (get-xaxis test-data))
-; (prn "series" (get-series test-data))
-; (prn "full" (clj->js (load-data (last @(rf/subscribe [:summary])))))
-
 
 (defn home-render []
   [:div {:style {:min-width "310px" :max-width "800px"
@@ -88,5 +84,3 @@
   [:div
     [chart "Paradise Beach"]
     [chart "Sandton"]])
-
-; TODO add location into chart headings
