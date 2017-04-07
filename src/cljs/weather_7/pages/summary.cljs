@@ -14,7 +14,7 @@
 
 (enable-console-print!)
 
-(def chart-config
+(defonce chart-config-static
   {:chart {:type "spline"}
    ; :title {:text "Paradise Beach Temperature History"}
    ; :subtitle {:text "Source: Wikipedia.org"}
@@ -37,48 +37,51 @@
    ;          :shadow true}
    :credits {:enabled false}})
 
-(defn get-series [summary]
+(defn build-series [summary-data]
   {:series
    [{:name "Maximum" :data (map #(round (:max-temp %))
-                                (:summary summary))}
+                                (:summary summary-data))}
     {:name "Average" :data (map #(round (:avg-temp %))
-                                (:summary summary))}
+                                (:summary summary-data))}
     {:name "Minimum" :data (map #(round (:min-temp %))
-                                (:summary summary))}]})
+                                (:summary summary-data))}]})
 
 ; (tf/unparse date-format (t/to-default-time-zone (get % "date")))
 ; TODO sort out time axis
+; TODO review names
 
-(defn get-xaxis [summary]
+(defn build-xaxis [summary-data]
   {:xAxis {:categories
             (into [] (map #(tf/unparse date-format (t/to-default-time-zone (:date %)))
-                          (:summary summary)))}})
+                          (:summary summary-data)))}})
            ; :dateTimeLabelFormats
            ;  {:month "%e. %b"
            ;   :year "%b"}
            ; :title {:text "Date"}}})
 
-(defn load-data [summary-data]
-  (merge (get-xaxis summary-data)
-         (get-series summary-data)
-         {:title {:text (str (:location summary-data) " Temperature Summary")}}
-         chart-config))
+(defn build-title [summary-data]
+  {:title {:text (str (:location summary-data) " Temperature Summary")}})
+
+
+(defn build-chart-config [summary-data]
+  (merge (build-xaxis summary-data)
+         (build-series summary-data)
+         (build-title summary-data)
+         chart-config-static))
 
 (defn home-render []
   [:div {:style {:min-width "310px" :max-width "800px"
                  :height "400px" :margin "0 auto"}}])
 
-(defn get-data [location]
+(defn extract-data [location]
   (first (filter #(= location (:location %)) @(rf/subscribe [:summary]))))
 
 (defn home-did-mount [location this]
-  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (get-data location)))))
+  (js/Highcharts.Chart. (r/dom-node this) (clj->js (build-chart-config (extract-data location)))))
 
 (defn chart [location]
-  (let [data (get-data location)]
    (r/create-class {:reagent-render home-render
-                    :display-name "chart1"
-                    :component-did-mount (partial home-did-mount location)})))
+                    :component-did-mount (partial home-did-mount location)}))
 
 (defn summary-page []
   [:div
