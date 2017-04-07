@@ -3,25 +3,20 @@
             [compojure.api.sweet :refer :all]
             [schema.core :as s]
             [weather-7.services.home :as srvh]
-            [weather-7.services.summary :as srvs]))
+            [weather-7.services.summary :as srvs]
+            [weather-7.services.history :as srvhis]))
 
 (s/defschema Latest
     {:date s/Inst
      :readings
       [{ :sunset s/Inst
-         ; :cloud-cover s/Num
-         ; :pressure s/Num
          :day-summary s/Str
          :wind-speed s/Num
          :sunrise s/Inst
          :icon s/Str
-         ; :humidity s/Num
-         ; :precip-intensity s/Num
          :wind-bearing s/Num
-         ; :now-summary s/Str
          :wind-direction s/Str
          :temperature-max s/Num
-         ; :precip-probability s/Num
          :location s/Str
          :temperature s/Num
          :week-summary s/Str
@@ -41,6 +36,14 @@
            :count s/Num
            :min-wind s/Num
            :avg-wind s/Num}]}])
+
+(s/defschema History
+    [{:location s/Str
+      :history
+         [{:date s/Inst
+           :temperature s/Num
+           :wind-speed s/Num
+           :location s/Str}]}])
 
 ; TODO add tide data to schema
 
@@ -64,4 +67,10 @@
       :return      Summary
       :query-params []
       :summary     "returns summary of weather conditions"
-      (ok (srvs/prepare-summary-data)))))
+      (ok (srvs/prepare-summary-data)))
+
+    (GET "/history" []
+      :return      History
+      :query-params []
+      :summary     "returns history of weather conditions"
+      (ok (srvhis/prepare-history-data)))))
