@@ -72,26 +72,21 @@
   [:div {:style {:min-width "310px" :max-width "800px"
                  :height "400px" :margin "0 auto"}}])
 
-(defn home-did-mount1 [this]
-  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (last @(rf/subscribe [:summary]))))))
+(defn get-data [location]
+  (first (filter #(= location (:location %)) @(rf/subscribe [:summary]))))
 
-(defn home-did-mount2 [this]
-  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (first @(rf/subscribe [:summary]))))))
+(defn home-did-mount [location this]
+  (js/Highcharts.Chart. (r/dom-node this) (clj->js (load-data (get-data location)))))
 
 (defn chart [location]
-  (let [data (load-data (last @(rf/subscribe [:summary])))]
+  (let [data (get-data location)]
    (r/create-class {:reagent-render home-render
                     :display-name "chart1"
-                    :component-did-mount home-did-mount2})))
-
-(defn chart2 []
-  (r/create-class {:reagent-render home-render
-                   :display-name "chart2"
-                   :component-did-mount home-did-mount2}))
+                    :component-did-mount (partial home-did-mount location)})))
 
 (defn summary-page []
   [:div
-    [chart "Sandton"]
-    [chart2]])
+    [chart "Paradise Beach"]
+    [chart "Sandton"]])
 
-; TODO make these charts generic
+; TODO add location into chart headings
