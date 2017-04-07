@@ -10,7 +10,8 @@
             [weather-7.handlers]
             [weather-7.subscriptions]
             [weather-7.pages.home :refer [home-page]]
-            [weather-7.pages.summary :refer [summary-page]])
+            [weather-7.pages.summary :refer [summary-page]]
+            [weather-7.pages.history :refer [history-page]])
   (:import goog.History))
 
 (enable-console-print!)
@@ -33,13 +34,15 @@
       [:a.navbar-brand {:href "#/"} "weather"]
       [:ul.nav.navbar-nav
        [nav-link "#/" "home" :home collapsed?]
-       [nav-link "#/summary" "summary" :summary collapsed?]]]]))
+       [nav-link "#/summary" "summary" :summary collapsed?]
+       [nav-link "#/history" "history" :history collapsed?]]]]))
 
 ; TODO create tests for this stuff
 
 (def pages
   {:home #'home-page
-   :summary #'summary-page})
+   :summary #'summary-page
+   :history #'history-page})
 
 (defn page []
   [:div
@@ -55,6 +58,9 @@
 
 (secretary/defroute "/summary" []
   (rf/dispatch [:set-active-page :summary]))
+
+(secretary/defroute "/history" []
+  (rf/dispatch [:set-active-page :history]))
 
 ;; -------------------------
 ;; History
