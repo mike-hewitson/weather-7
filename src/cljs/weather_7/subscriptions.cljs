@@ -15,3 +15,8 @@
   :summary
   (fn [db _]
     (:summary db)))
+
+(reg-sub
+  :history
+  (fn [db _]
+    (:history db)))

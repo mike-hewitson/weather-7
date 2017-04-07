@@ -81,6 +81,9 @@
 (defn fetch-summary! []
   (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])}))
 
+(defn fetch-history! []
+  (GET "/api/history" {:handler #(rf/dispatch [:set-history %])}))
+
 (defn mount-components []
   (rf/clear-subscription-cache!)
   (r/render [#'page] (.getElementById js/document "app")))
@@ -90,5 +93,6 @@
   (load-interceptors!)
   (fetch-latest!)
   (fetch-summary!)
+  (fetch-history!)
   (hook-browser-navigation!)
   (mount-components))
