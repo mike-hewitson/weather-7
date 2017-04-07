@@ -27,6 +27,7 @@
    :tooltip {:valueSuffix " deg C"}
    :plotOptions {:spline {:dataLabels {:enabled false}
                           :marker {:enabled false}}}
+   :exporting {:enabled false}
    ; :legend {:layout "vertical"
    ;          :align "right"
    ;          :verticalAlign "top"
