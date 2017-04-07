@@ -586,3 +586,65 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.555 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.647 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/summary.cljs   line:68  column:34  ----[0m
+
+  [1mMap literal must contain an even number of forms[0m
+
+  [36m66[0m  [36m          {:month "%e. %b"[0m
+  [36m67[0m  [36m           :year "%b"}[0m
+  [33m68[0m  [1m         :title {:text "Date"}}})[0m
+  [0m  [0m  [33m                               ^--- Map literal must contain an even number of forms[0m
+  [36m69[0m  [36m; {:xAxis {:categories[0m
+  [36m70[0m  [36m;           (into [] (map #(tf/unparse date-format (t/to-default-time-zone (:date %)))[0m
+  [36m71[0m  [36m;                         (:summary summary-data)))}})[0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.601 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/summary.cljs   line:67  column:34  ----[0m
+
+  [1mMap literal must contain an even number of forms[0m
+
+  [36m65[0m  [36m          {:month "%e. %b"[0m
+  [36m66[0m  [36m           :year "%b"}[0m
+  [33m67[0m  [1m         :title {:text "Date"}}})[0m
+  [0m  [0m  [33m                               ^--- Map literal must contain an even number of forms[0m
+  [36m68[0m  [36m; {:xAxis {:categories[0m
+  [36m69[0m  [36m;           (into [] (map #(tf/unparse date-format (t/to-default-time-zone (:date %)))[0m
+  [36m70[0m  [36m;                         (:summary summary-data)))}})[0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.529 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/summary.cljs   line:67  column:34  ----[0m
+
+  [1mMap literal must contain an even number of forms[0m
+
+  [36m65[0m  [36m          {:month "%e. %b"[0m
+  [36m66[0m  [36m           :year "%b"}[0m
+  [33m67[0m  [1m         :title {:text "Date"}}})[0m
+  [0m  [0m  [33m                               ^--- Map literal must contain an even number of forms[0m
+  [36m68[0m  [36m; {:xAxis {:categories[0m
+  [36m69[0m  [36m;           (into [] (map #(tf/unparse date-format (t/to-default-time-zone (:date %)))[0m
+  [36m70[0m  [36m;                         (:summary summary-data)))}})[0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/summary.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.771 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.596 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.652 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.615 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.656 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js

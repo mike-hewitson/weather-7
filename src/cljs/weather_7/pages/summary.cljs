@@ -16,10 +16,6 @@
 
 (defonce chart-config-static
   {:chart {:type "spline"}
-   ; :title {:text "Paradise Beach Temperature History"}
-   ; :subtitle {:text "Source: Wikipedia.org"}
-   ; :xAxis {:categories ["Africa" "America" "Asia" "Europe" "Oceania"]
-   ;         :title {:text nil}}
    :yAxis {:min 0
            :title {:text "Degrees C"
                    :align "high"}
@@ -28,37 +24,26 @@
    :plotOptions {:spline {:dataLabels {:enabled false}
                           :marker {:enabled false}}}
    :exporting {:enabled false}
-   ; :legend {:layout "vertical"
-   ;          :align "right"
-   ;          :verticalAlign "top"
-   ;          :x -40
-   ;          :y 100
-   ;          :floating true
-   ;          :borderWidth 1
-   ;          :shadow true}
    :credits {:enabled false}})
 
 (defn build-series [summary-data]
   {:series
-   [{:name "Maximum" :data (map #(round (:max-temp %))
+   [{:name "Maximum" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
+                                         (round (:max-temp x))])
                                 (:summary summary-data))}
-    {:name "Average" :data (map #(round (:avg-temp %))
+    {:name "Average" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
+                                         (round (:avg-temp x))])
                                 (:summary summary-data))}
-    {:name "Minimum" :data (map #(round (:min-temp %))
+    {:name "Minimum" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
+                                         (round (:min-temp x))])
                                 (:summary summary-data))}]})
 
-; (tf/unparse date-format (t/to-default-time-zone (get % "date")))
-; TODO sort out time axis
-; TODO review names
-
 (defn build-xaxis [summary-data]
-  {:xAxis {:categories
-            (into [] (map #(tf/unparse date-format (t/to-default-time-zone (:date %)))
-                          (:summary summary-data)))}})
-           ; :dateTimeLabelFormats
-           ;  {:month "%e. %b"
-           ;   :year "%b"}
-           ; :title {:text "Date"}}})
+  {:xAxis {:type "datetime"
+           :dateTimeLabelFormats
+            {:month "%e %b"
+             :year "%b"}
+           :title {:text "Date"}}})
 
 (defn build-title [summary-data]
   {:title {:text (str (:location summary-data) " Temperature Summary")}})
