@@ -16,11 +16,16 @@
 
 (defonce chart-config-static
   {:chart {:type "spline"}
-   :yAxis {:min 0
-           :title {:text "Degrees C"
-                   :align "high"}
-           :labels {:overflow "justify"}}
-   :tooltip {:valueSuffix " deg C"}
+   :yAxis [
+           {:min 0
+            :title {:text "Degrees C"
+                    :align "high"}
+            :labels {:overflow "justify"}}
+           {:min 0
+            :title {:text "Km/hr"
+                    :align "high"}
+            :labels {:overflow "justify"}
+            :opposite true}]
    :plotOptions {:spline {:dataLabels {:enabled false}
                           :marker {:enabled false}}}
    :exporting {:enabled false}
@@ -28,15 +33,17 @@
 
 (defn build-series [summary-data]
   {:series
-   [{:name "Maximum" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
-                                         (round (:max-temp x))])
-                                (:summary summary-data))}
-    {:name "Average" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
-                                         (round (:avg-temp x))])
-                                (:summary summary-data))}
-    {:name "Minimum" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
-                                         (round (:min-temp x))])
-                                (:summary summary-data))}]})
+   [{:name "Temperature"
+     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
+                         (round (:temperature x))])
+                (:history summary-data))
+     :tooltip {:valueSuffix " deg C"}}
+    {:name "Wind Speed"
+     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
+                         (round (:wind-speed x))])
+                (:history summary-data))
+     :yAxis 1
+     :tooltip {:valueSuffix " Km/hr"}}]})
 
 (defn build-xaxis [summary-data]
   {:xAxis {:type "datetime"
@@ -46,7 +53,7 @@
            :title {:text "Date"}}})
 
 (defn build-title [summary-data]
-  {:title {:text (str (:location summary-data) " Temperature Summary")}})
+  {:title {:text (str (:location summary-data) " Conditions History")}})
 
 
 (defn build-chart-config [summary-data]
@@ -60,7 +67,7 @@
                  :height "400px" :margin "0 auto"}}])
 
 (defn extract-data [location]
-  (first (filter #(= location (:location %)) @(rf/subscribe [:summary]))))
+  (first (filter #(= location (:location %)) @(rf/subscribe [:history]))))
 
 (defn home-did-mount [location this]
   (js/Highcharts.Chart. (r/dom-node this) (clj->js (build-chart-config (extract-data location)))))

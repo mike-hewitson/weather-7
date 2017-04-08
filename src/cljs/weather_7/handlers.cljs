@@ -18,11 +18,11 @@
     (assoc db :latest latest)))
 
 (reg-event-db
-  :set-summary
-  (fn [db [_ summary]]
-    (assoc db :summary summary)))
-
-(reg-event-db
   :set-history
   (fn [db [_ history]]
     (assoc db :history history)))
+
+(reg-event-db
+  :set-summary
+  (fn [db [_ summary]]
+    (assoc db :summary summary)))

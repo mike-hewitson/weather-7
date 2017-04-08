@@ -648,3 +648,196 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.656 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.676 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/handlers.cljs   line:28  column:4  ----[0m
+
+  [1mUse of undeclared Var weather-7.handlers/accoc[0m
+
+  [36m25[0m  [36m(reg-event-db[0m
+  [36m26[0m  [36m :set-history[0m
+  [36m27[0m  [36m (fn [db [_ history]][0m
+  [33m28[0m  [1m  (accoc db :history history)))[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var weather-7.handlers/accoc[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/handlers.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.611 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.549 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.546 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/subscriptions.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.81 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.758 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.581 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/handlers.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.647 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.538 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.591 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.589 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.404 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.789 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.6 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.7 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.607 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.566 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.541 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.521 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.527 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.502 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.535 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.509 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.661 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.575 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.687 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.564 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.527 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.639 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.504 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/history.cljs   line:40  column:26  ----[0m
+
+  [1mWrong number of args (2) passed to cljs-time.coerce/to-long[0m
+
+  [36m37[0m  [36m(defn build-series [summary-data][0m
+  [36m38[0m  [36m  {:series[0m
+  [36m39[0m  [36m   [{:name "Temperature"[0m
+  [33m40[0m  [1m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [0m  [0m  [33m                         ^--- Wrong number of args (2) passed to cljs-time.coerce/to-long[0m
+  [36m41[0m  [36m                                             (round (:temperature x)))[0m
+  [36m42[0m  [36m                                    (:history summary-data))]))}[0m
+  [36m43[0m  [36m    {:name "Wind Speed"[0m
+  [36m44[0m  [36m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [36m45[0m  [36m                                            (round (:wind-speed x)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/history.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/history.cljs   line:40  column:37  ----[0m
+
+  [1mWrong number of args (2) passed to cljs-time.core/to-default-time-zone[0m
+
+  [36m37[0m  [36m(defn build-series [summary-data][0m
+  [36m38[0m  [36m  {:series[0m
+  [36m39[0m  [36m   [{:name "Temperature"[0m
+  [33m40[0m  [1m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [0m  [0m  [33m                                    ^--- Wrong number of args (2) passed to cljs-time.core/to-default-time-zone[0m
+  [36m41[0m  [36m                                             (round (:temperature x)))[0m
+  [36m42[0m  [36m                                    (:history summary-data))]))}[0m
+  [36m43[0m  [36m    {:name "Wind Speed"[0m
+  [36m44[0m  [36m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [36m45[0m  [36m                                            (round (:wind-speed x)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/history.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/history.cljs   line:44  column:26  ----[0m
+
+  [1mWrong number of args (2) passed to cljs-time.coerce/to-long[0m
+
+  [36m40[0m  [36m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [36m41[0m  [36m                                             (round (:temperature x)))[0m
+  [36m42[0m  [36m                                    (:history summary-data))]))}[0m
+  [36m43[0m  [36m    {:name "Wind Speed"[0m
+  [33m44[0m  [1m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [0m  [0m  [33m                         ^--- Wrong number of args (2) passed to cljs-time.coerce/to-long[0m
+  [36m45[0m  [36m                                            (round (:wind-speed x)))[0m
+  [36m46[0m  [36m                                   (:history summary-data))]))[0m
+  [36m47[0m  [36m     :yAxis 1}]})[0m
+  [36m48[0m  [36m[0m
+  [36m49[0m  [36m(defn build-xaxis [summary-data][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/history.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/history.cljs   line:44  column:37  ----[0m
+
+  [1mWrong number of args (2) passed to cljs-time.core/to-default-time-zone[0m
+
+  [36m40[0m  [36m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [36m41[0m  [36m                                             (round (:temperature x)))[0m
+  [36m42[0m  [36m                                    (:history summary-data))]))}[0m
+  [36m43[0m  [36m    {:name "Wind Speed"[0m
+  [33m44[0m  [1m     :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)[0m
+  [0m  [0m  [33m                                    ^--- Wrong number of args (2) passed to cljs-time.core/to-default-time-zone[0m
+  [36m45[0m  [36m                                            (round (:wind-speed x)))[0m
+  [36m46[0m  [36m                                   (:history summary-data))]))[0m
+  [36m47[0m  [36m     :yAxis 1}]})[0m
+  [36m48[0m  [36m[0m
+  [36m49[0m  [36m(defn build-xaxis [summary-data][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/history.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.558 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.508 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.471 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.454 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.477 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.549 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js

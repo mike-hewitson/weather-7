@@ -82,6 +82,7 @@
   (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])}))
 
 (defn fetch-history! []
+  ; (prn (GET "/api/history"))
   (GET "/api/history" {:handler #(rf/dispatch [:set-history %])}))
 
 (defn mount-components []

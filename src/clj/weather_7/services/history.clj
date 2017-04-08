@@ -8,8 +8,7 @@
 
 ; TODO adjust readings resolution when graphs are visual
 ; TODO make resolution a parameter
-; TODO currently set for one day back. change to 14 as a deault
-; TODO days back to be a parameter on the from-end
+; TODO days back to be a parameter on the from-end (default 14)
 
 (def locations
   ["Sandton" "Paradise Beach"])
@@ -41,13 +40,6 @@
             :location (:location reading)}))
        readings-list))
 
-(defn history-page []
-    {:readings (->
-                (create-history-seq 1 (t/now))
-                create-readings-list
-                create-display-list
-                dedupe)})
-
 (defn extract-fields-for-one-reading
   [reading]
   (let [date (:date reading)]
@@ -63,12 +55,12 @@
 
 (defn prepare-history-data []
   "bring together all of the home page data components"
-  (->> (create-history-seq 1 (t/now))
+  (->> (create-history-seq 14 (t/now))
        create-readings-list
+       dedupe
        (map extract-fields-for-one-reading)
        flatten
        rebuild-data-per-location))
 
-; TODO remove sandton from detail
 ; TODO refactor code
 ; TODO create tests

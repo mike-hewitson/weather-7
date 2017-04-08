@@ -17,6 +17,6 @@
     (:summary db)))
 
 (reg-sub
-  :history
-  (fn [db _]
-    (:history db)))
+ :history
+ (fn [db _]
+   (:history db)))
