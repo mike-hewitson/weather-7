@@ -22,7 +22,7 @@
   ["Sandton" "Paradise Beach"])
 
 (def wind-directions
-  ["N" "NE" "E" "SE" "S" "SW" "W" "NW"])
+  ["Northerly" "North-easterly" "Easterly" "South-easterly" "Southerly" "South-westerley" "Westerly" "North-westerly"])
 
 (defn get-direction
   "translate wind bearing to direction in text"
