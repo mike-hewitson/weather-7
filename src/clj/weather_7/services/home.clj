@@ -19,7 +19,7 @@
    :week-summary])
 
 (def locations
-  ["Sandton" "Paradise Beach"])
+  ["Paradise Beach" "Sandton"])
 
 (def wind-directions
   ["Northerly" "North-easterly" "Easterly" "South-easterly" "Southerly" "South-westerley" "Westerly" "North-westerly"])
