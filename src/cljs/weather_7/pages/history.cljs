@@ -39,7 +39,7 @@
      :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
                          (round (:temperature x))])
                 (:history summary-data))
-     :tooltip {:valueSuffix " deg C"}}
+     :tooltip {:valueSuffix " °C"}}
     {:name "Wind Speed"
      :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
                          (round (:wind-speed x))])

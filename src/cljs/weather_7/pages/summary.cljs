@@ -20,7 +20,7 @@
            :title {:text "Degrees C"
                    :align "high"}
            :labels {:overflow "justify"}}
-   :tooltip {:valueSuffix " deg C"}
+   :tooltip {:valueSuffix " °C"}
    :plotOptions {:spline {:dataLabels {:enabled false}
                           :marker {:enabled false}}}
    :exporting {:enabled false}
