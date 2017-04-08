@@ -17,11 +17,13 @@
 (defonce chart-config-static
   {:chart {:type "spline"}
    :yAxis [
-           {:min 0
+           {
+            ; :min 0
             :title {:text "Degrees C"
                     :align "high"}
             :labels {:overflow "justify"}}
-           {:min 0
+           {
+            ; :min 0
             :title {:text "Km/hr"
                     :align "high"}
             :labels {:overflow "justify"}
