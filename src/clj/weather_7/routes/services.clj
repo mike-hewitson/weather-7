@@ -20,6 +20,7 @@
          :location s/Str
          :temperature s/Num
          :week-summary s/Str
+         :moon-phase-icon s/Str
          (s/optional-key :date) s/Inst
          (s/optional-key :dt) s/Num
          (s/optional-key :type) s/Str
