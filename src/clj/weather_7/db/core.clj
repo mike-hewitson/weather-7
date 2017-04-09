@@ -75,3 +75,11 @@
               :max-wind {"$max" "$readings.wind-speed"}
               :min-wind {"$min" "$readings.wind-speed"}}}
     {$sort {"_id.date" 1}}]))
+
+(defn get-moonphases
+  "return the most recent moon phase data"
+  []
+ (with-collection db "moon"
+  (find {})
+  (sort (sorted-map $natural -1))
+  (limit 1)))
