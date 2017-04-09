@@ -22,6 +22,7 @@
          :week-summary s/Str
          :moon-phase-icon s/Str
          :phase-of-moon s/Str
+         :age-of-moon s/Num
          (s/optional-key :date) s/Inst
          (s/optional-key :dt) s/Num
          (s/optional-key :type) s/Str

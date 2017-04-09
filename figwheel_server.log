@@ -886,3 +886,487 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/c
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.43 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.476 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:17  column:24  ----[0m
+
+  [1mToo few arguments to if at line 17 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m15[0m  [36m(defn create-reading-element [reading][0m
+  [36m16[0m  [36m  (let [days-to-next-spring (mod 14 (:age-of-moon reading))[0m
+  [33m17[0m  [1m        next-moon-type (if (quot (:age-of-moon reading) 14))])[0m
+  [0m  [0m  [33m                       ^--- Too few arguments to if at line 17 src/cljs/weather_7/pages/home.cljs[0m
+  [36m18[0m  [36m  [:div.row[0m
+  [36m19[0m  [36m   [:h4 (str (:location reading) " ")[0m
+  [36m20[0m  [36m    [:i {:class (str "wi " (:icon reading))}][0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:40  column:8  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m36[0m  [36m [:td "moon"][0m
+  [36m37[0m  [36m [:td][0m
+  [36m38[0m  [36m [:td[0m
+  [36m39[0m  [36m  (:phase-of-moon reading)[0m
+  [33m40[0m  [1m  days-to-next-spring[0m
+  [0m  [0m  [33m  ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m41[0m  [36m  next-moon-type]][0m
+  [36m42[0m  [36m[:tr[0m
+  [36m43[0m  [36m [:td "sunrise/set"][0m
+  [36m44[0m  [36m [:td][0m
+  [36m45[0m  [36m [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:41  column:8  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m37[0m  [36m [:td][0m
+  [36m38[0m  [36m [:td[0m
+  [36m39[0m  [36m  (:phase-of-moon reading)[0m
+  [36m40[0m  [36m  days-to-next-spring[0m
+  [33m41[0m  [1m  next-moon-type]][0m
+  [0m  [0m  [33m  ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m42[0m  [36m[:tr[0m
+  [36m43[0m  [36m [:td "sunrise/set"][0m
+  [36m44[0m  [36m [:td][0m
+  [36m45[0m  [36m [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))[0m
+  [36m46[0m  [36m      " / "[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.359 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:68  column:10  ----[0m
+
+  [1mToo few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m66[0m  [36m         (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m67[0m  [36m         (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m68[0m  [1m         (if (= () 0))]])]]])[0m
+  [0m  [0m  [33m         ^--- Too few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m[0m
+  [36m71[0m  [36m; TODO create tests for this stuff[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.301 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:68  column:10  ----[0m
+
+  [1mToo few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m66[0m  [36m         (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m67[0m  [36m         (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m68[0m  [1m         (if (= () 0))]])]]]))[0m
+  [0m  [0m  [33m         ^--- Too few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m[0m
+  [36m71[0m  [36m; TODO create tests for this stuff[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+Figwheel: Can't open  ("src/cljs/weather_7/pages/home.cljs" 68 10) No :open-file-command supplied in the config.
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.313 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:68  column:10  ----[0m
+
+  [1mToo few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m66[0m  [36m         (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m67[0m  [36m         (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m68[0m  [1m         (if (= () 0))]])]]]))[0m
+  [0m  [0m  [33m         ^--- Too few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m[0m
+  [36m71[0m  [36m; TODO create tests for this stuff[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.289 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:68  column:10  ----[0m
+
+  [1mToo few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m66[0m  [36m         (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m67[0m  [36m         (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m68[0m  [1m         (if (= () 0))]])]]])[0m
+  [0m  [0m  [33m         ^--- Too few arguments to if at line 68 src/cljs/weather_7/pages/home.cljs[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m[0m
+  [36m71[0m  [36m; TODO create tests for this stuff[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.291 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:65  column:10  ----[0m
+
+  [1mToo few arguments to if at line 65 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m63[0m  [36m         (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m64[0m  [36m         (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m65[0m  [1m         (if (= () 0))]])]]])[0m
+  [0m  [0m  [33m         ^--- Too few arguments to if at line 65 src/cljs/weather_7/pages/home.cljs[0m
+  [36m66[0m  [36m[0m
+  [36m67[0m  [36m[0m
+  [36m68[0m  [36m; TODO create tests for this stuff[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.467 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.322 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/home.cljs   line:12  column:1  ----[0m
+
+  [1mEOF while reading, starting at line 12 and column 1[0m
+
+  [36m10[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+  [36m11[0m  [36m[0m
+  [33m12[0m  [1m(defn create-reading-element [reading][0m
+  [0m  [0m  [33m^--- EOF while reading, starting at line 12 and column 1[0m
+  [36m13[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))[0m
+  [36m14[0m  [36m       next-moon-type (if (quot (:age-of-moon reading) 14)[0m
+  [36m15[0m  [36m                        "full moon"[0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.43 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.458 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.458 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.434 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.476 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.418 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.49 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.437 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.411 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.425 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.415 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.449 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:14  column:34  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/age-of[0m
+
+  [36m10[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+  [36m11[0m  [36m[0m
+  [36m12[0m  [36m(defn format-moon-phase-test[0m
+  [36m13[0m  [36m  [age-of-moon][0m
+  [33m14[0m  [1m  (let [next-moon-type (if (quot age-of 14)[0m
+  [0m  [0m  [33m                                 ^--- Use of undeclared Var weather-7.pages.home/age-of[0m
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:17  column:51  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/reading[0m
+
+  [36m13[0m  [36m  [age-of-moon][0m
+  [36m14[0m  [36m  (let [next-moon-type (if (quot age-of 14)[0m
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [33m17[0m  [1m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [0m  [0m  [33m                                                  ^--- Use of undeclared Var weather-7.pages.home/reading[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:18  column:12  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m14[0m  [36m  (let [next-moon-type (if (quot age-of 14)[0m
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [33m18[0m  [1m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [0m  [0m  [33m           ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:18  column:35  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m14[0m  [36m  (let [next-moon-type (if (quot age-of 14)[0m
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [33m18[0m  [1m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [0m  [0m  [33m                                  ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:12  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [33m19[0m  [1m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [0m  [0m  [33m           ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:40  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [33m19[0m  [1m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [0m  [0m  [33m                                       ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:71  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [33m19[0m  [1m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [0m  [0m  [33m                                                                      ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:20  column:20  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [33m20[0m  [1m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [0m  [0m  [33m                   ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+  [36m25[0m  [36m   [:h4 (str (:location reading) " ")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:20  column:52  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 (:age-of-moon reading))])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [33m20[0m  [1m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [0m  [0m  [33m                                                   ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+  [36m25[0m  [36m   [:h4 (str (:location reading) " ")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.747 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:18  column:12  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m14[0m  [36m  (let [next-moon-type (if (quot age-of-moon 14)[0m
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [33m18[0m  [1m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [0m  [0m  [33m           ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:18  column:35  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m14[0m  [36m  (let [next-moon-type (if (quot age-of-moon 14)[0m
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [33m18[0m  [1m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [0m  [0m  [33m                                  ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:12  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [33m19[0m  [1m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [0m  [0m  [33m           ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:40  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [33m19[0m  [1m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [0m  [0m  [33m                                       ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:71  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m15[0m  [36m                         "full moon"[0m
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [33m19[0m  [1m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [0m  [0m  [33m                                                                      ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m20[0m  [36m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:20  column:20  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [33m20[0m  [1m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [0m  [0m  [33m                   ^--- Use of undeclared Var weather-7.pages.home/days-to-next-spring[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+  [36m25[0m  [36m   [:h4 (str (:location reading) " ")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:20  column:52  ----[0m
+
+  [1mUse of undeclared Var weather-7.pages.home/next-moon-type[0m
+
+  [36m16[0m  [36m                         "new moon")[0m
+  [36m17[0m  [36m        days-to-next-spring (mod 14 age-of-moon)])[0m
+  [36m18[0m  [36m  (cond (= days-to-next-spring 0) next-moon-type[0m
+  [36m19[0m  [36m        (= days-to-next-spring 1) (str days-to-next-spring " day to " next-moon-type)[0m
+  [33m20[0m  [1m        :else (str days-to-next-spring " days to " next-moon-type)))[0m
+  [0m  [0m  [33m                                                   ^--- Use of undeclared Var weather-7.pages.home/next-moon-type[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(defn create-reading-element [reading][0m
+  [36m23[0m  [36m (let [days-to-next-spring (mod 14 (:age-of-moon reading))][0m
+  [36m24[0m  [36m  [:div.row[0m
+  [36m25[0m  [36m   [:h4 (str (:location reading) " ")[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.56 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.587 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.466 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.445 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:19  column:5  ----[0m
+
+  [1mToo many arguments to if at line 19 src/cljs/weather_7/pages/home.cljs[0m
+
+  [36m17[0m  [36m                     "new moon")[0m
+  [36m18[0m  [36m    days-to-next-spring (mod 14 age-of-moon)][0m
+  [33m19[0m  [1m(if (= days-to-next-spring 0) [0m
+  [0m  [0m  [33m^--- Too many arguments to if at line 19 src/cljs/weather_7/pages/home.cljs[0m
+  [36m20[0m  [36m  next-moon-type[0m
+  [36m21[0m  [36m      (= days-to-next-spring 1)[0m
+  [36m22[0m  [36m  (str days-to-next-spring[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.455 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.618 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js

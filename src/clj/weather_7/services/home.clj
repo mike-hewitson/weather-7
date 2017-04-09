@@ -90,6 +90,7 @@
 
 ; TODO change tides function name to be consistent
 ; TODO create test for moon phases
+; TODO check the the icon is in line with the numeric phase, may need to be reduced by one for indexing
 
 (defn create-moonphase-for-merge
   "strip out and transform age of moon to icon"
@@ -103,6 +104,12 @@
                                      :ageOfMoon
                                      Integer/parseInt
                                      moon-icons-transform)
+                               :age-of-moon
+                                 (-> x
+                                     :phases
+                                     :moon_phase
+                                     :ageOfMoon
+                                     Integer/parseInt)
                                :phase-of-moon
                                  (-> x
                                      :phases
