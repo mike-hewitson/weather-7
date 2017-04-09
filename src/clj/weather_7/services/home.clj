@@ -93,28 +93,23 @@
 ; TODO check the the icon is in line with the numeric phase, may need to be reduced by one for indexing
 
 (defn create-moonphase-for-merge
-  "strip out and transform age of moon to icon"
+  "strip out and transform age of moon to icon, age and phase"
   [moon-data]
   (let [locations (:locations moon-data)]
-   (apply merge (map (fn [x] {(:location x)
-                              {:moon-phase-icon
-                                 (-> x
-                                     :phases
-                                     :moon_phase
-                                     :ageOfMoon
-                                     Integer/parseInt
-                                     moon-icons-transform)
-                               :age-of-moon
-                                 (-> x
-                                     :phases
-                                     :moon_phase
-                                     :ageOfMoon
-                                     Integer/parseInt)
-                               :phase-of-moon
-                                 (-> x
-                                     :phases
-                                     :moon_phase
-                                     :phaseofMoon)}})
+   (apply merge (map (fn [x]
+                       (let [moon-phase (:moon_phase (:phases x))]
+                         {(:location x)
+                          {:moon-phase-icon
+                            (-> moon-phase
+                                :ageOfMoon
+                                Integer/parseInt
+                                moon-icons-transform)
+                           :age-of-moon
+                            (-> moon-phase
+                                :ageOfMoon
+                                Integer/parseInt)
+                           :phase-of-moon
+                            (:phaseofMoon moon-phase)}}))
                      locations))))
 
 (defn prepare-home-page-data []
