@@ -12,7 +12,9 @@
 (defn create-reading-element [reading]
   [:div.row
    [:h4 (str (:location reading) " ")
-    [:i {:class (str "wi " (:icon reading))}]]
+    [:i {:class (str "wi " (:icon reading))}]
+    " - "
+    [:i {:class (str "wi " (:moon-phase-icon reading))}]]
    [:table.table
     [:tbody
      [:tr
@@ -23,6 +25,12 @@
       [:td]
       [:td "day"]
       [:td (:day-summary reading)]]
+     [:tr
+      [:td "moon"]
+      [:td]
+      [:td
+        [:h4
+         [:i {:class (str "wi " (:moon-phase-icon reading))}]]]]
      [:tr
       [:td "sunrise/set"]
       [:td]
