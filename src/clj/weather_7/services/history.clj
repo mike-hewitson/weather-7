@@ -8,7 +8,7 @@
 
 ; TODO adjust readings resolution when graphs are visual
 ; TODO make resolution a parameter
-; TODO days back to be a parameter on the from-end (default 14)
+; TODO days back to be a parameter on the from-end (default 7)
 
 (def locations
   ["Sandton" "Paradise Beach"])
@@ -18,12 +18,14 @@
    :wind-speed
    :temperature])
 
+(def points-to-plot 200)
+
 (defn create-history-seq
   "create a sequence of 50 dates between a date and today"
   [days-back end-point]
-  (let [interval (int (/ (* days-back 24  3600) 49))
+  (let [interval (int (/ (* days-back 24  3600) (dec points-to-plot)))
         from-date (t/minus end-point (t/days days-back))]
-   (map c/to-date (take 50 (p/periodic-seq from-date (t/seconds interval))))))
+   (map c/to-date (take points-to-plot (p/periodic-seq from-date (t/seconds interval))))))
 
 (defn create-readings-list
   "create a list of readings, on for each date "
@@ -55,7 +57,7 @@
 
 (defn prepare-history-data []
   "bring together all of the home page data components"
-  (->> (create-history-seq 14 (t/now))
+  (->> (create-history-seq 7 (t/now))
        create-readings-list
        dedupe
        (map extract-fields-for-one-reading)
