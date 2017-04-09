@@ -7,11 +7,11 @@
 
 (facts "about 'get-direction'"
     (fact "given some bearings, its should return their direction"
-      (r/get-direction 0) => "N"
-      (r/get-direction 45) => "NE"
-      (r/get-direction 44.9) => "NE"
-      (r/get-direction 50) => "NE"
-      (r/get-direction 359) => "N"))
+      (r/get-direction 0) => "Northerly"
+      (r/get-direction 45) => "North-easterly"
+      (r/get-direction 44.9) => "North-easterly"
+      (r/get-direction 50) => "North-easterly"
+      (r/get-direction 359) => "Northerly"))
 
 
 (facts "about 'format-readings-for-merge'"
