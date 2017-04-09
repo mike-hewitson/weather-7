@@ -34,8 +34,8 @@
       [:a.navbar-brand {:href "#/"} "weather"]
       [:ul.nav.navbar-nav
        [nav-link "#/" "home" :home collapsed?]
-       [nav-link "#/summary" "summary" :summary collapsed?]
-       [nav-link "#/history" "history" :history collapsed?]]]]))
+       [nav-link "#/summary" "temp daily" :summary collapsed?]
+       [nav-link "#/history" "temp/wind history" :history collapsed?]]]]))
 
 ; TODO create tests for this stuff
 
