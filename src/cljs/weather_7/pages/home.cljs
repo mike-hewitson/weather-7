@@ -28,9 +28,7 @@
      [:tr
       [:td "moon"]
       [:td]
-      [:td
-        [:h4
-         [:i {:class (str "wi " (:moon-phase-icon reading))}]]]]
+      [:td (:phase-of-moon reading)]]
      [:tr
       [:td "sunrise/set"]
       [:td]

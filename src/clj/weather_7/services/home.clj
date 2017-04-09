@@ -97,12 +97,17 @@
   (let [locations (:locations moon-data)]
    (apply merge (map (fn [x] {(:location x)
                               {:moon-phase-icon
-                               (-> x
-                                   :phases
-                                   :moon_phase
-                                   :ageOfMoon
-                                   Integer/parseInt
-                                   moon-icons-transform)}})
+                                 (-> x
+                                     :phases
+                                     :moon_phase
+                                     :ageOfMoon
+                                     Integer/parseInt
+                                     moon-icons-transform)
+                               :phase-of-moon
+                                 (-> x
+                                     :phases
+                                     :moon_phase
+                                     :phaseofMoon)}})
                      locations))))
 
 (defn prepare-home-page-data []
