@@ -103,11 +103,13 @@
                             (-> moon-phase
                                 :ageOfMoon
                                 Integer/parseInt
+                                dec
                                 moon-icons-transform)
                            :age-of-moon
                             (-> moon-phase
                                 :ageOfMoon
-                                Integer/parseInt)
+                                Integer/parseInt
+                                dec)
                            :phase-of-moon
                             (:phaseofMoon moon-phase)}}))
                      locations))))
