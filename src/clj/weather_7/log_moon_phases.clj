@@ -3,7 +3,6 @@
             [clojure.tools.logging :as log]
             [cprop.core :refer [load-config]]
             [cprop.source :as source]
-            [clojure.math.numeric-tower :as m]
             [monger.core :as mg]
             [monger.collection :as mc]))
 
@@ -38,7 +37,7 @@
         db (:db (mg/connect-via-uri uri))]
     (mc/insert db "moon" {:date now :locations (build-moon-phases)})))
 
-(defn -main [& args]
+(defn -main []
   (log-moon-phases)
   (log/info "Logged one set of moon phases")
   (System/exit 0))

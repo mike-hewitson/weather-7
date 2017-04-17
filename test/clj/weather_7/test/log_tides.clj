@@ -1,8 +1,7 @@
 (ns weather-7.test.log-tides
-  (:require [ring.mock.request :refer :all]
-            [weather-7.log-tides :refer :all]
-            [midje.sweet :refer :all]
-            [weather-7.test.fixtures :as fix]))
+  (:require [weather-7.log-tides :refer :all]
+            ; [ring.mock.request :refer :all]
+            [midje.sweet :refer :all]))
 
 (facts "about 'get-worldtide-reading'"
        (let [tides (get-worldtide-data ["51.317" "0.057"])]

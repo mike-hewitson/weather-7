@@ -1,6 +1,6 @@
 (ns weather-7.test.services.home
   (:require [midje.sweet :refer :all]
-            [ring.mock.request :refer :all]
+            ; [ring.mock.request :refer :all]
             [weather-7.services.home :as r]
             [weather-7.test.fixtures :as fix]))
 

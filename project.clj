@@ -137,9 +137,10 @@
 
    :profiles/dev {}
    :profiles/test {}}
-  ; :cljfmt {:file-pattern #"[^\.#]*\.clj[s]?$"}
+  :cljfmt {:file-pattern #"[^\.#]*\.clj[s]?$"}
   :eastwood {:exclude-linters [:constant-test]
              :add-linters [:unused-fn-args :unused-locals :unused-namespaces
                            :unused-private-vars]
-             :namespaces [:source-paths]})
-             ; :exclude-namespaces [...]})
+             :namespaces [:source-paths :test-paths]
+             :exclude-namespaces [weather-7.routes.home
+                                  weather-7.routes.services]})

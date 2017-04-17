@@ -8,6 +8,8 @@ script: lein2 do clean, javac, test
 # script: lein midje
 script: lein bikeshed
 script: lein cljfmt check
+script: lein eastwood
+script: lein kibit
 script: lein cloverage --fail-threshold 40
 jdk:
   - oraclejdk8

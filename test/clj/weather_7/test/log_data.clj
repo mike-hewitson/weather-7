@@ -1,6 +1,6 @@
 (ns weather-7.test.log-data
-  (:require [ring.mock.request :refer :all]
-            [weather-7.log-data :refer :all]
+  (:require [weather-7.log-data :refer :all]
+            ; [ring.mock.request :refer :all]
             [midje.sweet :refer :all]
             [weather-7.test.fixtures :as fix]))
 

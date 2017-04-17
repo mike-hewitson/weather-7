@@ -1,6 +1,5 @@
 (ns weather-7.services.home
-  (:require [clojure.tools.logging :as log]
-            [clojure.math.numeric-tower :as m]
+  (:require [clojure.math.numeric-tower :as m]
             [weather-7.db.core :as db]
             [clj-time.core :as t]
             [clj-time.coerce :as c]))
@@ -116,13 +115,13 @@
                             (:phaseofMoon moon-phase)}}))
                       locations))))
 
-(defn prepare-home-page-data []
+(defn prepare-home-page-data
   "bring together all of the home page data components"
+  []
   (let [weather-data (first (db/get-latest))
         tides-data (first (db/get-tides))
         moon-data (first (db/get-moonphases))
-        reading-date (:date weather-data)
-        now (c/from-date (new java.util.Date))]
+        reading-date (:date weather-data)]
     {:date reading-date
      :readings
      (vals

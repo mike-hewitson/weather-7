@@ -3,7 +3,6 @@
             [clojure.tools.logging :as log]
             [cprop.core :refer [load-config]]
             [cprop.source :as source]
-            [clojure.math.numeric-tower :as m]
             [monger.core :as mg]
             [monger.collection :as mc]))
 
@@ -40,7 +39,7 @@
         db (:db (mg/connect-via-uri uri))]
     (mc/insert db "tides" {:date now :locations (build-tides)})))
 
-(defn -main [& args]
+(defn -main []
   (log-tides)
   (log/info "Logged one set of tides")
   (System/exit 0))

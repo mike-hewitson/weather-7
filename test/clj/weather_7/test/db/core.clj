@@ -1,7 +1,7 @@
-(ns weather-7.test.db.core
-  (:require [midje.sweet :refer :all]
-            [ring.mock.request :refer :all]
-            [weather-7.db.core :as db]))
+(ns weather-7.test.db.core)
+;   (:require [midje.sweet :refer :all]
+;             [ring.mock.request :refer :all]
+;             [weather-7.db.core :as db]))
 
 ; TODO fix the deferable state error with testing db
 ; TODO include test for latest tide

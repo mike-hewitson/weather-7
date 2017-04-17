@@ -95,8 +95,10 @@
 (defn create-update
   "create a hash that contains data for a location"
   [location reading-map]
-  (assoc (apply merge (map (fn [[[name & [cast]] value]]
-                             {name (if cast (cast value) value)})
+  (assoc (apply merge (map (fn [[[name & [my-cast]] value]]
+                             {name (if my-cast
+                                     (my-cast value)
+                                     value)})
                            reading-map))
          "location" location))
 
@@ -119,7 +121,7 @@
         db (:db (mg/connect-via-uri uri))]
     (mc/insert db "readings" {:date now :readings (build-readings)})))
 
-(defn -main [& args]
+(defn -main []
   (log-readings)
   (log/info "Logged one set of readings")
   (System/exit 0))

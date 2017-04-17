@@ -1,6 +1,6 @@
 (ns user
   (:require [mount.core :as mount]
-            [weather-7.figwheel :refer [start-fw stop-fw cljs]]
+            ; [weather-7.figwheel :refer [start-fw stop-fw cljs]]
             weather-7.core))
 
 (defn start []

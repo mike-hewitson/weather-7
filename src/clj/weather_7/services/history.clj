@@ -1,7 +1,5 @@
 (ns weather-7.services.history
-  (:require [clojure.tools.logging :as log]
-            [clojure.math.numeric-tower :as m]
-            [weather-7.db.core :as db]
+  (:require [weather-7.db.core :as db]
             [clj-time.core :as t]
             [clj-time.coerce :as c]
             [clj-time.periodic :as p]))
@@ -57,8 +55,9 @@
                                  all-data)})
        locations))
 
-(defn prepare-history-data []
+(defn prepare-history-data
   "bring together all of the home page data components"
+  []
   (->> (create-history-seq 7 (t/now))
        create-readings-list
        dedupe
