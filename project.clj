@@ -99,7 +99,9 @@
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.18.1"]
                                  [lein-doo "0.1.7"]
                                  [lein-figwheel "0.5.9"]
-                                 [org.clojure/clojurescript "1.9.495"]]
+                                 [org.clojure/clojurescript "1.9.495"]
+                                 [lein-bikeshed "0.2.0"]
+                                 [lein-cljfmt "0.5.6"]]
                   :cljsbuild
                   {:builds
                    {:app
@@ -134,4 +136,10 @@
 
 
    :profiles/dev {}
-   :profiles/test {}})
+   :profiles/test {}}
+  :cljfmt {:file-pattern #"[^\.#]*\.clj[s]?$"}
+  :eastwood {:exclude-linters [:constant-test]
+             :add-linters [:unused-fn-args :unused-locals :unused-namespaces
+                           :unused-private-vars]
+             :namespaces [:source-paths]})
+             ; :exclude-namespaces [...]})

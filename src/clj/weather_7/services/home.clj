@@ -22,7 +22,8 @@
   ["Paradise Beach" "Sandton"])
 
 (def wind-directions
-  ["Northerly" "North-easterly" "Easterly" "South-easterly" "Southerly" "South-westerley" "Westerly" "North-westerly"])
+  ["Northerly" "North-easterly" "Easterly" "South-easterly"
+   "Southerly" "South-westerley" "Westerly" "North-westerly"])
 
 (def moon-icons-transform
   ["wi-moon-alt-new"
@@ -72,7 +73,8 @@
   [readings]
   (apply merge
     (map (fn [reading]
-             { (:location reading) {:wind-direction (get-direction (:wind-bearing reading))}})
+             {(:location reading) {:wind-direction (get-direction
+                                                    (:wind-bearing reading))}})
          (:readings readings))))
 
 (defn create-tide-for-merge
@@ -90,7 +92,7 @@
 
 ; TODO change tides function name to be consistent
 ; TODO create test for moon phases
-; TODO check the the icon is in line with the numeric phase, may need to be reduced by one for indexing
+; TODO check the the icon is in line with the numeric phase
 
 (defn create-moonphase-for-merge
   "strip out and transform age of moon to icon, age and phase"

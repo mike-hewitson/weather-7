@@ -71,10 +71,11 @@
 (defn get-darksky-data
   "retrieve a set of readings from darksky.io for a gps location"
   [gps]
-  (let [my-url (str
-                "https://api.darksky.net/forecast/62888a9ff1907377b60a866701cf3338/"
-                gps
-                "?units=si&exclude=minutely,hourly,alerts,flags")]
+  (let [my-url
+        (str
+         "https://api.darksky.net/forecast/62888a9ff1907377b60a866701cf3338/"
+         gps
+         "?units=si&exclude=minutely,hourly,alerts,flags")]
     (:body (client/get my-url {:as :json}))))
 
 
@@ -96,8 +97,10 @@
 (defn create-update
   "create a hash that contains data for a location"
   [location reading-map]
-  (assoc (apply merge (map (fn [[[name & [cast]] value]] {name (if cast (cast value) value)})
-                          reading-map)) "location" location))
+  (assoc (apply merge (map (fn [[[name & [cast]] value]]
+                             {name (if cast (cast value) value)})
+                           reading-map))
+         "location" location))
 
 (defn build-readings
   []

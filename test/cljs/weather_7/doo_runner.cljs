@@ -3,4 +3,3 @@
             [weather-7.core-test]))
 
 (doo-tests 'weather-7.core-test)
-

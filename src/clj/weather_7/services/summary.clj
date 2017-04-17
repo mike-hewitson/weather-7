@@ -12,7 +12,8 @@
  (map (fn [x] (dissoc (merge (:_id x) x) :_id)) data))
 
 (defn prepare-summary-data []
-  (map (fn [x] {:location x :summary (build-for-one-location x (db/get-summary x))})
+  (map (fn [x] {:location x
+                :summary (build-for-one-location x (db/get-summary x))})
        locations))
 
 ; TODO add tests

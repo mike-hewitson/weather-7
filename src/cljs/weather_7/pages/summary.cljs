@@ -28,15 +28,21 @@
 
 (defn build-series [summary-data]
   {:series
-   [{:name "Maximum" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
-                                         (round (:max-temp x))])
-                                (:summary summary-data))}
-    {:name "Average" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
-                                         (round (:avg-temp x))])
-                                (:summary summary-data))}
-    {:name "Minimum" :data (map (fn [x] [(c/to-long (t/to-default-time-zone (:date x)))
-                                         (round (:min-temp x))])
-                                (:summary summary-data))}]})
+   [{:name "Maximum" :data (map
+                            (fn [x]
+                              [(c/to-long (t/to-default-time-zone (:date x)))
+                               (round (:max-temp x))])
+                            (:summary summary-data))}
+    {:name "Average" :data (map
+                            (fn [x]
+                              [(c/to-long (t/to-default-time-zone (:date x)))
+                               (round (:avg-temp x))])
+                            (:summary summary-data))}
+    {:name "Minimum" :data (map
+                            (fn [x]
+                              [(c/to-long (t/to-default-time-zone (:date x)))
+                               (round (:min-temp x))])
+                            (:summary summary-data))}]})
 
 (defn build-xaxis [summary-data]
   {:xAxis {:type "datetime"
@@ -63,7 +69,9 @@
   (first (filter #(= location (:location %)) @(rf/subscribe [:summary]))))
 
 (defn home-did-mount [location this]
-  (js/Highcharts.Chart. (r/dom-node this) (clj->js (build-chart-config (extract-data location)))))
+  (js/Highcharts.Chart. (r/dom-node this) (clj->js
+                                           (build-chart-config
+                                            (extract-data location)))))
 
 (defn chart [location]
    (r/create-class {:reagent-render home-render

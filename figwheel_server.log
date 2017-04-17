@@ -1370,3 +1370,187 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.618 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.781 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.082 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/home.cljs   line:2  column:3  ----[0m
+
+  [1mEOF while reading, starting at line 2 and column 3[0m
+
+  [36m1[0m  [36m(ns weather-7.pages.home[0m
+  [33m2[0m  [1m  (:require [reagent.core :as r][0m
+  [0m [0m  [33m  ^--- EOF while reading, starting at line 2 and column 3[0m
+  [36m3[0m  [36m            [re-frame.core :as rf][0m
+  [36m4[0m  [36m            [goog.string :as gstring][0m
+  [36m5[0m  [36m            [goog.string.format][0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.605 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.277 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 3.203 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.666 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app_devcards.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app_devcards.js" in 0.717 seconds.[0m
+[36m----  Could not Analyze  env/dev/cljs/weather_7/cards.cljs  ----[0m
+
+  [1mNo such namespace: bob1.core, could not locate bob1/core.cljs, bob1/core.cljc, or Closure namespace "bob1.core" [0m
+
+[36m----  Analysis Error : Please see env/dev/cljs/weather_7/cards.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app_devcards.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   env/dev/cljs/weather_7/cards.cljs   line:15  column:4  ----[0m
+
+  [1mUse of undeclared Var weather-7.core/home-page[0m
+
+  [36m11[0m  [36m(defcard-rg first-card[0m
+  [36m12[0m  [36m  [:div>h1 "This is your first devcard!"])[0m
+  [36m13[0m  [36m[0m
+  [36m14[0m  [36m(defcard-rg home-page-card[0m
+  [33m15[0m  [1m  [core/home-page])[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var weather-7.core/home-page[0m
+  [36m16[0m  [36m[0m
+  [36m17[0m  [36m(reagent/render [:div] (.getElementById js/document "app"))[0m
+  [36m18[0m  [36m[0m
+  [36m19[0m  [36m;; remember to run 'lein figwheel devcards' and then browse to[0m
+  [36m20[0m  [36m;; http://localhost:3449/cards[0m
+
+[36m----  Compiler Warning : Please see env/dev/cljs/weather_7/cards.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app_devcards.js" in 1.163 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/devcards_out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/devcards_out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/devcards_out/weather_7/cards.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.662 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/cards.js
+[0mCompiling "target/cljsbuild/public/js/app_devcards.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app_devcards.js" in 1.687 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/devcards_out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/devcards_out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/devcards_out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.33 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.899 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:13  column:4  ----[0m
+
+  [1mNo such namespace: reagent, could not locate reagent.cljs, reagent.cljc, or Closure namespace ""[0m
+
+  [36m 9[0m  [36m  (:require-macros[0m
+  [36m10[0m  [36m   [devcards.core :as dc :refer [defcard defcard-rg defcard-doc]]))[0m
+  [36m11[0m  [36m[0m
+  [36m12[0m  [36m(defcard reagent-no-help[0m
+  [33m13[0m  [1m  (reagent/as-element [:h1 "Reagent example"]))[0m
+  [0m  [0m  [33m   ^--- No such namespace: reagent, could not locate reagent.cljs, reagent.cljc, or Closure namespace ""[0m
+  [36m14[0m  [36m[0m
+  [36m15[0m  [36m[0m
+  [36m16[0m  [36m(def date-format (tf/formatter "HH:mm"))[0m
+  [36m17[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:13  column:4  ----[0m
+
+  [1mUse of undeclared Var reagent/as-element[0m
+
+  [36m 9[0m  [36m  (:require-macros[0m
+  [36m10[0m  [36m   [devcards.core :as dc :refer [defcard defcard-rg defcard-doc]]))[0m
+  [36m11[0m  [36m[0m
+  [36m12[0m  [36m(defcard reagent-no-help[0m
+  [33m13[0m  [1m  (reagent/as-element [:h1 "Reagent example"]))[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var reagent/as-element[0m
+  [36m14[0m  [36m[0m
+  [36m15[0m  [36m[0m
+  [36m16[0m  [36m(def date-format (tf/formatter "HH:mm"))[0m
+  [36m17[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.867 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.742 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:4  ----[0m
+
+  [1mNo such namespace: reagent, could not locate reagent.cljs, reagent.cljc, or Closure namespace ""[0m
+
+  [36m15[0m  [36m(defn reagent-component-example [][0m
+  [36m16[0m  [36m  [:div "hey there"])[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m(defcard reagent-component[0m
+  [33m19[0m  [1m  (reagent/as-element [reagent-component-example]))[0m
+  [0m  [0m  [33m   ^--- No such namespace: reagent, could not locate reagent.cljs, reagent.cljc, or Closure namespace ""[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(def date-format (tf/formatter "HH:mm"))[0m
+  [36m23[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:19  column:4  ----[0m
+
+  [1mUse of undeclared Var reagent/as-element[0m
+
+  [36m15[0m  [36m(defn reagent-component-example [][0m
+  [36m16[0m  [36m  [:div "hey there"])[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m(defcard reagent-component[0m
+  [33m19[0m  [1m  (reagent/as-element [reagent-component-example]))[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var reagent/as-element[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m(def date-format (tf/formatter "HH:mm"))[0m
+  [36m23[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.744 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.675 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.73 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.786 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.775 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.664 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.768 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.569 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.289 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/ajax.js

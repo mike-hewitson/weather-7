@@ -24,7 +24,9 @@
 
 (defn build-tides
   []
-  (map (fn [[location gps]] {:location location :tides (get-worldtide-data gps)})
+  (map (fn [[location gps]]
+         {:location location
+          :tides (get-worldtide-data gps)})
        tide-locations))
 
 (defonce now

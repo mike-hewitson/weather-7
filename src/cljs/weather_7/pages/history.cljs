@@ -72,7 +72,10 @@
   (first (filter #(= location (:location %)) @(rf/subscribe [:history]))))
 
 (defn home-did-mount [location this]
-  (js/Highcharts.Chart. (r/dom-node this) (clj->js (build-chart-config (extract-data location)))))
+  (js/Highcharts.Chart. (r/dom-node this)
+                        (clj->js
+                         (build-chart-config
+                          (extract-data location)))))
 
 (defn chart [location]
    (r/create-class {:reagent-render home-render

@@ -6,6 +6,7 @@ before_script:
   # - ./bin/ci/before_script.sh
 script: lein2 do clean, javac, test
 # script: lein midje
+script: lein bikeshed
 script: lein cloverage --fail-threshold 40
 jdk:
   - oraclejdk8

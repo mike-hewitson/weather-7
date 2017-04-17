@@ -25,7 +25,9 @@
   [days-back end-point]
   (let [interval (int (/ (* days-back 24  3600) (dec points-to-plot)))
         from-date (t/minus end-point (t/days days-back))]
-   (map c/to-date (take points-to-plot (p/periodic-seq from-date (t/seconds interval))))))
+   (map c/to-date
+        (take points-to-plot (p/periodic-seq from-date
+                                             (t/seconds interval))))))
 
 (defn create-readings-list
   "create a list of readings, on for each date "

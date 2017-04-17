@@ -22,7 +22,9 @@
 
 (defn build-moon-phases
   []
-  (map (fn [[location search-string]] {:location location :phases (get-moon-phase-data search-string)})
+  (map (fn [[location search-string]]
+         {:location location
+          :phases (get-moon-phase-data search-string)})
        moon-locations))
 
 (defonce now

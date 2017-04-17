@@ -3,7 +3,7 @@
 (def a-darksky-reading-body
   {:timezone "Europe/London",
    :daily {:icon "snow",
-           :summary "Light snow (under 1 cm.) on Saturday, with temperatures rising to 12°C on Wednesday.",
+           :summary "Light snow (under 1 cm.) on Saturday, with temperatures",
            :data [{:precipIntensityMaxTime 1486652400,
                    :pressure 1027.4,
                    :apparentTemperatureMaxTime 1486648800,
@@ -257,7 +257,7 @@
                   :precip-probability 0,
                   :location "London",
                   :temperature 9.300000190734863,
-                  :week-summary "Light rain today through Thursday, with temperatures rising to 15°C on Friday."}
+                  :week-summary "Light rain today through Thursday, with"}
                  {:sunset #inst "2017-03-05T16:36:18.000-00:00",
                   :cloud-cover 0.10000000149011612,
                   :pressure 1010.7000122070312,
@@ -273,7 +273,7 @@
                   :precip-probability 0.009999999776482582,
                   :location "Sandton",
                   :temperature 23.100000381469727,
-                  :week-summary "Drizzle today, with temperatures peaking at 31°C on Tuesday."}
+                  :week-summary "Drizzle today, with temperatures peaking"}
                  {:sunset #inst "2017-03-05T16:53:44.000-00:00",
                   :cloud-cover 0,
                   :pressure 1014.5,
@@ -289,7 +289,7 @@
                   :precip-probability 0,
                   :location "Paradise Beach",
                   :temperature 20.600000381469727,
-                  :week-summary "Light rain on Thursday, with temperatures bottoming out at 21°C on Thursday."}]})
+                  :week-summary "Light rain on Thursday, with temperatures"}]})
 
 (def home-page-data
 
@@ -304,7 +304,7 @@
                :temperature-max 9.300000190734863,
                :location "London",
                :temperature 9.300000190734863,
-               :week-summary "Light rain today through Thursday, with temperatures rising to 15°C on Friday."}
+               :week-summary "Light rain today through Thursday, with"}
               {:sunset #inst "2017-03-05T16:36:18.000-00:00",
                :day-summary "Partly cloudy until afternoon.",
                :wind-speed 1.399999976158142,
@@ -315,7 +315,7 @@
                :temperature-max 26.399999618530273,
                :location "Sandton",
                :temperature 23.100000381469727,
-               :week-summary "Drizzle today, with temperatures peaking at 31°C on Tuesday."}
+               :week-summary "Drizzle today, with temperatures peaking at 31°C"}
               {:sunset #inst "2017-03-05T16:53:44.000-00:00",
                :day-summary "Partly cloudy in the morning.",
                :wind-speed 16.899999618530273,
@@ -326,7 +326,7 @@
                :temperature-max 23.5,
                :location "Paradise Beach",
                :temperature 20.600000381469727,
-               :week-summary "Light rain on Thursday, with temperatures bottoming out at 21°C on Thursday."}]})
+               :week-summary "Light rain on Thursday, with temperatures"}]})
 
 (def tides-data
   {:_id [org.bson.types.ObjectId 1736410270 "58dfba9601ffcffe500acb31"],
@@ -336,7 +336,7 @@
                  :requestLat "-34.0521",
                  :responseLat -34.166668,
                  :atlas "TPXO_8_v1",
-                 :copyright "Tidal data retrieved from www.worldtide.info. Copyright © 2014-2017 FaMe IT. Licensed for use of individual spatial coordinates on behalf of/by an end-user. Copyright © 2010-2016 Oregon State University. Licensed for individual spatial coordinates via ModEM-Geophysics Inc. NO GUARANTEES ARE MADE ABOUT THE CORRECTNESS OF THIS DATA. You may not use it if anyone or anything could come to harm as a result of using it (e.g. for navigational purposes).",
+                 :copyright "Tidal data retrieved from www.worldtide.info"
                  :extremes
                   [{:date "2017-04-01T10:29+0000",
                     :dt 1491042556,
@@ -379,7 +379,7 @@
                  :requestLat "51.317",
                  :responseLat 51.466675,
                  :atlas "TPXO_8_v1",
-                 :copyright "Tidal data retrieved from www.worldtide.info. Copyright © 2014-2017 FaMe IT. Licensed for use of individual spatial coordinates on behalf of/by an end-user. Copyright © 2010-2016 Oregon State University. Licensed for individual spatial coordinates via ModEM-Geophysics Inc. NO GUARANTEES ARE MADE ABOUT THE CORRECTNESS OF THIS DATA. You may not use it if anyone or anything could come to harm as a result of using it (e.g. for navigational purposes).",
+                 :copyright "Tidal data retrieved from www.worldtide.info."
                  :extremes
                   [{:date "2017-04-01T09:02+0000",
                     :dt 1491037339,

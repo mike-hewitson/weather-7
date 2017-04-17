@@ -7,7 +7,8 @@
   {:init
    (fn []
      (parser/cache-off!)
-     (log/info "\n-=[weather-7 started successfully using the development profile]=-"))
+     (log/info
+      "\n-=[weather-7 started successfully using the development profile]=-"))
    :stop
    (fn []
      (log/info "\n-=[weather-7 has shut down successfully]=-"))

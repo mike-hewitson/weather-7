@@ -65,7 +65,9 @@
      [:tr
       [:td "wind"]
       [:td]
-      [:td (gstring/format "%.1f" (:wind-speed reading)) " km/hr - " (:wind-direction reading)]]
+      [:td (gstring/format "%.1f" (:wind-speed reading))
+       " km/hr - "
+       (:wind-direction reading)]]
      (if (:date reading)
        [:tr
         [:td "next tide"]
@@ -90,4 +92,6 @@
            (for [reading  (:readings latest)]
              ^{:key (:location reading)} [create-reading-element reading])]]
         [:div.col-xs-12
-          [:time "weather info @ " (tf/unparse date-time-format (t/to-default-time-zone (:date latest)))]]])])
+          [:time "weather info @ "
+           (tf/unparse date-time-format (t/to-default-time-zone
+                                         (:date latest)))]]])])
