@@ -6,3 +6,6 @@
 
 (deftest test-home
   (is (= true true)))
+
+(deftest test-other
+  (is (= true false)))

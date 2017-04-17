@@ -61,7 +61,6 @@
    :css-dirs ["resources/public/css"]
    :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
-
   :profiles
   {:uberjar {:omit-source true
              :prep-tasks ["compile" ["cljsbuild" "once" "min"]]
@@ -76,8 +75,6 @@
                  :closure-warnings
                  {:externs-validation :off :non-standard-jsdoc :off}
                  :externs ["externs.js"]}}}}
-
-
              :aot :all
              :uberjar-name "weather-7.jar"
              :source-paths ["env/prod/clj"]
@@ -114,9 +111,6 @@
                       :source-map true
                       :optimizations :none
                       :pretty-print true}}}}
-
-
-
                   :doo {:build "test"}
                   :source-paths ["env/dev/clj"]
                   :resource-paths ["env/dev/resources"]
@@ -133,7 +127,6 @@
                       :main "weather-7.doo-runner"
                       :optimizations :whitespace
                       :pretty-print true}}}}}
-
 
    :profiles/dev {}
    :profiles/test {}}

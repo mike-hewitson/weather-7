@@ -1554,3 +1554,31 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.289 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/ajax.js
+[0mCompiling "resources/public/cljs/tests/all-tests.js" from ["src/cljc" "src/cljs" "test/cljs"]...[0m
+[32mSuccessfully compiled "resources/public/cljs/tests/all-tests.js" in 1.592 seconds.[0m
+[0mCompiling "resources/public/cljs/tests/all-tests.js" from ["src/cljc" "src/cljs" "test/cljs"]...[0m
+[36m----  Compiler Warning on   test/cljs/weather_7/browser_runner.cljs   line:1  column:1  ----[0m
+
+  [1mbrowser-runner is a single segment namespace[0m
+
+  [33m1[0m  [1m(ns browser-runner[0m
+  [0m [0m  [33m^--- browser-runner is a single segment namespace[0m
+  [36m2[0m  [36m  (:require [weather-7.core-test :as test]))[0m
+
+[36m----  Compiler Warning : Please see test/cljs/weather_7/browser_runner.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/cljs/tests/all-tests.js" in 0.59 seconds.[0m
+notifying browser that file changed:  resources/public/cljs/tests/out/goog/deps.js
+notifying browser that file changed:  resources/public/cljs/tests/out/cljs_deps.js
+notifying browser that file changed:  resources/public/cljs/tests/out/browser_runner.js
+[0mCompiling "resources/public/cljs/tests/all-tests.js" from ["src/cljc" "src/cljs" "test/cljs"]...[0m
+[32mSuccessfully compiled "resources/public/cljs/tests/all-tests.js" in 0.709 seconds.[0m
+notifying browser that file changed:  resources/public/cljs/tests/out/goog/deps.js
+notifying browser that file changed:  resources/public/cljs/tests/out/cljs_deps.js
+notifying browser that file changed:  resources/public/cljs/tests/out/weather_7/browser_runner.js
+[0mCompiling "resources/public/cljs/tests/all-tests.js" from ["src/cljc" "src/cljs" "test/cljs"]...[0m
+[32mSuccessfully compiled "resources/public/cljs/tests/all-tests.js" in 0.668 seconds.[0m
+notifying browser that file changed:  resources/public/cljs/tests/out/cljs_deps.js
+notifying browser that file changed:  resources/public/cljs/tests/out/weather_7/browser_runner.js
+[0mCompiling "resources/public/cljs/tests/all-tests.js" from ["src/cljc" "src/cljs" "test/cljs"]...[0m
+[32mSuccessfully compiled "resources/public/cljs/tests/all-tests.js" in 0.618 seconds.[0m
+notifying browser that file changed:  resources/public/cljs/tests/out/weather_7/browser_runner.js
