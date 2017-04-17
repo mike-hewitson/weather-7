@@ -240,56 +240,56 @@
    :latitude 51.317})
 
 (def latest-reading
-     {:_id [org.bson.types.ObjectId 1421875669 "58bc3c563629a3ec0c7f19f9"]
-      :date #inst "2017-03-05T16:27:02.112-00:00"
-      :readings [{:sunset #inst "2017-03-05T17:48:02.000-00:00",
-                  :cloud-cover 0.36000001430511475,
-                  :pressure 990.5,
-                  :day-summary "Light rain until evening.",
-                  :wind-speed 21.299999237060547,
-                  :sunrise #inst "2017-03-05T06:37:23.000-00:00",
-                  :icon "wi-day-sunny-overcast",
-                  :humidity 0.7400000095367432,
-                  :precip-intensity 0,
-                  :wind-bearing 257,
-                  :now-summary "Partly Cloudy",
-                  :temperature-max 9.300000190734863,
-                  :precip-probability 0,
-                  :location "London",
-                  :temperature 9.300000190734863,
-                  :week-summary "Light rain today through Thursday, with"}
-                 {:sunset #inst "2017-03-05T16:36:18.000-00:00",
-                  :cloud-cover 0.10000000149011612,
-                  :pressure 1010.7000122070312,
-                  :day-summary "Partly cloudy until afternoon.",
-                  :wind-speed 1.399999976158142,
-                  :sunrise #inst "2017-03-05T04:05:11.000-00:00",
-                  :icon "wi-day-sunny",
-                  :humidity 0.7099999785423279,
-                  :precip-intensity 0.0203000009059906,
-                  :wind-bearing 0,
-                  :now-summary "Clear",
-                  :temperature-max 26.399999618530273,
-                  :precip-probability 0.009999999776482582,
-                  :location "Sandton",
-                  :temperature 23.100000381469727,
-                  :week-summary "Drizzle today, with temperatures peaking"}
-                 {:sunset #inst "2017-03-05T16:53:44.000-00:00",
-                  :cloud-cover 0,
-                  :pressure 1014.5,
-                  :day-summary "Partly cloudy in the morning.",
-                  :wind-speed 16.899999618530273,
-                  :sunrise #inst "2017-03-05T04:12:57.000-00:00",
-                  :icon "wi-day-sunny",
-                  :humidity 0.7400000095367432,
-                  :precip-intensity 0,
-                  :wind-bearing 229,
-                  :now-summary "Clear",
-                  :temperature-max 23.5,
-                  :precip-probability 0,
-                  :location "Paradise Beach",
-                  :temperature 20.600000381469727,
-                  :week-summary "Light rain on Thursday, with temperatures"}]})
+  {:_id [org.bson.types.ObjectId 1421875669 "58bc3c563629a3ec0c7f19f9"]
+   :date #inst "2017-03-05T16:27:02.112-00:00"
+   :readings [{:sunset #inst "2017-03-05T17:48:02.000-00:00",
+               :cloud-cover 0.36000001430511475,
+               :pressure 990.5,
+               :day-summary "Light rain until evening.",
+               :wind-speed 21.299999237060547,
+               :sunrise #inst "2017-03-05T06:37:23.000-00:00",
+               :icon "wi-day-sunny-overcast",
+               :humidity 0.7400000095367432,
+               :precip-intensity 0,
+               :wind-bearing 257,
+               :now-summary "Partly Cloudy",
+               :temperature-max 9.300000190734863,
+               :precip-probability 0,
+               :location "London",
+               :temperature 9.300000190734863,
+               :week-summary "Light rain today through Thursday, with"}
+              {:sunset #inst "2017-03-05T16:36:18.000-00:00",
+               :cloud-cover 0.10000000149011612,
+               :pressure 1010.7000122070312,
+               :day-summary "Partly cloudy until afternoon.",
+               :wind-speed 1.399999976158142,
+               :sunrise #inst "2017-03-05T04:05:11.000-00:00",
+               :icon "wi-day-sunny",
+               :humidity 0.7099999785423279,
+               :precip-intensity 0.0203000009059906,
+               :wind-bearing 0,
+               :now-summary "Clear",
+               :temperature-max 26.399999618530273,
+               :precip-probability 0.009999999776482582,
+               :location "Sandton",
+               :temperature 23.100000381469727,
+               :week-summary "Drizzle today, with temperatures peaking"}
+              {:sunset #inst "2017-03-05T16:53:44.000-00:00",
+               :cloud-cover 0,
+               :pressure 1014.5,
+               :day-summary "Partly cloudy in the morning.",
+               :wind-speed 16.899999618530273,
+               :sunrise #inst "2017-03-05T04:12:57.000-00:00",
+               :icon "wi-day-sunny",
+               :humidity 0.7400000095367432,
+               :precip-intensity 0,
+               :wind-bearing 229,
+               :now-summary "Clear",
+               :temperature-max 23.5,
+               :precip-probability 0,
+               :location "Paradise Beach",
+               :temperature 20.600000381469727,
+               :week-summary "Light rain on Thursday, with temperatures"}]})
 
 (def home-page-data
 
@@ -338,41 +338,41 @@
                  :atlas "TPXO_8_v1",
                  :copyright "Tidal data retrieved from www.worldtide.info"
                  :extremes
-                  [{:date "2017-04-01T10:29+0000",
-                    :dt 1491042556,
-                    :type "Low",
-                    :height -0.693}
-                   {:date "2017-04-01T16:40+0000",
-                    :dt 1491064803,
-                    :type "High",
-                    :height 0.609}
-                   {:date "2017-04-01T22:43+0000",
-                    :dt 1491086595,
-                    :type "Low",
-                    :height -0.618}
-                   {:date "2017-04-02T05:04+0000",
-                    :dt 1491109469,
-                    :type "High",
-                    :height 0.621}
-                   {:date "2017-04-02T11:17+0000",
-                    :dt 1491131860,
-                    :type "Low",
-                    :height -0.542}
-                   {:date "2017-04-02T17:34+0000",
-                    :dt 1491154493,
-                    :type "High",
-                    :height 0.461}
-                   {:date "2017-04-02T23:38+0000",
-                    :dt 1491176308,
-                    :type "Low",
-                    :height -0.453}
-                   {:date "2017-04-03T06:07+0000",
-                    :dt 1491199634,
-                    :type "High",
-                    :height 0.448},]
+                 [{:date "2017-04-01T10:29+0000",
+                   :dt 1491042556,
+                   :type "Low",
+                   :height -0.693}
+                  {:date "2017-04-01T16:40+0000",
+                   :dt 1491064803,
+                   :type "High",
+                   :height 0.609}
+                  {:date "2017-04-01T22:43+0000",
+                   :dt 1491086595,
+                   :type "Low",
+                   :height -0.618}
+                  {:date "2017-04-02T05:04+0000",
+                   :dt 1491109469,
+                   :type "High",
+                   :height 0.621}
+                  {:date "2017-04-02T11:17+0000",
+                   :dt 1491131860,
+                   :type "Low",
+                   :height -0.542}
+                  {:date "2017-04-02T17:34+0000",
+                   :dt 1491154493,
+                   :type "High",
+                   :height 0.461}
+                  {:date "2017-04-02T23:38+0000",
+                   :dt 1491176308,
+                   :type "Low",
+                   :height -0.453}
+                  {:date "2017-04-03T06:07+0000",
+                   :dt 1491199634,
+                   :type "High",
+                   :height 0.448}]
                  :status 200,
                  :responseLon 24.5,
-                 :requestLon "24.5412",}
+                 :requestLon "24.5412"}
                 :location "Paradise Beach"}
                {:tides
                 {:callCount 1,
@@ -381,39 +381,39 @@
                  :atlas "TPXO_8_v1",
                  :copyright "Tidal data retrieved from www.worldtide.info."
                  :extremes
-                  [{:date "2017-04-01T09:02+0000",
-                    :dt 1491037339,
-                    :type "Low",
-                    :height -2.295}
-                   {:date "2017-04-01T15:03+0000",
-                    :dt 1491058996,
-                    :type "High",
-                    :height 2.273}
-                   {:date "2017-04-01T21:18+0000",
-                    :dt 1491081539,
-                    :type "Low",
-                    :height -2.013}
-                   {:date "2017-04-02T03:23+0000",
-                    :dt 1491103425,
-                    :type "High",
-                    :height 2.295}
-                   {:date "2017-04-02T09:46+0000",
-                    :dt 1491126402,
-                    :type "Low",
-                    :height -1.999}
-                   {:date "2017-04-02T15:51+0000",
-                    :dt 1491148276,
-                    :type "High",
-                    :height 1.966}
-                   {:date "2017-04-02T22:05+0000",
-                    :dt 1491170754,
-                    :type "Low",
-                    :height -1.783}
-                   {:date "2017-04-03T04:17+0000",
-                    :dt 1491193058,
-                    :type "High",
-                    :height 1.943},
-                      :status 200,
-                      :responseLon 0.6333313,
-                      :requestLon "0.057",]
+                 [{:date "2017-04-01T09:02+0000",
+                   :dt 1491037339,
+                   :type "Low",
+                   :height -2.295}
+                  {:date "2017-04-01T15:03+0000",
+                   :dt 1491058996,
+                   :type "High",
+                   :height 2.273}
+                  {:date "2017-04-01T21:18+0000",
+                   :dt 1491081539,
+                   :type "Low",
+                   :height -2.013}
+                  {:date "2017-04-02T03:23+0000",
+                   :dt 1491103425,
+                   :type "High",
+                   :height 2.295}
+                  {:date "2017-04-02T09:46+0000",
+                   :dt 1491126402,
+                   :type "Low",
+                   :height -1.999}
+                  {:date "2017-04-02T15:51+0000",
+                   :dt 1491148276,
+                   :type "High",
+                   :height 1.966}
+                  {:date "2017-04-02T22:05+0000",
+                   :dt 1491170754,
+                   :type "Low",
+                   :height -1.783}
+                  {:date "2017-04-03T04:17+0000",
+                   :dt 1491193058,
+                   :type "High",
+                   :height 1.943},
+                  :status 200,
+                  :responseLon 0.6333313,
+                  :requestLon "0.057"]
                  :location "London"}}]})

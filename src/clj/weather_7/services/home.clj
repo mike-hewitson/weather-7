@@ -55,7 +55,6 @@
    "wi-moon-alt-waning-crescent-5"
    "wi-moon-alt-waning-crescent-6"])
 
-
 (defn get-direction
   "translate wind bearing to direction in text"
   [bearing]
@@ -65,30 +64,31 @@
   "create map of selected reading data for merge"
   [readings]
   (apply merge
-         (map (fn [x] { (:location x) (select-keys x fields-needed)})
+         (map (fn [x] {(:location x) (select-keys x fields-needed)})
               (:readings readings))))
 
 (defn create-directions-for-merge
   "create wind directions for merging"
   [readings]
   (apply merge
-    (map (fn [reading]
-             {(:location reading) {:wind-direction (get-direction
-                                                    (:wind-bearing reading))}})
-         (:readings readings))))
+         (map (fn [reading]
+                {(:location reading) {:wind-direction
+                                      (get-direction
+                                       (:wind-bearing reading))}})
+              (:readings readings))))
 
 (defn create-tide-for-merge
   "Create a map with the next tide with key of location"
   [tide]
   (let [now (c/from-date (new java.util.Date))
         locations (:locations tide)]
-   (apply merge (map (fn [x] {(:location x)
-                              (some #(if (t/after?
-                                          (c/from-date (c/to-date (:date %)))
-                                          now)
-                                         %)
-                                    (:extremes (:tides x)))})
-                     locations))))
+    (apply merge (map (fn [x] {(:location x)
+                               (some #(if (t/after?
+                                           (c/from-date (c/to-date (:date %)))
+                                           now)
+                                        %)
+                                     (:extremes (:tides x)))})
+                      locations))))
 
 ; TODO change tides function name to be consistent
 ; TODO create test for moon phases
@@ -98,23 +98,23 @@
   "strip out and transform age of moon to icon, age and phase"
   [moon-data]
   (let [locations (:locations moon-data)]
-   (apply merge (map (fn [x]
-                       (let [moon-phase (:moon_phase (:phases x))]
-                         {(:location x)
-                          {:moon-phase-icon
+    (apply merge (map (fn [x]
+                        (let [moon-phase (:moon_phase (:phases x))]
+                          {(:location x)
+                           {:moon-phase-icon
                             (-> moon-phase
                                 :ageOfMoon
                                 Integer/parseInt
                                 dec
                                 moon-icons-transform)
-                           :age-of-moon
+                            :age-of-moon
                             (-> moon-phase
                                 :ageOfMoon
                                 Integer/parseInt
                                 dec)
-                           :phase-of-moon
+                            :phase-of-moon
                             (:phaseofMoon moon-phase)}}))
-                     locations))))
+                      locations))))
 
 (defn prepare-home-page-data []
   "bring together all of the home page data components"
@@ -123,8 +123,8 @@
         moon-data (first (db/get-moonphases))
         reading-date (:date weather-data)
         now (c/from-date (new java.util.Date))]
-   {:date reading-date
-    :readings
+    {:date reading-date
+     :readings
      (vals
       (select-keys
        (merge-with merge

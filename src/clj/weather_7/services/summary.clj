@@ -9,7 +9,7 @@
   ["Sandton" "Paradise Beach"])
 
 (defn build-for-one-location [location data]
- (map (fn [x] (dissoc (merge (:_id x) x) :_id)) data))
+  (map (fn [x] (dissoc (merge (:_id x) x) :_id)) data))
 
 (defn prepare-summary-data []
   (map (fn [x] {:location x

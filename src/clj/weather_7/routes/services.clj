@@ -7,46 +7,46 @@
             [weather-7.services.history :as srvhis]))
 
 (s/defschema Latest
-    {:date s/Inst
-     :readings
-      [{ :sunset s/Inst
-         :day-summary s/Str
-         :wind-speed s/Num
-         :sunrise s/Inst
-         :icon s/Str
-         :wind-bearing s/Num
-         :wind-direction s/Str
-         :temperature-max s/Num
-         :location s/Str
-         :temperature s/Num
-         :week-summary s/Str
-         :moon-phase-icon s/Str
-         :phase-of-moon s/Str
-         :age-of-moon s/Num
-         (s/optional-key :date) s/Inst
-         (s/optional-key :dt) s/Num
-         (s/optional-key :type) s/Str
-         (s/optional-key :height) s/Num}]})
+  {:date s/Inst
+   :readings
+   [{:sunset s/Inst
+     :day-summary s/Str
+     :wind-speed s/Num
+     :sunrise s/Inst
+     :icon s/Str
+     :wind-bearing s/Num
+     :wind-direction s/Str
+     :temperature-max s/Num
+     :location s/Str
+     :temperature s/Num
+     :week-summary s/Str
+     :moon-phase-icon s/Str
+     :phase-of-moon s/Str
+     :age-of-moon s/Num
+     (s/optional-key :date) s/Inst
+     (s/optional-key :dt) s/Num
+     (s/optional-key :type) s/Str
+     (s/optional-key :height) s/Num}]})
 
 (s/defschema Summary
-    [{:location s/Str
-      :summary
-         [{:date s/Inst
-           :max-temp s/Num
-           :avg-temp s/Num
-           :max-wind s/Num
-           :min-temp s/Num
-           :count s/Num
-           :min-wind s/Num
-           :avg-wind s/Num}]}])
+  [{:location s/Str
+    :summary
+    [{:date s/Inst
+      :max-temp s/Num
+      :avg-temp s/Num
+      :max-wind s/Num
+      :min-temp s/Num
+      :count s/Num
+      :min-wind s/Num
+      :avg-wind s/Num}]}])
 
 (s/defschema History
-    [{:location s/Str
-      :history
-         [{:date s/Inst
-           :temperature s/Num
-           :wind-speed s/Num
-           :location s/Str}]}])
+  [{:location s/Str
+    :history
+    [{:date s/Inst
+      :temperature s/Num
+      :wind-speed s/Num
+      :location s/Str}]}])
 
 ; TODO add tide data to schema
 

@@ -25,9 +25,9 @@
   [days-back end-point]
   (let [interval (int (/ (* days-back 24  3600) (dec points-to-plot)))
         from-date (t/minus end-point (t/days days-back))]
-   (map c/to-date
-        (take points-to-plot (p/periodic-seq from-date
-                                             (t/seconds interval))))))
+    (map c/to-date
+         (take points-to-plot (p/periodic-seq from-date
+                                              (t/seconds interval))))))
 
 (defn create-readings-list
   "create a list of readings, on for each date "
@@ -47,8 +47,8 @@
 (defn extract-fields-for-one-reading
   [reading]
   (let [date (:date reading)]
-   (map (fn [x] (merge {:date date} (select-keys x fields-needed)))
-        (:readings reading))))
+    (map (fn [x] (merge {:date date} (select-keys x fields-needed)))
+         (:readings reading))))
 
 (defn rebuild-data-per-location
   [all-data]

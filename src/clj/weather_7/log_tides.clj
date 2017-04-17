@@ -8,8 +8,8 @@
             [monger.collection :as mc]))
 
 (def tide-locations
-   '(["Paradise Beach" ["-34.0521" "24.5412"]]
-     ["London" ["51.317" "0.057"]]))
+  '(["Paradise Beach" ["-34.0521" "24.5412"]]
+    ["London" ["51.317" "0.057"]]))
 
 (defn get-worldtide-data
   "retrieve a set of readings from worldtide.com for a gps location"
@@ -34,9 +34,9 @@
 
 (defn log-tides []
   (let [uri (:database-url
-              (load-config :merge
-                [(source/from-system-props)
-                 (source/from-env)]))
+             (load-config :merge
+                          [(source/from-system-props)
+                           (source/from-env)]))
         db (:db (mg/connect-via-uri uri))]
     (mc/insert db "tides" {:date now :locations (build-tides)})))
 

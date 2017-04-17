@@ -8,8 +8,8 @@
             [monger.collection :as mc]))
 
 (def moon-locations
-   '(["Paradise Beach" "ZA/Jeffreys_Bay"]
-     ["Sandton" "ZA/Sandton"]))
+  '(["Paradise Beach" "ZA/Jeffreys_Bay"]
+    ["Sandton" "ZA/Sandton"]))
 
 (defn get-moon-phase-data
   "retrieve a set of readings from wunderorldtide.com for a gps location"
@@ -32,9 +32,9 @@
 
 (defn log-moon-phases []
   (let [uri (:database-url
-              (load-config :merge
-                [(source/from-system-props)
-                 (source/from-env)]))
+             (load-config :merge
+                          [(source/from-system-props)
+                           (source/from-env)]))
         db (:db (mg/connect-via-uri uri))]
     (mc/insert db "moon" {:date now :locations (build-moon-phases)})))
 

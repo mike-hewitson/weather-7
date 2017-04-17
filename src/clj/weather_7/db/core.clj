@@ -8,11 +8,11 @@
             [clojure.tools.logging :as log]))
 
 (defstate db*
-          :start (-> env :database-url mg/connect-via-uri)
-          :stop (-> db* :conn mg/disconnect))
+  :start (-> env :database-url mg/connect-via-uri)
+  :stop (-> db* :conn mg/disconnect))
 
 (defstate db
-          :start (:db db*))
+  :start (:db db*))
 
 ; TODO remove old code
 ; (defn create-user [user]
@@ -30,28 +30,27 @@
 (defn get-latest
   "return the most recent reading"
   []
- (with-collection db "readings"
-  (find {})
-  (sort (sorted-map $natural -1))
-  (limit 1)))
+  (with-collection db "readings"
+    (find {})
+    (sort (sorted-map $natural -1))
+    (limit 1)))
 
 (defn get-tides
   "return the most recent set of tide data"
   []
- (with-collection db "tides"
-  (find {})
-  (sort (sorted-map $natural -1))
-  (limit 1)))
+  (with-collection db "tides"
+    (find {})
+    (sort (sorted-map $natural -1))
+    (limit 1)))
 
 (defn get-reading-at-time
   "return the reading just before to the supplied date/time"
   [date-time]
   (log/debug "date-time:" date-time)
   (with-collection db "readings"
-    (find {:date { $lte date-time}})
+    (find {:date {$lte date-time}})
     (sort (array-map :date -1))
     (limit 1)))
-
 
 ; TODO put filter in place for the date range
 
@@ -62,24 +61,24 @@
    db
    "readings"
    [{$unwind "$readings"}
-    {$match {"readings.location" { "$eq" location}}}
+    {$match {"readings.location" {"$eq" location}}}
     {$project {"readings" 1
                :yearMonthDay {"$dateToString" {:format "%Y-%m-%d"
                                                :date "$date"}}}}
-    {$group { "_id" {"date" "$yearMonthDay"}
-              :count {"$sum" 1}
-              :avg-temp {"$avg" "$readings.temperature"}
-              :max-temp {"$max" "$readings.temperature"}
-              :min-temp {"$min" "$readings.temperature"}
-              :avg-wind {"$avg" "$readings.wind-speed"}
-              :max-wind {"$max" "$readings.wind-speed"}
-              :min-wind {"$min" "$readings.wind-speed"}}}
+    {$group {"_id" {"date" "$yearMonthDay"}
+             :count {"$sum" 1}
+             :avg-temp {"$avg" "$readings.temperature"}
+             :max-temp {"$max" "$readings.temperature"}
+             :min-temp {"$min" "$readings.temperature"}
+             :avg-wind {"$avg" "$readings.wind-speed"}
+             :max-wind {"$max" "$readings.wind-speed"}
+             :min-wind {"$min" "$readings.wind-speed"}}}
     {$sort {"_id.date" 1}}]))
 
 (defn get-moonphases
   "return the most recent moon phase data"
   []
- (with-collection db "moon"
-  (find {})
-  (sort (sorted-map $natural -1))
-  (limit 1)))
+  (with-collection db "moon"
+    (find {})
+    (sort (sorted-map $natural -1))
+    (limit 1)))
