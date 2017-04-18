@@ -23,7 +23,7 @@
       :age-of-moon 19,
       :temperature 16.299999237060547,
       :height 0.31,
-      :week-summary "No precipitation throughout the week, with temperatures rising to 31°C on Sunday."}
+      :week-summary "No precipitation throughout the week"}
     {
       :sunset "2017-04-17T15:51:21.000Z",
       :moon-phase-icon "wi-moon-alt-waning-gibbous-5",
@@ -38,4 +38,4 @@
       :location "Sandton",
       :age-of-moon 19,
       :temperature 11.699999809265137,
-      :week-summary "Light rain on Monday, with temperatures peaking at 26°C on Wednesday."}]})
+      :week-summary "Light rain on Monday, with temperatures"}]})
