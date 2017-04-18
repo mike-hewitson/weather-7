@@ -1582,3 +1582,115 @@ notifying browser that file changed:  resources/public/cljs/tests/out/weather_7/
 [0mCompiling "resources/public/cljs/tests/all-tests.js" from ["src/cljc" "src/cljs" "test/cljs"]...[0m
 [32mSuccessfully compiled "resources/public/cljs/tests/all-tests.js" in 0.618 seconds.[0m
 notifying browser that file changed:  resources/public/cljs/tests/out/weather_7/browser_runner.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.708 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.971 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.432 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.714 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.782 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.682 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.428 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:12  column:1  ----[0m
+
+  [1mUnsupported binding form: (- 14 (mod age-of-moon 14))[0m
+
+  [36m10[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+  [36m11[0m  [36m[0m
+  [33m12[0m  [1m(defn days-to-next-spring[0m
+  [0m  [0m  [33m^--- Unsupported binding form: (- 14 (mod age-of-moon 14))[0m
+  [36m13[0m  [36m  [age-of-moon[0m
+  [36m14[0m  [36m   (- 14 (mod age-of-moon 14))])[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.456 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:12  column:1  ----[0m
+
+  [1mUnsupported binding form: (- 14 (mod age-of-moon 14))[0m
+
+  [36m10[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+  [36m11[0m  [36m[0m
+  [33m12[0m  [1m(defn days-to-next-spring[0m
+  [0m  [0m  [33m^--- Unsupported binding form: (- 14 (mod age-of-moon 14))[0m
+  [36m13[0m  [36m  [age-of-moon[0m
+  [36m14[0m  [36m   (- 14 (mod age-of-moon 14))])[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.414 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:12  column:1  ----[0m
+
+  [1mUnsupported binding form: (- 14 (mod age-of-moon 14))[0m
+
+  [36m10[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+  [36m11[0m  [36m[0m
+  [33m12[0m  [1m(defn days-to-next-spring[0m
+  [0m  [0m  [33m^--- Unsupported binding form: (- 14 (mod age-of-moon 14))[0m
+  [36m13[0m  [36m  [age-of-moon[0m
+  [36m14[0m  [36m   (- 14 (mod age-of-moon 14))])[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.476 seconds.[0m
+[36m----  Could not Analyze  src/cljs/weather_7/pages/home.cljs   line:12  column:1  ----[0m
+
+  [1mUnsupported binding form: (- 14 (mod age-of-moon 14))[0m
+
+  [36m10[0m  [36m(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))[0m
+  [36m11[0m  [36m[0m
+  [33m12[0m  [1m(defn days-to-next-spring[0m
+  [0m  [0m  [33m^--- Unsupported binding form: (- 14 (mod age-of-moon 14))[0m
+  [36m13[0m  [36m  [age-of-moon[0m
+  [36m14[0m  [36m   (- 14 (mod age-of-moon 14))])[0m
+
+[36m----  Analysis Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.558 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.714 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.712 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.621 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.475 seconds.[0m
+[36m----  Could not Read  src/cljs/weather_7/pages/home.cljs   line:84  column:36  ----[0m
+
+  [1mUnmatched delimiter )[0m
+
+  [36m82[0m  [36m         (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [36m83[0m  [36m         (if (= (days-to-next-spring (:age-of-moon reading)) 14)[0m
+  [33m84[0m  [1m           ": spring tide")]])]]]))[0m
+  [0m  [0m  [33m                                   ^--- Unmatched delimiter )[0m
+  [36m85[0m  [36m[0m
+  [36m86[0m  [36m[0m
+  [36m87[0m  [36m; TODO create tests for this stuff[0m
+
+[36m----  Reader Error : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.681 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.865 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.056 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
