@@ -30,7 +30,6 @@
 
 (defn create-reading-element
   [reading]
- ; (let [days-to-next-spring (mod 14 (:age-of-moon reading))]
   [:div.row
    [:h4 (str (:location reading) " ")
     [:i {:class (str "wi " (:icon reading))}]
@@ -83,8 +82,6 @@
          (tf/unparse date-format (t/to-default-time-zone (:date reading)))
          (if (= (days-to-next-spring (:age-of-moon reading)) 14)
            ": spring tide")]])]]])
-
-; TODO create tests for this stuff
 
 (defn home-page []
   [:div.container-fluid
