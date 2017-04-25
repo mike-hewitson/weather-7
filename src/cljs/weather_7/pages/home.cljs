@@ -66,6 +66,8 @@
      [:tr
       [:td "temp"]
       [:td
+       (gstring/format "%.1f" (:temperature-min reading))
+       " / "
        [:strong
         (gstring/format "%.1f" (:temperature reading))]
        " / "
