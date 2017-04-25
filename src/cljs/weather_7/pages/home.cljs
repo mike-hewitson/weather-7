@@ -38,50 +38,43 @@
    [:table.table
     [:tbody
      [:tr
-      [:td "forecast"]
       [:td "week"]
       [:td (:week-summary reading)]]
      [:tr
-      [:td]
       [:td "day"]
       [:td (:day-summary reading)]]
      [:tr
       [:td "moon"]
-      [:td]
       [:td
        (:phase-of-moon reading)
        ": "
        (format-moon-phase-test (:age-of-moon reading))]]
-     [:tr
-      [:td "sunrise/set"]
-      [:td]
-      [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
-           " / "
-           (tf/unparse date-format (t/to-default-time-zone (:sunset reading)))]]
-     [:tr
-      [:td "temp"]
-      [:td "max"]
-      [:td (gstring/format "%.1f" (:temperature-max reading)) " °C"]]
-     [:tr
-      [:td]
-      [:td "now"]
-      [:td (gstring/format "%.1f" (:temperature reading)) " °C"]]
-     [:tr
-      [:td "wind"]
-      [:td]
-      [:td (gstring/format "%.1f" (:wind-speed reading))
-       " km/hr - "
-       (:wind-direction reading)]]
      (if (:date reading)
        [:tr
         [:td "next tide"]
-        [:td]
         [:td
          (:type reading) " "
          (gstring/format "%.1f" (:height reading)) " m at "
          (tf/unparse date-format (t/to-default-time-zone (:date reading)))
          (if (= (days-to-next-spring (:age-of-moon reading)) 14)
-           ": spring tide")]])]]])
+           ": spring tide")]])
+     [:tr
+      [:td "sunrise/set"]
+      [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
+           " / "
+           (tf/unparse date-format (t/to-default-time-zone (:sunset reading)))]]
+     [:tr
+      [:td "temp"]
+      [:td
+       [:strong
+        (gstring/format "%.1f" (:temperature reading))]
+       " / "
+       (gstring/format "%.1f" (:temperature-max reading)) " °C"]]
+     [:tr
+      [:td "wind"]
+      [:td (gstring/format "%.1f" (:wind-speed reading))
+       " km/hr - "
+       (:wind-direction reading)]]]]])
 
 (defn home-page []
   [:div.container-fluid
