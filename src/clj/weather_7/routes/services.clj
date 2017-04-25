@@ -17,6 +17,7 @@
      :wind-bearing s/Num
      :wind-direction s/Str
      :temperature-max s/Num
+     :temperature-min s/Num
      :location s/Str
      :temperature s/Num
      :week-summary s/Str

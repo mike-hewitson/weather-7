@@ -29,7 +29,7 @@
          (fact "it should return a map"
                (map? update) => true)
          (fact "it should contain 14 items"
-               (count update) => 16)
+               (count update) => 17)
          (fact "it should contain some correct data"
                (:sunrise update))) => true
        (:icon update)) => true

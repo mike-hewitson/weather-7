@@ -13,6 +13,7 @@
    :wind-bearing
    :wind-direction
    :temperature-max
+   :temperature-min
    :location
    :temperature
    :week-summary])

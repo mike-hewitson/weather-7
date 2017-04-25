@@ -34,6 +34,7 @@
 (def reading-names
   [[["week-summary"]
     ["temperature-max" float-and-round]
+    ["temperature-min" float-and-round]
     ["sunrise" (fn [x] (java.util.Date. (* 1000 x)))]
     ["sunset" (fn [x] (java.util.Date. (* 1000 x)))]
     ["day-summary"]
@@ -49,6 +50,7 @@
     ["cloud-cover" float]]
    [[:daily :summary]
     [:data :temperatureMax]
+    [:data :temperatureMin]
     [:data :sunriseTime]
     [:data :sunsetTime]
     [:data :summary]
