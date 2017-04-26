@@ -1747,3 +1747,54 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 [0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.574 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 3.362 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.491 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:59  column:17  ----[0m
+
+  [1mWrong number of args (2) passed to weather-7.pages.home/days-to-next-spring[0m
+
+  [36m55[0m  [36m   [:td[0m
+  [36m56[0m  [36m    (:type reading) " "[0m
+  [36m57[0m  [36m    (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m58[0m  [36m    (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m59[0m  [1m    (if (= (days-to-next-spring (inc (:age-of-moon reading)) 14))[0m
+  [0m  [0m  [33m           ^--- Wrong number of args (2) passed to weather-7.pages.home/days-to-next-spring[0m
+  [36m60[0m  [36m      ": spring tide")]])[0m
+  [36m61[0m  [36m[:tr[0m
+  [36m62[0m  [36m [:td "sunrise/set"][0m
+  [36m63[0m  [36m [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))[0m
+  [36m64[0m  [36m      " / "[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.28 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/weather_7/pages/home.cljs   line:59  column:17  ----[0m
+
+  [1mWrong number of args (2) passed to weather-7.pages.home/days-to-next-spring[0m
+
+  [36m55[0m  [36m   [:td[0m
+  [36m56[0m  [36m    (:type reading) " "[0m
+  [36m57[0m  [36m    (gstring/format "%.1f" (:height reading)) " m at "[0m
+  [36m58[0m  [36m    (tf/unparse date-format (t/to-default-time-zone (:date reading)))[0m
+  [33m59[0m  [1m    (if (= (days-to-next-spring (inc (:age-of-moon reading)) 14))[0m
+  [0m  [0m  [33m           ^--- Wrong number of args (2) passed to weather-7.pages.home/days-to-next-spring[0m
+  [36m60[0m  [36m      ": spring tide")]])[0m
+  [36m61[0m  [36m[:tr[0m
+  [36m62[0m  [36m [:td "sunrise/set"][0m
+  [36m63[0m  [36m [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))[0m
+  [36m64[0m  [36m      " / "[0m
+
+[36m----  Compiler Warning : Please see src/cljs/weather_7/pages/home.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.987 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.795 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js

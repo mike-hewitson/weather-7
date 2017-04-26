@@ -13,7 +13,7 @@
   [age-of-moon]
   (- 14 (mod age-of-moon 14)))
 
-(defn format-moon-phase-test
+(defn format-moon-phase-text
   "create text for moon phase"
   [age-of-moon]
   (let [next-moon-type (if (= (quot age-of-moon 14) 0)
@@ -48,7 +48,7 @@
       [:td
        (:phase-of-moon reading)
        ": "
-       (format-moon-phase-test (:age-of-moon reading))]]
+       (format-moon-phase-text (inc (:age-of-moon reading)))]]
      (if (:date reading)
        [:tr
         [:td "next tide"]
@@ -56,7 +56,7 @@
          (:type reading) " "
          (gstring/format "%.1f" (:height reading)) " m at "
          (tf/unparse date-format (t/to-default-time-zone (:date reading)))
-         (if (= (days-to-next-spring (:age-of-moon reading)) 14)
+         (if (= (days-to-next-spring (inc (:age-of-moon reading))) 14)
            ": spring tide")]])
      [:tr
       [:td "sunrise/set"]

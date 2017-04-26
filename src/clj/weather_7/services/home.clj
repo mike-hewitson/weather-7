@@ -26,8 +26,7 @@
    "Southerly" "South-westerley" "Westerly" "North-westerly"])
 
 (def moon-icons-transform
-  ["wi-moon-alt-new"
-   "wi-moon-alt-waxing-crescent-1"
+  ["wi-moon-alt-waxing-crescent-1"
    "wi-moon-alt-waxing-crescent-2"
    "wi-moon-alt-waxing-crescent-3"
    "wi-moon-alt-waxing-crescent-4"
@@ -53,7 +52,8 @@
    "wi-moon-alt-waning-crescent-3"
    "wi-moon-alt-waning-crescent-4"
    "wi-moon-alt-waning-crescent-5"
-   "wi-moon-alt-waning-crescent-6"])
+   "wi-moon-alt-waning-crescent-6"
+   "wi-moon-alt-new"])
 
 (defn get-direction
   "translate wind bearing to direction in text"
@@ -106,11 +106,13 @@
                                 :ageOfMoon
                                 Integer/parseInt
                                 dec
+                                dec
                                 moon-icons-transform)
                             :age-of-moon
                             (-> moon-phase
                                 :ageOfMoon
                                 Integer/parseInt
+                                dec
                                 dec)
                             :phase-of-moon
                             (:phaseofMoon moon-phase)}}))

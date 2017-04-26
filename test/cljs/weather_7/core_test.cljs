@@ -13,12 +13,12 @@
   (is (= (ph/days-to-next-spring 15) 13)))
 
 (deftest test-moon-phase-text
-  (is (= (ph/format-moon-phase-test 0) "full moon"))
-  (is (= (ph/format-moon-phase-test 5) "9 days to full moon"))
-  (is (= (ph/format-moon-phase-test 14) "new moon"))
-  (is (= (ph/format-moon-phase-test 1) "13 days to full moon"))
-  (is (= (ph/format-moon-phase-test 15) "13 days to new moon"))
-  (is (= (ph/format-moon-phase-test 22) "6 days to new moon")))
+  (is (= (ph/format-moon-phase-text 0) "full moon"))
+  (is (= (ph/format-moon-phase-text 5) "9 days to full moon"))
+  (is (= (ph/format-moon-phase-text 14) "new moon"))
+  (is (= (ph/format-moon-phase-text 1) "13 days to full moon"))
+  (is (= (ph/format-moon-phase-text 15) "13 days to new moon"))
+  (is (= (ph/format-moon-phase-text 22) "6 days to new moon")))
 
 (deftest test-moon-phase-text-with
  (let [reading-element (ph/create-reading-element
