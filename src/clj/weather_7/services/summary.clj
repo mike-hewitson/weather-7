@@ -2,7 +2,7 @@
   (:require [weather-7.db.core :as db]))
 
 (def locations
-  ["Sandton" "Paradise Beach"])
+  ["Sandton" "Paradise Beach" "London"])
 
 (defn build-for-one-location [data]
   (map (fn [x] (dissoc (merge (:_id x) x) :_id)) data))

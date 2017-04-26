@@ -80,4 +80,5 @@
 (defn summary-page []
   [:div
     [chart "Paradise Beach"]
-    [chart "Sandton"]])
+    [chart "Sandton"]
+    [chart "London"]])
