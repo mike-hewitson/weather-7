@@ -8,7 +8,8 @@
 
 (def moon-locations
   '(["Paradise Beach" "ZA/Jeffreys_Bay"]
-    ["Sandton" "ZA/Sandton"]))
+    ["Sandton" "ZA/Sandton"]
+    ["London" "UK/London"]))
 
 (defn get-moon-phase-data
   "retrieve a set of readings from wunderorldtide.com for a gps location"
