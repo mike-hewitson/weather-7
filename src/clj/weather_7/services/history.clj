@@ -9,7 +9,7 @@
 ; TODO days back to be a parameter on the from-end (default 7)
 
 (def locations
-  ["Sandton" "Paradise Beach"])
+  ["Sandton" "Paradise Beach" "London"])
 
 (def fields-needed
   [:location
