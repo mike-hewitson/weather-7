@@ -4,19 +4,19 @@
             [clj-time.coerce :as c]
             [clj-time.periodic :as p]))
 
-; TODO adjust readings resolution when graphs are visual
 ; TODO make resolution a parameter
 ; TODO days back to be a parameter on the from-end (default 7)
+; TODO get locations from database
 
 (def locations
   ["Sandton" "Paradise Beach" "London"])
 
-(def fields-needed
+(defonce fields-needed
   [:location
    :wind-speed
    :temperature])
 
-(def points-to-plot 200)
+(defonce points-to-plot 200)
 
 (defn create-history-seq
   "create a sequence of 50 dates between a date and today"

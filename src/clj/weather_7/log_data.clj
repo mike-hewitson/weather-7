@@ -65,6 +65,8 @@
     [:currently :precipIntensity]
     [:currently :cloudCover]]])
 
+; TODO move location to database
+
 (def locations
   '(["London" "51.317,0.057"]
     ["Sandton" "-26.097,28.053"]

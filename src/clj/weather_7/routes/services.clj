@@ -49,8 +49,6 @@
       :wind-speed s/Num
       :location s/Str}]}])
 
-; TODO add tide data to schema
-
 (defapi service-routes
   {:swagger {:ui "/swagger-ui"
              :spec "/swagger.json"
@@ -78,3 +76,5 @@
       :query-params []
       :summary     "returns history of weather conditions"
       (ok (srvhis/prepare-history-data)))))
+
+; TODO create locations service

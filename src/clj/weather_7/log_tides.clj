@@ -6,6 +6,8 @@
             [monger.core :as mg]
             [monger.collection :as mc]))
 
+; TODO move locations to database
+
 (def tide-locations
   '(["Paradise Beach" ["-34.0521" "24.5412"]]
     ["London" ["51.317" "0.057"]]))

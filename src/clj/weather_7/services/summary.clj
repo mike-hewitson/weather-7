@@ -1,6 +1,8 @@
 (ns weather-7.services.summary
   (:require [weather-7.db.core :as db]))
 
+; TODO get locations from database
+
 (def locations
   ["Sandton" "Paradise Beach" "London"])
 

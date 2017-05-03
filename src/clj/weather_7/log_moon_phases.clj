@@ -6,6 +6,8 @@
             [monger.core :as mg]
             [monger.collection :as mc]))
 
+; TODO move locations to database
+
 (def moon-locations
   '(["Paradise Beach" "ZA/Jeffreys_Bay"]
     ["Sandton" "ZA/Sandton"]

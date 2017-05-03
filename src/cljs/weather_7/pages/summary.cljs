@@ -82,3 +82,5 @@
     [chart "Paradise Beach"]
     [chart "Sandton"]
     [chart "London"]])
+
+; TODO get locations to show from database

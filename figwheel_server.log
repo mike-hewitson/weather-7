@@ -1803,3 +1803,17 @@ notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/p
 notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 3.959 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/history.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.481 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/home.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.186 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/pages/summary.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljs" "src/cljc" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.187 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/weather_7/core.js

@@ -75,6 +75,8 @@
 
 ;; -------------------------
 ;; Initialize app
+; TODO setup locations config handler etc
+
 (defn fetch-latest! []
   (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
 

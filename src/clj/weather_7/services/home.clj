@@ -18,6 +18,8 @@
    :temperature
    :week-summary])
 
+; TODO get locations from database
+
 (def locations
   ["Paradise Beach" "Sandton" "London"])
 

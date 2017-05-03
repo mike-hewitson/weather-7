@@ -91,3 +91,5 @@
           [:time "weather info @ "
            (tf/unparse date-time-format (t/to-default-time-zone
                                          (:date latest)))]]])])
+
+; TODO only show required locations as per database config
