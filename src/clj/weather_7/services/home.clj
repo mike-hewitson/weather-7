@@ -79,7 +79,7 @@
                                        (:wind-bearing reading))}})
               (:readings readings))))
 
-(defn create-tide-for-merge
+(defn create-tides-for-merge
   "Create a map with the next tide with key of location"
   [tide]
   (let [now (c/from-date (new java.util.Date))
@@ -132,6 +132,6 @@
        (merge-with merge
                    (format-readings-for-merge weather-data)
                    (create-directions-for-merge weather-data)
-                   (create-tide-for-merge tides-data)
+                   (create-tides-for-merge tides-data)
                    (create-moonphase-for-merge moon-data))
        locations))}))
