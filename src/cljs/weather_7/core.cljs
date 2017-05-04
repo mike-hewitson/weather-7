@@ -99,3 +99,5 @@
   (fetch-history!)
   (hook-browser-navigation!)
   (mount-components))
+
+; TODO move fetch summary. latest to the background after home page load
