@@ -92,9 +92,7 @@
                                      (:extremes (:tides x)))})
                       locations))))
 
-; TODO change tides function name to be consistent
 ; TODO create test for moon phases
-; TODO check the the icon is in line with the numeric phase
 
 (defn create-moonphase-for-merge
   "strip out and transform age of moon to icon, age and phase"

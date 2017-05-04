@@ -34,8 +34,10 @@
          (fact "it should contain some correct data"
                (string? (:wind-direction (val (first directions)))) => true)))
 
-; (facts "about 'create-next-tide-list'"
-;   (let [tides (r/create-next-tide-list fix/tides-data)]
+; TODO weird bug - function does t/after? does not work when tested
+
+; (facts "about 'create-tide-for-merge'"
+;   (let [tides (r/create-tide-for-merge fix/tides-data)]
 ;     (fact "it should return a map"
 ;      (map? tides) => true)
 ;     (fact "it should contain 2 items"

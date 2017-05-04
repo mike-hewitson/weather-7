@@ -11,12 +11,12 @@
 (def locations
   ["Sandton" "Paradise Beach" "London"])
 
-(defonce fields-needed
+(def fields-needed
   [:location
    :wind-speed
    :temperature])
 
-(defonce points-to-plot 200)
+(def points-to-plot 200)
 
 (defn create-history-seq
   "create a sequence of 50 dates between a date and today"
