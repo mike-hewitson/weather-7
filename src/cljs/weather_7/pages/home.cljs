@@ -6,6 +6,9 @@
             [cljs-time.core :as t]
             [cljs-time.format :as tf]))
 
+
+; TODO autorefresh data if older than 10 mins
+
 (def date-format (tf/formatter "HH:mm"))
 (def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))
 
