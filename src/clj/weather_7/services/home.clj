@@ -94,6 +94,13 @@
 
 ; TODO create test for moon phases
 
+(defn normalise-age
+  "make age of moon usaeble for indexing"
+  [age-of-moon]
+  (if (> age-of-moon 27)
+    27
+    (dec age-of-moon)))
+
 (defn create-moonphase-for-merge
   "strip out and transform age of moon to icon, age and phase"
   [moon-data]
@@ -105,15 +112,13 @@
                             (-> moon-phase
                                 :ageOfMoon
                                 Integer/parseInt
-                                dec
-                                dec
+                                normalise-age
                                 moon-icons-transform)
                             :age-of-moon
                             (-> moon-phase
                                 :ageOfMoon
                                 Integer/parseInt
-                                dec
-                                dec)
+                                normalise-age)
                             :phase-of-moon
                             (:phaseofMoon moon-phase)}}))
                       locations))))
