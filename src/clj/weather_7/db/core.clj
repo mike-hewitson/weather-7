@@ -2,7 +2,7 @@
   (:require [monger.core :as mg]
             [monger.collection :as mc]
             [monger.operators :refer :all]
-            [monger.query :refer :all]
+            [monger.query :as mq]
             [mount.core :refer [defstate]]
             [weather-7.config :refer [env]]
             [clojure.tools.logging :as log]))
@@ -30,27 +30,27 @@
 (defn get-latest
   "return the most recent reading"
   []
-  (with-collection db "readings"
-    (find {})
-    (sort (sorted-map $natural -1))
-    (limit 1)))
+  (mq/with-collection db "readings"
+    (mq/find {})
+    (mq/sort (sorted-map $natural -1))
+    (mq/limit 1)))
 
 (defn get-tides
   "return the most recent set of tide data"
   []
-  (with-collection db "tides"
-    (find {})
-    (sort (sorted-map $natural -1))
-    (limit 1)))
+  (mq/with-collection db "tides"
+    (mq/find {})
+    (mq/sort (sorted-map $natural -1))
+    (mq/limit 1)))
 
 (defn get-reading-at-time
   "return the reading just before to the supplied date/time"
   [date-time]
   (log/debug "date-time:" date-time)
-  (with-collection db "readings"
-    (find {:date {$lte date-time}})
-    (sort (array-map :date -1))
-    (limit 1)))
+  (mq/with-collection db "readings"
+    (mq/find {:date {$lte date-time}})
+    (mq/sort (array-map :date -1))
+    (mq/limit 1)))
 
 ; TODO put filter in place for the date range
 
@@ -78,7 +78,7 @@
 (defn get-moonphases
   "return the most recent moon phase data"
   []
-  (with-collection db "moon"
-    (find {})
-    (sort (sorted-map $natural -1))
-    (limit 1)))
+  (mq/with-collection db "moon"
+    (mq/find {})
+    (mq/sort (sorted-map $natural -1))
+    (mq/limit 1)))
