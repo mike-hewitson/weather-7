@@ -20,8 +20,8 @@
   "create text for moon phase"
   [age-of-moon]
   (let [next-moon-type (if (= (quot age-of-moon 14) 0)
-                         "full moon"
-                         "new moon")
+                         "new moon"
+                         "full moon")
         days-to-next-spring (days-to-next-spring age-of-moon)]
     (if (= days-to-next-spring 14)
       next-moon-type
