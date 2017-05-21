@@ -21,7 +21,7 @@
 ; TODO get locations from database
 
 (def locations
-  ["Paradise Beach" "Sandton" "London"])
+  ["Paradise Beach" "Sandton"])
 
 (def wind-directions
   ["Northerly" "North-easterly" "Easterly" "South-easterly"

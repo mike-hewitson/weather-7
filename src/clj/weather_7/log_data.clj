@@ -68,9 +68,9 @@
 ; TODO move location to database
 
 (def locations
-  '(["London" "51.317,0.057"]
-    ["Sandton" "-26.097,28.053"]
+  '(["Sandton" "-26.097,28.053"]
     ["Paradise Beach" "-34.0521,24.5412"]))
+    ; ["London" "51.317,0.057"]))
 
 (defn get-darksky-data
   "retrieve a set of readings from darksky.io for a gps location"

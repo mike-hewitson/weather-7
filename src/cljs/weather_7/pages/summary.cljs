@@ -80,7 +80,6 @@
 (defn summary-page []
   [:div
     [chart "Paradise Beach"]
-    [chart "Sandton"]
-    [chart "London"]])
+    [chart "Sandton"]])
 
 ; TODO get locations to show from database

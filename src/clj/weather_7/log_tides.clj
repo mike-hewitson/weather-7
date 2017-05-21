@@ -9,8 +9,8 @@
 ; TODO move locations to database
 
 (def tide-locations
-  '(["Paradise Beach" ["-34.0521" "24.5412"]]
-    ["London" ["51.317" "0.057"]]))
+  '(["Paradise Beach" ["-34.0521" "24.5412"]]))
+    ; ["London" ["51.317" "0.057"]]))
 
 (defn get-worldtide-data
   "retrieve a set of readings from worldtide.com for a gps location"
