@@ -50,7 +50,7 @@
       [:td "moon"]
       [:td
        (:phase-of-moon reading)
-       ": "
+       " - "
        (format-moon-phase-text (inc (:age-of-moon reading)))]]
      (if (:date reading)
        [:tr
@@ -60,7 +60,7 @@
          (gstring/format "%.1f" (:height reading)) " m at "
          (tf/unparse date-format (t/to-default-time-zone (:date reading)))
          (if (= (days-to-next-spring (inc (:age-of-moon reading))) 14)
-           ": spring tide")]])
+           " - spring tide")]])
      [:tr
       [:td "sunrise/set"]
       [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
