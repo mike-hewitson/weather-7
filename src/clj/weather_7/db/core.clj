@@ -43,7 +43,6 @@
 
 (defn get-reading-at-time [date-time]
   "return the reading just before to the supplied date/time"
-  (log/debug "date-time:" date-time)
   (mq/with-collection db "readings"
     (mq/find {:date {$lte date-time}})
     (mq/sort (array-map :date -1))
