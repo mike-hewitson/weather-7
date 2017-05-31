@@ -57,21 +57,18 @@
    "wi-moon-alt-waning-crescent-6"
    "wi-moon-alt-new"])
 
-(defn get-direction
+(defn get-direction [bearing]
   "translate wind bearing to direction in text"
-  [bearing]
   (wind-directions (mod (m/round (/ bearing 45)) 8)))
 
-(defn format-readings-for-merge
+(defn format-readings-for-merge [readings]
   "create map of selected reading data for merge"
-  [readings]
   (apply merge
          (map (fn [x] {(:location x) (select-keys x fields-needed)})
               (:readings readings))))
 
-(defn create-directions-for-merge
+(defn create-directions-for-merge [readings]
   "create wind directions for merging"
-  [readings]
   (apply merge
          (map (fn [reading]
                 {(:location reading) {:wind-direction
@@ -79,9 +76,8 @@
                                        (:wind-bearing reading))}})
               (:readings readings))))
 
-(defn create-tides-for-merge
+(defn create-tides-for-merge [tide]
   "Create a map with the next tide with key of location"
-  [tide]
   (let [now (c/from-date (new java.util.Date))
         locations (:locations tide)]
     (apply merge (map (fn [x] {(:location x)
@@ -94,16 +90,14 @@
 
 ; TODO create test for moon phases
 
-(defn normalise-age
+(defn normalise-age [age-of-moon]
   "make age of moon usaeble for indexing"
-  [age-of-moon]
   (if (> age-of-moon 27)
     27
     (dec age-of-moon)))
 
-(defn create-moonphase-for-merge
+(defn create-moonphase-for-merge [moon-data]
   "strip out and transform age of moon to icon, age and phase"
-  [moon-data]
   (let [locations (:locations moon-data)]
     (apply merge (map (fn [x]
                         (let [moon-phase (:moon_phase (:phases x))]
@@ -123,9 +117,8 @@
                             (:phaseofMoon moon-phase)}}))
                       locations))))
 
-(defn prepare-home-page-data
+(defn prepare-home-page-data []
   "bring together all of the home page data components"
-  []
   (let [weather-data (first (db/get-latest))
         tides-data (first (db/get-tides))
         moon-data (first (db/get-moonphases))

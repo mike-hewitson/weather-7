@@ -13,17 +13,15 @@
     ["Sandton" "ZA/Sandton"]))
     ; ["London" "UK/London"]))
 
-(defn get-moon-phase-data
+(defn get-moon-phase-data [search-string]
   "retrieve a set of readings from wunderorldtide.com for a gps location"
-  [search-string]
   (let [my-url (str
                 "http://api.wunderground.com/api/1054d74a239c7946/astronomy/q/"
                 search-string
                 ".json")]
     (:body (client/get my-url {:as :json}))))
 
-(defn build-moon-phases
-  []
+(defn build-moon-phases []
   (map (fn [[location search-string]]
          {:location location
           :phases (get-moon-phase-data search-string)})

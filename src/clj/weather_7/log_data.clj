@@ -72,9 +72,8 @@
     ["Paradise Beach" "-34.0521,24.5412"]))
     ; ["London" "51.317,0.057"]))
 
-(defn get-darksky-data
+(defn get-darksky-data [gps]
   "retrieve a set of readings from darksky.io for a gps location"
-  [gps]
   (let [my-url
         (str
          "https://api.darksky.net/forecast/62888a9ff1907377b60a866701cf3338/"
@@ -82,9 +81,8 @@
          "?units=si&exclude=minutely,hourly,alerts,flags")]
     (:body (client/get my-url {:as :json}))))
 
-(defn extract-reading-data
+(defn extract-reading-data [body]
   "extract the required data elements from the darksky message body"
-  [body]
   (zipmap (first reading-names)
           (map (fn [[k v]]
                  (let [data (v (first (:data (:daily body))))]
@@ -96,9 +94,8 @@
                (last reading-names))))
 
 ; TODO this feels wrong, need to refactor
-(defn create-update
+(defn create-update [location reading-map]
   "create a hash that contains data for a location"
-  [location reading-map]
   (assoc (apply merge (map (fn [[[name & [my-cast]] value]]
                              {name (if my-cast
                                      (my-cast value)
@@ -106,8 +103,7 @@
                            reading-map))
          "location" location))
 
-(defn build-readings
-  []
+(defn build-readings []
   (map (fn [[location gps]]
          (->> (get-darksky-data gps)
               (extract-reading-data)

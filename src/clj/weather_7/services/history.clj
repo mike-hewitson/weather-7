@@ -18,46 +18,40 @@
 
 (def points-to-plot 200)
 
-(defn create-history-seq
+(defn create-history-seq [days-back end-point]
   "create a sequence of 50 dates between a date and today"
-  [days-back end-point]
   (let [interval (int (/ (* days-back 24  3600) (dec points-to-plot)))
         from-date (t/minus end-point (t/days days-back))]
     (map c/to-date
          (take points-to-plot (p/periodic-seq from-date
                                               (t/seconds interval))))))
 
-(defn create-readings-list
+(defn create-readings-list [dates]
   "create a list of readings, on for each date "
-  [dates]
   (map #(first (db/get-reading-at-time %))
        dates))
 
-(defn create-display-list
+(defn create-display-list [readings-list]
   "format the a reeading list for the html template "
-  [readings-list]
   (map (fn [x]
          (let [reading (first (:readings x))]
            {:date (:date x)
             :location (:location reading)}))
        readings-list))
 
-(defn extract-fields-for-one-reading
-  [reading]
+(defn extract-fields-for-one-reading [reading]
   (let [date (:date reading)]
     (map (fn [x] (merge {:date date} (select-keys x fields-needed)))
          (:readings reading))))
 
-(defn rebuild-data-per-location
-  [all-data]
+(defn rebuild-data-per-location [all-data]
   (map (fn [x] {:location x
                 :history (filter #(= (:location %) x)
                                  all-data)})
        locations))
 
-(defn prepare-history-data
+(defn prepare-history-data []
   "bring together all of the home page data components"
-  []
   (->> (create-history-seq 7 (t/now))
        create-readings-list
        dedupe

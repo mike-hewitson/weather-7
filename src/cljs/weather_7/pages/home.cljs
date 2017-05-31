@@ -12,13 +12,11 @@
 (def date-format (tf/formatter "HH:mm"))
 (def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))
 
-(defn days-to-next-spring
-  [age-of-moon]
+(defn days-to-next-spring [age-of-moon]
   (- 14 (mod age-of-moon 14)))
 
-(defn format-moon-phase-text
+(defn format-moon-phase-text [age-of-moon]
   "create text for moon phase"
-  [age-of-moon]
   (let [next-moon-type (if (= (quot age-of-moon 14) 0)
                          "full moon"
                          "new moon")
@@ -31,8 +29,7 @@
              " days to ")
            next-moon-type))))
 
-(defn create-reading-element
-  [reading]
+(defn create-reading-element [reading]
   [:div.row
    [:h4 (str (:location reading) " ")
     [:i {:class (str "wi " (:icon reading))}]
