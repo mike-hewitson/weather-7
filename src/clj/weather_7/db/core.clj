@@ -27,25 +27,22 @@
 ; (defn get-user [id]
 ;   (mc/find-one-as-map db "users" {:_id id}))
 
-(defn get-latest
+(defn get-latest []
   "return the most recent reading"
-  []
   (mq/with-collection db "readings"
     (mq/find {})
     (mq/sort (sorted-map $natural -1))
     (mq/limit 1)))
 
-(defn get-tides
+(defn get-tides []
   "return the most recent set of tide data"
-  []
   (mq/with-collection db "tides"
     (mq/find {})
     (mq/sort (sorted-map $natural -1))
     (mq/limit 1)))
 
-(defn get-reading-at-time
+(defn get-reading-at-time [date-time]
   "return the reading just before to the supplied date/time"
-  [date-time]
   (log/debug "date-time:" date-time)
   (mq/with-collection db "readings"
     (mq/find {:date {$lte date-time}})
@@ -54,9 +51,8 @@
 
 ; TODO put filter in place for the date range
 
-(defn get-summary
+(defn get-summary [location]
   "retrieve summary data for all days that we have data for"
-  [location]
   (mc/aggregate
    db
    "readings"
@@ -75,9 +71,8 @@
              :min-wind {"$min" "$readings.wind-speed"}}}
     {$sort {"_id.date" 1}}]))
 
-(defn get-moonphases
+(defn get-moonphases []
   "return the most recent moon phase data"
-  []
   (mq/with-collection db "moon"
     (mq/find {})
     (mq/sort (sorted-map $natural -1))
