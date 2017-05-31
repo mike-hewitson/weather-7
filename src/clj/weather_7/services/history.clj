@@ -39,10 +39,9 @@
             :location (:location reading)}))
        readings-list))
 
-(defn extract-fields-for-one-reading [reading]
-  (let [date (:date reading)]
-    (map (fn [x] (merge {:date date} (select-keys x fields-needed)))
-         (:readings reading))))
+(defn extract-fields-for-one-reading [{date :date readings :readings}]
+  (map (fn [x] (merge {:date date} (select-keys x fields-needed)))
+       readings))
 
 (defn rebuild-data-per-location [all-data]
   (map (fn [x] {:location x
