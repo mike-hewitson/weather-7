@@ -1,8 +1,8 @@
 (ns weather-7.services.home
-  (:require [clojure.math.numeric-tower :as m]
-            [weather-7.db.core :as db]
-            [clj-time.core :as t]
-            [clj-time.coerce :as c]))
+  (:require [clojure.math.numeric-tower :as math]
+            [weather-7.db.core          :as db]
+            [clj-time.core              :as time]
+            [clj-time.coerce            :as coerce]))
 
 (def fields-needed
   [:sunset
@@ -23,9 +23,11 @@
 (def locations-to-send
   ["Paradise Beach" "Sandton"])
 
+
 (def wind-directions
   ["Northerly" "North-easterly" "Easterly" "South-easterly"
    "Southerly" "South-westerley" "Westerly" "North-westerly"])
+
 
 (def moon-icons-transform
   ["wi-moon-alt-waxing-crescent-1"
@@ -57,9 +59,11 @@
    "wi-moon-alt-waning-crescent-6"
    "wi-moon-alt-new"])
 
+
 (defn get-direction [bearing]
   "translate wind bearing to direction in text"
-  (wind-directions (mod (m/round (/ bearing 45)) 8)))
+  (wind-directions (mod (math/round (/ bearing 45)) 8)))
+
 
 (defn format-readings-for-merge [{readings :readings}]
   "create map of selected reading data for merge"
@@ -68,6 +72,7 @@
                 {location (select-keys reading fields-needed)})
               readings)))
 
+
 (defn create-directions-for-merge [{readings :readings}]
   "create wind directions for merging"
   (apply merge
@@ -75,13 +80,14 @@
                   {location {:wind-direction (get-direction wind-bearing)}})
               readings)))
 
+
 (defn create-tides-for-merge [{locations :locations}]
   "Create a map with the next tide with key of location"
-  (let [now (c/from-date (new java.util.Date))]
+  (let [now (coerce/from-date (new java.util.Date))]
     (apply merge (map (fn [{:keys [location tides]}]
                         {location
-                               (some #(if (t/after?
-                                           (c/from-date (c/to-date (:date %)))
+                               (some #(if (time/after?
+                                           (coerce/from-date (coerce/to-date (:date %)))
                                            now)
                                         %)
                                      (:extremes tides))})
@@ -94,6 +100,8 @@
   (if (> age-of-moon 27)
     27
     (dec age-of-moon)))
+
+; TODO chat to Rob about the function below, does not feel right
 
 (defn create-moonphase-for-merge [{locations :locations}]
   "strip out and transform age of moon to icon, age and phase"
@@ -115,11 +123,12 @@
                             (:phaseofMoon moon-phase)}}))
                       locations)))
 
+
 (defn prepare-home-page-data []
   "bring together all of the home page data components"
   (let [weather-data (first (db/get-latest))
-        tides-data (first (db/get-tides))
-        moon-data (first (db/get-moonphases))
+        tides-data   (first (db/get-tides))
+        moon-data    (first (db/get-moonphases))
         reading-date (:date weather-data)]
     {:date reading-date
      :readings
