@@ -20,7 +20,7 @@
 
 ; TODO get locations from database
 
-(def locations
+(def locations-to-send
   ["Paradise Beach" "Sandton"])
 
 (def wind-directions
@@ -61,31 +61,30 @@
   "translate wind bearing to direction in text"
   (wind-directions (mod (m/round (/ bearing 45)) 8)))
 
-(defn format-readings-for-merge [readings]
+(defn format-readings-for-merge [{readings :readings}]
   "create map of selected reading data for merge"
   (apply merge
-         (map (fn [x] {(:location x) (select-keys x fields-needed)})
-              (:readings readings))))
+         (map (fn [{location :location :as reading}]
+                {location (select-keys reading fields-needed)})
+              readings)))
 
-(defn create-directions-for-merge [readings]
+(defn create-directions-for-merge [{readings :readings}]
   "create wind directions for merging"
   (apply merge
-         (map (fn [reading]
-                {(:location reading) {:wind-direction
-                                      (get-direction
-                                       (:wind-bearing reading))}})
-              (:readings readings))))
+         (map (fn [{:keys [location wind-bearing]}]
+                  {location {:wind-direction (get-direction wind-bearing)}})
+              readings)))
 
-(defn create-tides-for-merge [tide]
+(defn create-tides-for-merge [{locations :locations}]
   "Create a map with the next tide with key of location"
-  (let [now (c/from-date (new java.util.Date))
-        locations (:locations tide)]
-    (apply merge (map (fn [x] {(:location x)
+  (let [now (c/from-date (new java.util.Date))]
+    (apply merge (map (fn [{:keys [location tides]}]
+                        {location
                                (some #(if (t/after?
                                            (c/from-date (c/to-date (:date %)))
                                            now)
                                         %)
-                                     (:extremes (:tides x)))})
+                                     (:extremes tides))})
                       locations))))
 
 ; TODO create test for moon phases
@@ -96,12 +95,11 @@
     27
     (dec age-of-moon)))
 
-(defn create-moonphase-for-merge [moon-data]
+(defn create-moonphase-for-merge [{locations :locations}]
   "strip out and transform age of moon to icon, age and phase"
-  (let [locations (:locations moon-data)]
-    (apply merge (map (fn [x]
-                        (let [moon-phase (:moon_phase (:phases x))]
-                          {(:location x)
+    (apply merge (map (fn [{:keys [phases location]}]
+                        (let [moon-phase (:moon_phase phases)]
+                          {location
                            {:moon-phase-icon
                             (-> moon-phase
                                 :ageOfMoon
@@ -115,7 +113,7 @@
                                 normalise-age)
                             :phase-of-moon
                             (:phaseofMoon moon-phase)}}))
-                      locations))))
+                      locations)))
 
 (defn prepare-home-page-data []
   "bring together all of the home page data components"
@@ -132,4 +130,4 @@
                    (create-directions-for-merge weather-data)
                    (create-tides-for-merge tides-data)
                    (create-moonphase-for-merge moon-data))
-       locations))}))
+       locations-to-send))}))
