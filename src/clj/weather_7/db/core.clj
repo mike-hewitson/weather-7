@@ -1,20 +1,21 @@
 (ns weather-7.db.core
-  (:require [monger.core :as mg]
-            [monger.collection :as mc]
-            [monger.operators :refer :all]
-            [monger.query :as mq]
-            [mount.core :refer [defstate]]
-            [weather-7.config :refer [env]]
+  (:require [monger.core           :as mg]
+            [monger.collection     :as mc]
+            [monger.operators      :refer :all]
+            [monger.query          :as mq]
+            [mount.core            :as mount :refer [defstate]]
+            [weather-7.config      :as config :refer [env]]
             [clojure.tools.logging :as log]))
 
-(defstate db*
-  :start (-> env :database-url mg/connect-via-uri)
+(mount/defstate db*
+  :start (-> config/env :database-url mg/connect-via-uri)
   :stop (-> db* :conn mg/disconnect))
 
-(defstate db
+
+(mount/defstate db
   :start (:db db*))
 
-; TODO remove old code
+; TODO remove old code when config has been built
 ; (defn create-user [user]
 ;   (mc/insert db "users" user))
 ;
@@ -34,12 +35,14 @@
     (mq/sort (sorted-map $natural -1))
     (mq/limit 1)))
 
+
 (defn get-tides []
   "return the most recent set of tide data"
   (mq/with-collection db "tides"
     (mq/find {})
     (mq/sort (sorted-map $natural -1))
     (mq/limit 1)))
+
 
 (defn get-reading-at-time [date-time]
   "return the reading just before to the supplied date/time"
@@ -69,6 +72,7 @@
              :max-wind {"$max" "$readings.wind-speed"}
              :min-wind {"$min" "$readings.wind-speed"}}}
     {$sort {"_id.date" 1}}]))
+
 
 (defn get-moonphases []
   "return the most recent moon phase data"
