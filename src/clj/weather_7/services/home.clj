@@ -60,7 +60,7 @@
    "wi-moon-alt-new"])
 
 
-(defn get-direction [bearing]
+(defn translate-direction [bearing]
   "translate wind bearing to direction in text"
   (wind-directions (mod (math/round (/ bearing 45)) 8)))
 
@@ -77,7 +77,7 @@
   "create wind directions for merging"
   (apply merge
          (map (fn [{:keys [location wind-bearing]}]
-                  {location {:wind-direction (get-direction wind-bearing)}})
+                  {location {:wind-direction (translate-direction wind-bearing)}})
               readings)))
 
 
