@@ -1,8 +1,8 @@
 (ns weather-7.routes.services
-  (:require [ring.util.http-response :refer :all]
-            [compojure.api.sweet :refer :all]
-            [schema.core :as s]
-            [weather-7.services.home :as srvh]
+  (:require [ring.util.http-response    :refer :all]
+            [compojure.api.sweet        :refer :all]
+            [schema.core                :as s]
+            [weather-7.services.home    :as srvh]
             [weather-7.services.summary :as srvs]
             [weather-7.services.history :as srvhis]))
 
@@ -29,6 +29,7 @@
      (s/optional-key :type) s/Str
      (s/optional-key :height) s/Num}]})
 
+
 (s/defschema Summary
   [{:location s/Str
     :summary
@@ -41,6 +42,7 @@
       :min-wind s/Num
       :avg-wind s/Num}]}])
 
+
 (s/defschema History
   [{:location s/Str
     :history
@@ -48,6 +50,7 @@
       :temperature s/Num
       :wind-speed s/Num
       :location s/Str}]}])
+
 
 (defapi service-routes
   {:swagger {:ui "/swagger-ui"
