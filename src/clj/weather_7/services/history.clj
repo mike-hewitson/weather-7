@@ -9,7 +9,7 @@
 ; TODO get locations from database
 
 (def locations
-  ["Sandton" "Paradise Beach"])
+  ["Sandton" "Paradise Beach" "Salt River"])
 
 (def fields-needed
   [:location

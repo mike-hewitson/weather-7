@@ -4,7 +4,7 @@
 ; TODO get locations from database
 
 (def locations
-  ["Sandton" "Paradise Beach"])
+  ["Sandton" "Paradise Beach" "Salt River"])
 
 (defn build-for-one-location [data]
   (map (fn [x] (dissoc (merge (:_id x) x) :_id)) data))
