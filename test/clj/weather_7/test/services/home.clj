@@ -6,11 +6,11 @@
 
 (facts "about 'get-direction'"
        (fact "given some bearings, its should return their direction"
-             (r/get-direction 0) => "Northerly"
-             (r/get-direction 45) => "North-easterly"
-             (r/get-direction 44.9) => "North-easterly"
-             (r/get-direction 50) => "North-easterly"
-             (r/get-direction 359) => "Northerly"))
+             (r/translate-direction 0) => "Northerly"
+             (r/translate-direction 45) => "North-easterly"
+             (r/translate-direction 44.9) => "North-easterly"
+             (r/translate-direction 50) => "North-easterly"
+             (r/translate-direction 359) => "Northerly"))
 
 (facts "about 'format-readings-for-merge'"
        (let [readings (r/format-readings-for-merge fix/latest-reading)]

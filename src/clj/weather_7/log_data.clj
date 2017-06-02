@@ -1,11 +1,11 @@
 (ns weather-7.log-data
-  (:require [clj-http.client :as client]
-            [clojure.tools.logging :as log]
-            [cprop.core :refer [load-config]]
-            [cprop.source :as source]
-            [clojure.math.numeric-tower :as m]
-            [monger.core :as mg]
-            [monger.collection :as mc]))
+  (:require [clj-http.client            :as client]
+            [clojure.tools.logging      :as log]
+            [cprop.core                 :as cprop :refer [load-config]]
+            [cprop.source               :as source]
+            [clojure.math.numeric-tower :as math]
+            [monger.core                :as mg]
+            [monger.collection          :as mc]))
 
 (def icons-transform
   {"day-sunny" "wi-day-sunny"
@@ -26,10 +26,11 @@
    "tornado" "wi-tornado"
    "clear-day" "wi-day-sunny"});
 
-(defn float-and-round
+
+(defn float-and-round [x]
   "cast to float after rounding to one decimal"
-  [x]
-  (float (/ (m/round (* x 10)) 10)))
+  (float (/ (math/round (* x 10)) 10)))
+
 
 (def reading-names
   [[["week-summary"]
@@ -67,10 +68,15 @@
 
 ; TODO move location to database
 
-(def locations
+(def data-locations
   '(["Sandton" "-26.097,28.053"]
     ["Paradise Beach" "-34.0521,24.5412"]))
     ; ["London" "51.317,0.057"]))
+
+
+(defonce now
+  (new java.util.Date))
+
 
 (defn get-darksky-data [gps]
   "retrieve a set of readings from darksky.io for a gps location"
@@ -81,17 +87,19 @@
          "?units=si&exclude=minutely,hourly,alerts,flags")]
     (:body (client/get my-url {:as :json}))))
 
-(defn extract-reading-data [body]
+
+(defn extract-reading-data [{:keys [daily currently]}]
   "extract the required data elements from the darksky message body"
   (zipmap (first reading-names)
           (map (fn [[k v]]
-                 (let [data (v (first (:data (:daily body))))]
-                   (cond
-                     (= k :daily) (v (:daily body))
-                     (= k :data) data
-                     (= k :currently) (v (:currently body))
-                     :else nil)))
+                 (let [data (v (first (:data daily)))]
+                   (case k
+                     :daily (v daily)
+                     :data data
+                     :currently (v currently)
+                     nil)))
                (last reading-names))))
+
 
 ; TODO this feels wrong, need to refactor
 (defn create-update [location reading-map]
@@ -103,23 +111,23 @@
                            reading-map))
          "location" location))
 
+
 (defn build-readings []
   (map (fn [[location gps]]
          (->> (get-darksky-data gps)
               (extract-reading-data)
               (create-update location)))
-       locations))
+       data-locations))
 
-(def now
-  (new java.util.Date))
 
 (defn log-readings []
   (let [uri (:database-url
-             (load-config :merge
+             (cprop/load-config :merge
                           [(source/from-system-props)
                            (source/from-env)]))
         db (:db (mg/connect-via-uri uri))]
     (mc/insert db "readings" {:date now :readings (build-readings)})))
+
 
 (defn -main []
   (log-readings)
