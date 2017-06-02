@@ -21,7 +21,7 @@
 ; TODO get locations from database
 
 (def locations-to-send
-  ["Paradise Beach" "Sandton"])
+  ["Paradise Beach" "Sandton" "Salt River"])
 
 
 (def wind-directions
@@ -77,7 +77,8 @@
   "create wind directions for merging"
   (apply merge
          (map (fn [{:keys [location wind-bearing]}]
-                  {location {:wind-direction (translate-direction wind-bearing)}})
+                  {location {:wind-direction
+                             (translate-direction wind-bearing)}})
               readings)))
 
 
@@ -87,7 +88,8 @@
     (apply merge (map (fn [{:keys [location tides]}]
                         {location
                                (some #(if (time/after?
-                                           (coerce/from-date (coerce/to-date (:date %)))
+                                           (coerce/from-date (coerce/to-date
+                                                              (:date %)))
                                            now)
                                         %)
                                      (:extremes tides))})

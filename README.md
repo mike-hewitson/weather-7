@@ -35,8 +35,7 @@ To manually reload src and test, and re-run them
 Before pushing changes, run the following:
 ```
 $ lein bikeshed
-$  lein cljfmt check
-$ lein eastwood
+$ lein cljfmt check
 $ lein kibit
 $ lein cloverage --fail-threshold 40
 $ lein with-profile test doo phantom once
