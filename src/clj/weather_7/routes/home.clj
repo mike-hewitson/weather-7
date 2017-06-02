@@ -1,10 +1,10 @@
 (ns weather-7.routes.home
   (:require [weather-7.layout :as layout]
-            [compojure.core   :as compojure :refer [defroutes GET]]))
+            [compojure.core   :refer [defroutes GET]]))
 
 (defn home-page []
   (layout/render "home.html"))
 
-(compojure/defroutes home-routes
-  (compojure/GET "/" []
+(defroutes home-routes
+  (GET "/" []
     (home-page)))
