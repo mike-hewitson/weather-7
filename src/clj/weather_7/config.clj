@@ -1,10 +1,11 @@
 (ns weather-7.config
-  (:require [cprop.core :refer [load-config]]
+  (:require [cprop.core   :as cprop :refer [load-config]]
             [cprop.source :as source]
-            [mount.core :refer [args defstate]]))
+            [mount.core   :as mount :refer [args defstate]]))
 
-(defstate env :start (load-config
+
+(mount/defstate env :start (cprop/load-config)
                       :merge
-                      [(args)
+                      [(mount/args)
                        (source/from-system-props)
-                       (source/from-env)]))
+                       (source/from-env)])
