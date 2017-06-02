@@ -84,6 +84,7 @@
 (defn history-page []
   [:div
     [chart "Paradise Beach"]
-    [chart "Sandton"]])
+    [chart "Sandton"]
+    [chart "Salt River"]])
 
 ; TODO get locations from database
