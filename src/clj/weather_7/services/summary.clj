@@ -3,15 +3,18 @@
 
 ; TODO get locations from database
 
-(def locations
+
+(def locations-to-send
   ["Sandton" "Paradise Beach" "Salt River"])
+
 
 (defn build-for-one-location [data]
   (map (fn [x] (dissoc (merge (:_id x) x) :_id)) data))
 
+
 (defn prepare-summary-data []
   (map (fn [x] {:location x
                 :summary (build-for-one-location (db/get-summary x))})
-       locations))
+       locations-to-send))
 
 ; TODO add tests

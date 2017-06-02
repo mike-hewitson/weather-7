@@ -9,7 +9,7 @@
 ; TODO get locations from database
 
 
-(def locations
+(def locations-to-send
   ["Sandton" "Paradise Beach" "Salt River"])
 
 
@@ -55,7 +55,7 @@
   (map (fn [x] {:location x
                 :history (filter #(= (:location %) x)
                                  all-data)})
-       locations))
+       locations-to-send))
 
 
 (defn prepare-history-data []
