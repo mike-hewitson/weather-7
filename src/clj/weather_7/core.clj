@@ -2,8 +2,8 @@
   (:require [weather-7.handler     :as handler]
             [luminus.repl-server   :as repl]
             [luminus.http-server   :as http]
-            [weather-7.config      :as config :refer [env]]
-            [clojure.tools.cli     :as cli :refer [parse-opts]]
+            [weather-7.config      :refer [env]]
+            [clojure.tools.cli     :refer [parse-opts]]
             [clojure.tools.logging :as log]
             [mount.core            :as mount])
   (:gen-class))
@@ -18,7 +18,7 @@
   http-server
   :start
   (http/start
-   (-> config/env
+   (-> env
        (assoc :handler (handler/app))
        (update :port #(or (-> env :options :port) %))))
   :stop
@@ -43,7 +43,7 @@
 
 (defn start-app [args]
   (doseq [component (-> args
-                        (cli/parse-opts cli-options)
+                        (parse-opts cli-options)
                         mount/start-with-args
                         :started)]
     (log/info component "started"))
