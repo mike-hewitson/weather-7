@@ -1,19 +1,23 @@
 (ns weather-7.pages.home
-  (:require [reagent.core :as r]
-            [re-frame.core :as rf]
-            [goog.string :as gstring]
+  (:require [reagent.core     :as r]
+            [re-frame.core    :as rf]
+            [goog.string      :as gstring]
             [goog.string.format]
-            [cljs-time.core :as t]
-            [cljs-time.format :as tf]))
+            [cljs-time.core   :as time]
+            [cljs-time.format :as time.format]))
 
 
 ; TODO autorefresh data if older than 10 mins
 
-(def date-format (tf/formatter "HH:mm"))
-(def date-time-format (tf/formatter "yyyy:MM:dd HH:mm"))
+(defonce date-format (time.format/formatter "HH:mm"))
+
+
+(defonce date-time-format (time.format/formatter "yyyy:MM:dd HH:mm"))
+
 
 (defn days-to-next-spring [age-of-moon]
   (- 14 (mod age-of-moon 14)))
+
 
 (defn format-moon-phase-text [age-of-moon]
   "create text for moon phase"
@@ -28,6 +32,7 @@
              " day to "
              " days to ")
            next-moon-type))))
+
 
 (defn create-reading-element [reading]
   [:div.row
@@ -55,14 +60,20 @@
         [:td
          (:type reading) " "
          (gstring/format "%.1f" (:height reading)) " m at "
-         (tf/unparse date-format (t/to-default-time-zone (:date reading)))
+         (time.format/unparse date-format
+                     (time/to-default-time-zone
+                      (:date reading)))
          (if (= (days-to-next-spring (inc (:age-of-moon reading))) 14)
            " - spring tide")]])
      [:tr
       [:td "sunrise/set"]
-      [:td (tf/unparse date-format (t/to-default-time-zone (:sunrise reading)))
+      [:td (time.format/unparse date-format
+                                (time/to-default-time-zone
+                                 (:sunrise reading)))
            " / "
-           (tf/unparse date-format (t/to-default-time-zone (:sunset reading)))]]
+           (time.format/unparse date-format
+                                (time/to-default-time-zone
+                                 (:sunset reading)))]]
      [:tr
       [:td "temp"]
       [:td
@@ -78,6 +89,7 @@
        " km/hr - "
        (:wind-direction reading)]]]]])
 
+
 (defn home-page []
   [:div.container-fluid
    (when-let [latest @(rf/subscribe [:latest])]
@@ -89,7 +101,9 @@
              ^{:key (:location reading)} [create-reading-element reading])]]
         [:div.col-xs-12
           [:time "weather info @ "
-           (tf/unparse date-time-format (t/to-default-time-zone
-                                         (:date latest)))]]])])
+           (time.format/unparse
+            date-time-format
+            (time/to-default-time-zone
+             (:date latest)))]]])])
 
 ; TODO only show required locations as per database config
