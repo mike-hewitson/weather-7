@@ -73,6 +73,7 @@
 
 
 (defn extract-data [location]
+  ; (rf/dispatch-sync [:get-summary])
   (first (filter #(= location (:location %)) @(rf/subscribe [:summary]))))
 
 

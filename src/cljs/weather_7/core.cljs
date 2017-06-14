@@ -4,8 +4,8 @@
             [secretary.core          :as secretary]
             [goog.events             :as events]
             [goog.history.EventType  :as HistoryEventType]
-            [markdown.core           :refer [md->html]]
-            [ajax.core               :refer [GET POST]]
+            ; [markdown.core           :refer [md->html]]
+            ; [ajax.core               :refer [GET]]
             [weather-7.ajax          :refer [load-interceptors!]]
             [weather-7.handlers]
             [weather-7.subscriptions]
@@ -64,11 +64,13 @@
 
 
 (secretary/defroute "/summary" []
+  (rf/dispatch [:get-summary])
   (rf/dispatch [:set-active-page :summary]))
 
 
 (secretary/defroute "/history" []
-  (rf/dispatch [:set-active-page :history]))
+ (rf/dispatch [:get-history])
+ (rf/dispatch [:set-active-page :history]))
 
 
 ;; -------------------------
@@ -86,17 +88,21 @@
 ;; Initialize app
 ; TODO setup locations config handler etc
 
+
 (defn fetch-latest! []
-  (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
+ (rf/dispatch [:get-latest]))
+ ; (GET "/api/latest" {:handler #(rf/dispatch [:set-latest %])}))
 
 
-(defn fetch-summary! []
-  (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])}))
-
-
-(defn fetch-history! []
-  (GET "/api/history" {:handler #(rf/dispatch [:set-history %])}))
-
+; (defn fetch-summary! []
+;  (rf/dispatch [:get-summary]))
+; ; (GET "/api/summary" {:handler #(rf/dispatch [:set-summary %])})
+;
+;
+; (defn fetch-history! []
+;  (rf/dispatch [:get-history]))
+; ; (GET "/api/history" {:handler #(rf/dispatch [:set-history %])})
+;
 
 (defn mount-components []
   (rf/clear-subscription-cache!)
@@ -107,8 +113,8 @@
   (rf/dispatch-sync [:initialize-db])
   (load-interceptors!)
   (fetch-latest!)
-  (fetch-summary!)
-  (fetch-history!)
+  ; (fetch-summary!)
+  ; (fetch-history!)
   (hook-browser-navigation!)
   (mount-components))
 

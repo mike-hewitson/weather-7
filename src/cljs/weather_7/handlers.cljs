@@ -1,6 +1,9 @@
 (ns weather-7.handlers
-  (:require [weather-7.db  :as db]
-            [re-frame.core :refer [dispatch reg-event-db]]))
+  (:require [weather-7.db      :as db]
+            [re-frame.core     :refer [dispatch reg-event-db reg-event-fx]]
+            [ajax.core         :as ajax]
+            [ajax.edn          :as edn]
+            [day8.re-frame.http-fx]))
 
 
 (reg-event-db
@@ -31,3 +34,39 @@
   :set-summary
   (fn [db [_ summary]]
     (assoc db :summary summary)))
+
+
+(reg-event-fx
+  :get-latest                      ;; usage:  (dispatch [:handler-with-http])
+  (fn [{:keys [db]} _]                    ;; the first param will be "world"
+    {:db   (assoc db :show-twirly true)   ;; causes the twirly-waiting-dialog to show??
+     :http-xhrio {:method          :get
+                  :uri             "/api/latest"
+                  :timeout         8000                                           ;; optional see API docs
+                  :response-format (edn/edn-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
+                  :on-success      [:set-latest]
+                  :on-failure      [:bad-http-result]}}))
+
+
+(reg-event-fx
+  :get-history                      ;; usage:  (dispatch [:handler-with-http])
+  (fn [{:keys [db]} _]                    ;; the first param will be "world"
+    {:db   (assoc db :show-twirly true)   ;; causes the twirly-waiting-dialog to show??
+     :http-xhrio {:method          :get
+                  :uri             "/api/history"
+                  :timeout         8000                                           ;; optional see API docs
+                  :response-format (edn/edn-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
+                  :on-success      [:set-history]
+                  :on-failure      [:bad-http-result]}}))
+
+
+(reg-event-fx
+  :get-summary                      ;; usage:  (dispatch [:handler-with-http])
+  (fn [{:keys [db]} _]                    ;; the first param will be "world"
+    {:db   (assoc db :show-twirly true)   ;; causes the twirly-waiting-dialog to show??
+     :http-xhrio {:method          :get
+                  :uri             "/api/summary"
+                  :timeout         8000                                           ;; optional see API docs
+                  :response-format (edn/edn-response-format {:keywords? true})  ;; IMPORTANT!: You must provide this.
+                  :on-success      [:set-summary]
+                  :on-failure      [:bad-http-result]}}))

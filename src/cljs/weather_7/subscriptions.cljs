@@ -24,3 +24,9 @@
  :history
  (fn [db _]
    (:history db)))
+
+
+(reg-sub
+ :show-twirly
+ (fn [db _]
+   (:show-twirly db)))

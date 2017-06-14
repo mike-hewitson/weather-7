@@ -34,7 +34,8 @@
                  [clj-time "0.13.0"]
                  [com.andrewmcveigh/cljs-time "0.4.0"]
                  [org.clojure/math.numeric-tower "0.0.4"]
-                 [com.novemberain/monger "3.1.0"]]
+                 [com.novemberain/monger "3.1.0"]
+                 [day8.re-frame/http-fx "0.1.3"]]
 
   :min-lein-version "2.0.0"
 
