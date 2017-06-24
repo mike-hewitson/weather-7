@@ -95,8 +95,7 @@
   (let [show-twirly (rf/subscribe [:show-twirly])]
    (if @show-twirly
       [:div
-       [:h2
-        [:i {:class "fa fa-spinner"}]]]
+       [:h2 "Loading ............"]]
       [:div
        [chart "Paradise Beach"]
        [chart "Sandton"]
