@@ -92,9 +92,14 @@
 
 
 (defn history-page []
-  [:div
-    [chart "Paradise Beach"]
-    [chart "Sandton"]
-    [chart "Salt River"]])
+  (let [show-twirly (rf/subscribe [:show-twirly])]
+   (if @show-twirly
+      [:div
+       [:h2
+        [:i {:class "fa fa-spinner"}]]]
+      [:div
+       [chart "Paradise Beach"]
+       [chart "Sandton"]
+       [chart "Salt River"]])))
 
 ; TODO get locations from database

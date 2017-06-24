@@ -21,19 +21,25 @@
 (reg-event-db
   :set-latest
   (fn [db [_ latest]]
-    (assoc db :latest latest)))
+    (assoc db
+           :latest latest
+           :show-twirly false)))
 
 
 (reg-event-db
   :set-history
   (fn [db [_ history]]
-    (assoc db :history history)))
+    (assoc db
+           :history history
+           :show-twirly false)))
 
 
 (reg-event-db
   :set-summary
   (fn [db [_ summary]]
-    (assoc db :summary summary)))
+    (assoc db
+           :summary summary
+           :show-twirly false)))
 
 
 (reg-event-fx
