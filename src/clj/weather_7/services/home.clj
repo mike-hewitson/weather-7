@@ -30,7 +30,8 @@
 
 
 (def moon-icons-transform
-  ["wi-moon-alt-waxing-crescent-1"
+  ["wi-moon-alt-new"
+   "wi-moon-alt-waxing-crescent-1"
    "wi-moon-alt-waxing-crescent-2"
    "wi-moon-alt-waxing-crescent-3"
    "wi-moon-alt-waxing-crescent-4"
@@ -56,8 +57,7 @@
    "wi-moon-alt-waning-crescent-3"
    "wi-moon-alt-waning-crescent-4"
    "wi-moon-alt-waning-crescent-5"
-   "wi-moon-alt-waning-crescent-6"
-   "wi-moon-alt-new"])
+   "wi-moon-alt-waning-crescent-6"])
 
 
 (defn translate-direction [bearing]
@@ -99,9 +99,10 @@
 
 (defn normalise-age [age-of-moon]
   "make age of moon usaeble for indexing"
-  (if (> age-of-moon 27)
-    27
-    (dec age-of-moon)))
+  (cond
+   (> age-of-moon 27) 27
+   (= age-of-moon 0)  0
+   :else (dec age-of-moon)))
 
 ; TODO chat to Rob about the function below, does not feel right
 

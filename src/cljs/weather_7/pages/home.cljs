@@ -25,9 +25,9 @@
                          "full moon"
                          "new moon")
         days-to-next-spring (days-to-next-spring age-of-moon)]
-    (if (= days-to-next-spring 14)
-      next-moon-type
-      (str days-to-next-spring
+    (if-not (= days-to-next-spring 14)
+      (str " - "
+           days-to-next-spring
            (if (= days-to-next-spring 1)
              " day to "
              " days to ")
@@ -52,8 +52,7 @@
       [:td "moon"]
       [:td
        (:phase-of-moon reading)
-       " - "
-       (format-moon-phase-text (inc (:age-of-moon reading)))]]
+       (format-moon-phase-text (:age-of-moon reading))]]
      (if (:date reading)
        [:tr
         [:td "next tide"]
@@ -63,7 +62,7 @@
          (time.format/unparse date-format
                      (time/to-default-time-zone
                       (:date reading)))
-         (if (= (days-to-next-spring (inc (:age-of-moon reading))) 14)
+         (if (= (days-to-next-spring (:age-of-moon reading)) 14)
            " - spring tide")]])
      [:tr
       [:td "sunrise/set"]
