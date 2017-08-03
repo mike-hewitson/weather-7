@@ -5,7 +5,7 @@
             [cljs-time.format :as time.format]
             [cljs-time.coerce :as time.coerce]))
 
-; TODO create tests for this stuff
+                                        ; TODO create tests for this stuff
 
 (def date-format (time.format/formatter "yyyy/MM/dd"))
 
@@ -17,42 +17,42 @@
 
 
 (defonce chart-config-static
-  {:chart {:type "spline"}
-   :yAxis {:min 0
-           :title {:text "Degrees C"
-                   :align "high"}
-           :labels {:overflow "justify"}}
-   :tooltip {:valueSuffix " °C"}
+  {:chart       {:type "spline"}
+   :yAxis       {:min    0
+                 :title  {:text  "Degrees C"
+                          :align "high"}
+                 :labels {:overflow "justify"}}
+   :tooltip     {:valueSuffix " °C"}
    :plotOptions {:spline {:dataLabels {:enabled false}
-                          :marker {:enabled false}}}
-   :exporting {:enabled false}
-   :credits {:enabled false}})
+                          :marker     {:enabled false}}}
+   :exporting   {:enabled false}
+   :credits     {:enabled false}})
 
 
 (defn build-series [summary-data]
   {:series
    [{:name "Maximum"
      :data (map (fn [x]
-                    [(time.coerce/to-long (time/to-default-time-zone (:date x)))
-                     (round (:max-temp x))])
+                  [(time.coerce/to-long (time/to-default-time-zone (:date x)))
+                   (round (:max-temp x))])
                 (:summary summary-data))}
     {:name "Average"
      :data (map (fn [x]
-                    [(time.coerce/to-long (time/to-default-time-zone (:date x)))
-                     (round (:avg-temp x))])
+                  [(time.coerce/to-long (time/to-default-time-zone (:date x)))
+                   (round (:avg-temp x))])
                 (:summary summary-data))}
     {:name "Minimum"
      :data (map (fn [x]
-                    [(time.coerce/to-long (time/to-default-time-zone (:date x)))
-                     (round (:min-temp x))])
+                  [(time.coerce/to-long (time/to-default-time-zone (:date x)))
+                   (round (:min-temp x))])
                 (:summary summary-data))}]})
 
 
 (defn build-xaxis [summary-data]
-  {:xAxis {:type "datetime"
+  {:xAxis {:type  "datetime"
            :dateTimeLabelFormats
-            {:month "%e %b"
-             :year "%b"}
+           {:month "%e %b"
+            :year  "%b"}
            :title {:text "Date"}}})
 
 
@@ -69,11 +69,11 @@
 
 (defn home-render []
   [:div {:style {:min-width "310px" :max-width "800px"
-                 :height "400px" :margin "0 auto"}}])
+                 :height    "400px" :margin    "0 auto"}}])
 
 
 (defn extract-data [location]
-  ; (rf/dispatch-sync [:get-summary])
+                                        ; (rf/dispatch-sync [:get-summary])
   (first (filter #(= location (:location %)) @(rf/subscribe [:summary]))))
 
 
@@ -84,18 +84,18 @@
 
 
 (defn chart [location]
-   (r/create-class {:reagent-render home-render
-                    :component-did-mount (partial home-did-mount location)}))
+  (r/create-class {:reagent-render      home-render
+                   :component-did-mount (partial home-did-mount location)}))
 
 
 (defn summary-page []
   (let [show-twirly (rf/subscribe [:show-twirly])]
-   (if @show-twirly
+    (if @show-twirly
       [:div
        [:h2 "Loading ......."]]
       [:div
-        [chart "Paradise Beach"]
-        [chart "Sandton"]
-        [chart "Salt River"]])))
+       [chart "Paradise Beach"]
+                                        ;        [chart "Sandton"]
+       [chart "Salt River"]])))
 
-; TODO get locations to show from database
+                                        ; TODO get locations to show from database

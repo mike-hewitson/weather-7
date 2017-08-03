@@ -4,13 +4,13 @@
             [clj-time.coerce   :as coerce]
             [clj-time.periodic :as periodic]))
 
-; TODO make resolution a parameter
-; TODO days back to be a parameter on the from-end (default 7)
-; TODO get locations from database
+                                        ; TODO make resolution a parameter
+                                        ; TODO days back to be a parameter on the from-end (default 7)
+                                        ; TODO get locations from database
 
 
 (def locations-to-send
-  ["Sandton" "Paradise Beach" "Salt River"])
+  ["Paradise Beach" "Salt River"])
 
 
 (def fields-needed
@@ -24,11 +24,11 @@
 
 (defn create-history-seq [days-back end-point]
   "create a sequence of 50 dates between a date and today"
-  (let [interval (int (/ (* days-back 24  3600) (dec points-to-plot)))
+  (let [interval  (int (/ (* days-back 24  3600) (dec points-to-plot)))
         from-date (time/minus end-point (time/days days-back))]
     (map coerce/to-date
          (take points-to-plot (periodic/periodic-seq from-date
-                                              (time/seconds interval))))))
+                                                     (time/seconds interval))))))
 
 
 (defn create-readings-list [dates]
@@ -41,7 +41,7 @@
   "format the a reeading list for the html template "
   (map (fn [{:keys [readings date]}]
          (let [location (:reading (first readings))]
-           {:date date
+           {:date     date
             :location location}))
        readings-list))
 
@@ -53,7 +53,7 @@
 
 (defn rebuild-data-per-location [all-data]
   (map (fn [x] {:location x
-                :history (filter #(= (:location %) x)
+               :history  (filter #(= (:location %) x)
                                  all-data)})
        locations-to-send))
 
@@ -67,5 +67,5 @@
        flatten
        rebuild-data-per-location))
 
-; TODO refactor code
-; TODO create tests
+                                        ; TODO refactor code
+                                        ; TODO create tests

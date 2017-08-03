@@ -18,10 +18,10 @@
    :temperature
    :week-summary])
 
-; TODO get locations from database
+                                        ; TODO get locations from database
 
 (def locations-to-send
-  ["Paradise Beach" "Sandton" "Salt River"])
+  ["Paradise Beach" "Salt River"])
 
 
 (def wind-directions
@@ -77,8 +77,8 @@
   "create wind directions for merging"
   (apply merge
          (map (fn [{:keys [location wind-bearing]}]
-                  {location {:wind-direction
-                             (translate-direction wind-bearing)}})
+                {location {:wind-direction
+                           (translate-direction wind-bearing)}})
               readings)))
 
 
@@ -87,44 +87,44 @@
   (let [now (coerce/from-date (new java.util.Date))]
     (apply merge (map (fn [{:keys [location tides]}]
                         {location
-                               (some #(if (time/after?
-                                           (coerce/from-date (coerce/to-date
-                                                              (:date %)))
-                                           now)
-                                        %)
-                                     (:extremes tides))})
+                         (some #(if (time/after?
+                                     (coerce/from-date (coerce/to-date
+                                                        (:date %)))
+                                     now)
+                                  %)
+                               (:extremes tides))})
                       locations))))
 
-; TODO create test for moon phases
+                                        ; TODO create test for moon phases
 
 (defn normalise-age [age-of-moon]
   "make age of moon usaeble for indexing"
   (cond
-   (> age-of-moon 27) 27
-   (= age-of-moon 0)  0
-   :else (dec age-of-moon)))
+    (> age-of-moon 27) 27
+    (= age-of-moon 0)  0
+    :else              (dec age-of-moon)))
 
-; TODO chat to Rob about the function below, does not feel right
+                                        ; TODO chat to Rob about the function below, does not feel right
 
 (defn create-moonphase-for-merge [{locations :locations}]
   "strip out and transform age of moon to icon, age and phase"
-    (apply merge (map (fn [{:keys [phases location]}]
-                        (let [moon-phase (:moon_phase phases)]
-                          {location
-                           {:moon-phase-icon
-                            (-> moon-phase
-                                :ageOfMoon
-                                Integer/parseInt
-                                normalise-age
-                                moon-icons-transform)
-                            :age-of-moon
-                            (-> moon-phase
-                                :ageOfMoon
-                                Integer/parseInt
-                                normalise-age)
-                            :phase-of-moon
-                            (:phaseofMoon moon-phase)}}))
-                      locations)))
+  (apply merge (map (fn [{:keys [phases location]}]
+                      (let [moon-phase (:moon_phase phases)]
+                        {location
+                         {:moon-phase-icon
+                          (-> moon-phase
+                              :ageOfMoon
+                              Integer/parseInt
+                              normalise-age
+                              moon-icons-transform)
+                          :age-of-moon
+                          (-> moon-phase
+                              :ageOfMoon
+                              Integer/parseInt
+                              normalise-age)
+                          :phase-of-moon
+                          (:phaseofMoon moon-phase)}}))
+                    locations)))
 
 
 (defn prepare-home-page-data []
