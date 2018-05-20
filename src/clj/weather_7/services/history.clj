@@ -10,7 +10,7 @@
 
 
 (def locations-to-send
-  ["Paradise Beach" "Salt River"])
+  ["Paradise Beach"])
 
 
 (def fields-needed

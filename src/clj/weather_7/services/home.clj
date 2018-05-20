@@ -21,8 +21,10 @@
                                         ; TODO get locations from database
 
 (def locations-to-send
-  ["Paradise Beach" "Salt River"])
+  ["Paradise Beach"])
 
+#_(def locations-to-send
+  ["Paradise Beach" "Salt River"])
 
 (def wind-directions
   ["Northerly" "North-easterly" "Easterly" "South-easterly"

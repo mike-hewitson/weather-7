@@ -5,7 +5,7 @@
 
 
 (def locations-to-send
-  ["Paradise Beach" "Salt River"])
+  ["Paradise Beach"])
 
 
 (defn build-for-one-location [data]
