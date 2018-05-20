@@ -41,7 +41,9 @@
              (cprop/load-config :merge
                                 [(source/from-system-props)
                                  (source/from-env)]))
-        db (:db (mg/connect-via-uri uri))]
+        db (:db (mg/connect-via-uri uri))
+        tides (build-tides)
+        _ (log/info tides)]
     (mc/insert db "tides" {:date now :locations (build-tides)})))
 
 
