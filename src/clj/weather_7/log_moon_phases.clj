@@ -10,8 +10,9 @@
 
 (def moon-locations
   '(["Paradise Beach" "ZA/Jeffreys_Bay"]
-    ["Sandton" "ZA/Sandton"]
-    ["Salt River" "ZA/Salt_River"]))
+    ; ["Sandton" "ZA/Sandton"]
+    ;["Salt River" "ZA/Salt_River"]
+    ))
     ; ["London" "UK/London"]))
 
 
