@@ -13,7 +13,7 @@ script: lein kibit
 script: lein cloverage --fail-threshold 40
 # script: lein with-profile test doo phantom once
 jdk:
-  - oraclejdk8
+  - oraclejdk9
 services:
   - mongodb
 deploy:
