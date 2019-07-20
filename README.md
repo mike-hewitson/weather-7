@@ -9,6 +9,8 @@
 Create a set of terminal windows, each to run one of the commands listed below:
 
 ```
+$ mongod --config /usr/local/etc/mongod.conf
+or
 $ mongod
 $ lein run
 $ lein figwheel
@@ -18,12 +20,14 @@ $ lein with-profile test doo phantom
 
 This gets everything up and running, as well as gets the test runners active for automatic testing whenever there are code changes.
 
+Got to localhost:3000 to access
+
 ### testing in the repl
 
 ```
 (use 'midje.repl)
 (autotest :resume)
-```   
+```
 
 To manually reload src and test, and re-run them
 ```
