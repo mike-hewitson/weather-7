@@ -1,4 +1,5 @@
 language: clojure
+dist: trusty
 lein: lein
 before_script:
   # - ./bin/ci/install_mongodb.sh
@@ -13,7 +14,7 @@ script: lein kibit
 script: lein cloverage --fail-threshold 40
 # script: lein with-profile test doo phantom once
 jdk:
-  - oraclejdk9
+  - oraclejdk8
 services:
   - mongodb
 deploy:
