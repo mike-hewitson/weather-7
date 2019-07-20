@@ -12,7 +12,7 @@ script: lein cljfmt check
 # script: lein eastwood
 script: lein kibit
 script: lein cloverage --fail-threshold 40
-# script: lein with-profile test doo phantom once
+
 jdk:
   - oraclejdk8
 services:

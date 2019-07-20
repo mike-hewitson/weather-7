@@ -89,12 +89,10 @@
                                  [pjstadig/humane-test-output "0.8.3"]
                                  [binaryage/devtools "0.9.10"]
                                  [com.cemerick/piggieback "0.2.2"]
-                                 [doo "0.1.10"]
                                  [figwheel-sidecar "0.5.16"]
                                  [midje "1.9.1"]
                                  [proto-repl "0.3.1"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.18.1"]
-                                 [lein-doo "0.1.7"]
                                  [lein-figwheel "0.5.16"]
                                  [org.clojure/clojurescript "1.9.495"]
                                  [lein-bikeshed "0.2.0"]
@@ -117,16 +115,6 @@
                   :repl-options {:init-ns user}
                   :injections [(require 'pjstadig.humane-test-output)
                                (pjstadig.humane-test-output/activate!)]}
-   :project/test {:resource-paths ["env/test/resources"]
-                  :cljsbuild
-                  {:builds
-                   {:test
-                    {:source-paths ["src/cljc" "src/cljs" "test/cljs"]
-                     :compiler
-                     {:output-to "target/test.js"
-                      :main "weather-7.doo-runner"
-                      :optimizations :whitespace
-                      :pretty-print true}}}}}
 
    :profiles/dev {}
    :profiles/test {}}

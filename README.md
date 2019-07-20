@@ -15,7 +15,6 @@ $ mongod
 $ lein run
 $ lein figwheel
 $ lein midje :autotest
-$ lein with-profile test doo phantom
 ```
 
 This gets everything up and running, as well as gets the test runners active for automatic testing whenever there are code changes.
@@ -104,6 +103,5 @@ The following are parts of the travis-ci build:
 - cljfmt (Clojure formatting)
 - kibit (Clojure static code analysis)
 - cloverage (runs midje tests and checks for code coverage)
-- doo (runs cljs tests with phantom)
 
 Any failures will fail the build and will not deploy.
